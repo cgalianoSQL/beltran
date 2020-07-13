@@ -21,11 +21,11 @@ CREATE TABLE beltran.tipos_documentos (
 
 CREATE TABLE beltran.usuarios (
 	id_usuario                    serial PRIMARY KEY,
-	usuario                       varchar(50) UNIQUE,
+	usuario                       varchar(50) NOT NULL UNIQUE,
 	password                      varchar(50) NOT NULL, 
 	nombre                        varchar(50) NOT NULL, 
 	apellido                      varchar(50) NOT NULL, 
-	nro_cliente                   varchar(50), 
+	nro_cliente                   varchar(50) UNIQUE, 
 	nro_documento                 varchar(50) NOT NULL,
 	id_tipo_documento             integer REFERENCES beltran.tipos_documentos(id_tipo_documento),
 	id_tipo_permiso               integer REFERENCES beltran.tipos_permisos(id_tipo_permiso),
@@ -35,14 +35,15 @@ CREATE TABLE beltran.usuarios (
 
 CREATE TABLE beltran.servicios (
 	id_servicio                   serial PRIMARY KEY,
-	nombre                        varchar(50) unique,
+	nombre                        varchar(50) UNIQUE,
 	descripcion                   varchar(50),
 	habilitado                    boolean NOT NULL DEFAULT true
 );
 
 CREATE TABLE beltran.servicios_nro_clientes (
 	id_usuario                    integer REFERENCES beltran.usuarios(id_usuario),
-	id_servicio                	  integer REFERENCES beltran.servicios(id_servicio)
+	id_servicio                	  integer REFERENCES beltran.servicios(id_servicio),
+	PRIMARY KEY 				  (id_usuario, id_servicio)
 );
 
 
