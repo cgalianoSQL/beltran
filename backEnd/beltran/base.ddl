@@ -60,7 +60,6 @@ CREATE TABLE beltran.usuarios_contactos (
 );
 
 
-
 CREATE TABLE beltran.pais (
 	id_pais                       serial PRIMARY KEY,
 	nombre_pais                   varchar(75)

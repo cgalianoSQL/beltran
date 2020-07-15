@@ -4,16 +4,11 @@ session_start();
 
 require 'database.php';
 
-if (!empty($_POST['username']) && !empty($_POST['password'])) {
-  $records = $conn->prepare('SELECT id, username, password FROM users WHERE username = :username');
-  $records->bindParam(':username', $_POST['username']);
-  $records->execute();
-  $results = $records->fetch(PDO::FETCH_ASSOC);
 
-  if (count($results) > 0 && ($_POST['password'] === $results['password'])) {
-    $_SESSION['user_id'] = $results['id'];
-        echo json_encode('Correcto');
-  } else {
-        echo json_encode('error');
-  }
-}
+$str1 = pg_escape_string($_POST['username']);
+$str2 = pg_escape_string($_POST['password']);
+$result = pg_query($conn, "SELECT webapi.beltran_usuarios_verificacion('{$str1}', '{$str2}')");
+$devolver = pg_fetch_object( $result, 0 );
+
+ 
+echo json_encode($devolver);
