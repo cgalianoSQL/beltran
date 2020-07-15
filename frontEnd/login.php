@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Pelis Retro</title>
-    <link rel="stylesheet" href="css/master.css">
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-      crossorigin="anonymous">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="estilo/estilo.css" rel="stylesheet" type="text/css">
+          
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>RR Resolucion de reclamos online</title>
+</head>
 
-  </head>
-  <body>
+<body>
 
-    <header class="header">
-          <div id="encabezado">
-            <img src="img/logo2.jpg" class="avatar" alt="Avatar Image">
-
-             PELIS RETRO
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="checklogin.php" method="post">
+          <div class="imgcontainer">
+              <img src="img/avatar.png" alt="Avatar" class="avatar">
           </div>
-      </header>
 
-    <div class="footer">
-      <p>Copyright 2020 © Pelis Retro</p>
+          <div class="container">
+            <center> 
+              <label for="username"><b>USUARIO</b></label>
+              <input type="text" placeholder="Ingresar Usuario" name="username" required>
+              <label for="password"><b>CONTRASEÑA</b></label>
+              <input type="password" placeholder="Ingresa tu Contraseña" name="password" required> 
+              <button type="submit">INGRESAR</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Recordar Usuario
+              </label>
+            </center>
+          </div>
+          <div class="container" style="background-color:#f1f1f1">
+               <button type="button" onclick="location.href='registrar.html'">REGISTRARSE</button>
+               <!-- <span class="psw">OLVIDE <a href="#"> MI CONTRASEÑA</a></span> Pendiente armar recupero de pass -->
+          </div>
+       </form>
     </div>
 
-    <div class="login-box">
-      <img src="img/logo1.jpg" class="avatar" alt="Avatar Image">
-      <h1>Bienvenido</h1>
- 
-      <form name="login" id="formulario">
-
-        <label for="username">Usuario</label>
-        <input type="text" name="username" placeholder="Introducir Usuario">
-        
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Introducir Password">
-        <input type="submit" value="Aceptar">
-
-        <div class="text-center">
-          <a href="signup.php" >REGISTRATE AQUI</a>
-        </div>
-
-        <div class="mt-3" id="respuesta">
-
-      </form>
-    </div>
-
-
-    <script src="js/loginQuery.js"></script>
-
-
-  </body>
+  <script src="js/loginQuery.js"></script>
+</body>
 </html>
