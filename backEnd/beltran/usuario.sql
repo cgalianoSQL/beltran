@@ -1,6 +1,6 @@
 -------------------------------
 -- PACKAGE: Beltran         --
--- CLASS: verificacion      --
+-- CLASS: Usuarios          --
 -- ABSTRACT DATA TYPE       --
 -------------------------------
 

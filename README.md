@@ -20,3 +20,9 @@ Gestion de reclamos
 # ** No me acuerdo si instale php o con el xampp ya es suficiente. **
 
 ## http://localhost/beltran/frontEnd/main.php inicio de aplicacion 
+
+
+## En PHP.INI 
+agregar o descomentar 
+extension=php_pdo_pgsql.dll
+extension=php_pgsql.dll
