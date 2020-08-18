@@ -30,28 +30,24 @@ class ApiUser{
     }
 
 
-    function getPermiso(){
+    function verificar($username, $password){
         $user = new User();
         $users = array();
-        $users["items"] = array();
 
-        $res = $user->obtenerUsers();
+        $res = $user->verificarUser($username, $password);
 
-        if($res->rowCount()){
-            $row = $res->fetch(PDO::FETCH_ASSOC))
-    
-            echo json_encode($row);
+        $result = $res->fetch(PDO::FETCH_ASSOC);
 
-            $item=array(
-                "id" => $row['id_usuario'],
-            );
-            array_push($users["items"], $item);
-            
-        
-            echo json_encode($users);
-        }else{
-            echo json_encode(array('mensaje' => 'No hay elementos'));
-        }
+        return $result;
+    }
+
+
+    function error($mensaje){
+        echo '<code>' . json_encode(array('mensaje' => $mensaje)) . '</code>'; 
+    }
+
+    function exito($mensaje){
+        echo '<code>' . json_encode(array('mensaje' => $mensaje)) . '</code>'; 
     }
 }
 

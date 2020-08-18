@@ -58,7 +58,7 @@ DECLARE
 BEGIN
 	IF NOT beltran.usuarios_verificacion(p_usuario, p_password)
 	THEN
-		RETURN json_build_object('permiso', 'ERROR');
+		RETURN 'ERROR';
 	END IF;
 
 	v_usuario := x from beltran.usuarios x where usuario = p_usuario AND password = p_password limit 1;
@@ -67,7 +67,7 @@ BEGIN
 
 	v_tipo_permiso := beltran.tipos_permisos_get_nombre_tipo(v_tipo_permiso_id);
 
-	RETURN json_build_object('permiso', v_tipo_permiso);
+	RETURN v_tipo_permiso;
 END
 $$ LANGUAGE plpgsql STABLE STRICT
 SET search_path FROM CURRENT;

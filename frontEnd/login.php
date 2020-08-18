@@ -1,3 +1,6 @@
+    <!-- SE NECESITA METODO PHP PARA VERIFICAR SI
+     HAY SEESSION SI EXISTE LA SESSION DIRECCIONAR AL HOME CORRESPONDIENTE -->
+
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +22,7 @@
 
     <div class="modal">
       
-      <form class="modal-content animate" id="formulario">
+      <form class="modal-content animate" id="formulario" action="php/api/login.php" method="POST">
           <div class="imgcontainer">
               <img src="img/avatar.png" alt="Avatar" class="avatar">
           </div>
@@ -53,6 +56,5 @@
        </form>
     </div>
 
-  <script src="js/loginQuery.js"></script>
 </body>
 </html>

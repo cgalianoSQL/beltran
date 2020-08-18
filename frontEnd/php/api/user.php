@@ -10,7 +10,8 @@ class User extends DB{
     }
 
     function verificarUser($user, $password){
-        $query = $this->connect()->query('SELECT webapi.beltran_usuarios_verificacion('{$user}', '{$password}')');
+        $query = $this->connect()->prepare('SELECT webapi.beltran_usuarios_verificacion(:user , :pass)');
+        $query->execute(['user' => $user, 'pass' => $password]);
         return ($query);
     }    
 
