@@ -61,7 +61,7 @@ if (isset($_SESSION['permiso']))
               </label>
               <br>
               <label>
-                <button type="button" onclick="location.href='registrar.html'">REGISTRARSE</button>
+                <button type="button" onclick="location.href='registro.html'">REGISTRARSE</button>
               </label>
               <br>
               <label>
