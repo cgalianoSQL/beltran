@@ -34,7 +34,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
       </li>
 
       <li class="nav-item">
-      <a class="nav-link" href="#">CERRAR SESIÓN</a>
+      <a class="nav-link" href="logout.php">CERRAR SESIÓN</a>
       </li>
 
     </ul>

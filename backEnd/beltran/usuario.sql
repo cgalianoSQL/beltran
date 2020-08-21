@@ -22,7 +22,7 @@ CREATE OR REPLACE FUNCTION beltran.usuarios_verificacion (
 ) RETURNS boolean AS
 $$
 	select exists (
-		select * from beltran.usuarios where usuario = p_usuario AND password = p_password
+		select 1 from beltran.usuarios where usuario = p_usuario AND password = p_password limit 1
 	);
 $$ LANGUAGE sql VOLATILE
 SET search_path FROM CURRENT;
