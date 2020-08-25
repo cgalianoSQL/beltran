@@ -6,6 +6,43 @@
 
 SELECT 'PACKAGE: BELTRAN CLASS: VERIFICACION (ABSTRACT DATA TYPE)' AS information;
 
+-------------------------------
+-- CONSTRUCTORS & DESTRUCTORS
+-------------------------------
+CREATE OR REPLACE FUNCTION beltran.usuarios (
+    IN p_usuario                    text,
+	IN p_password                   text,
+	IN p_nombre                     text,
+	IN p_apellido                   text,
+    IN p_nro_cliente                text,
+    IN p_nro_documento              text,
+    IN p_id_tipo_documento          integer,
+    IN p_id_tipo_permiso            integer
+) RETURNS beltran.usuarios AS
+$$
+	INSERT INTO beltran.usuarios (
+        usuario, 
+        password, 
+        nombre, 
+        apellido, 
+        nro_cliente, 
+        nro_documento, 
+        id_tipo_documento, 
+        id_tipo_permiso
+    )
+	VALUES (
+        p_usuario, 
+        p_password, 
+        p_nombre, 
+        p_apellido, 
+        p_nro_cliente, 
+        p_nro_documento, 
+        p_id_tipo_documento, 
+        p_id_tipo_permiso
+    ) RETURNING *;
+$$ LANGUAGE sql VOLATILE STRICT
+SET search_path FROM CURRENT;
+
 
 CREATE OR REPLACE FUNCTION beltran.usuarios_existe_por_usuario (
 	IN p_usuario                  text 
@@ -44,32 +81,5 @@ $$
 $$ LANGUAGE sql IMMUTABLE STRICT
 SET search_path FROM CURRENT;
 
-
--- METODO USAR PARA PHP
-CREATE OR REPLACE FUNCTION webapi.beltran_usuarios_verificacion (
-	IN p_usuario                  text, 
-	IN p_password			      text
-) RETURNS text AS $$
-DECLARE 
-	v_tipo_permiso_id             integer;
-	v_tipo_permiso                text;
-	v_usuario                     beltran.usuarios;
-
-BEGIN
-	IF NOT beltran.usuarios_verificacion(p_usuario, p_password)
-	THEN
-		RETURN 'ERROR';
-	END IF;
-
-	v_usuario := x from beltran.usuarios x where usuario = p_usuario AND password = p_password limit 1;
-
-	v_tipo_permiso_id := beltran.usuarios_get_tipo_permiso(v_usuario);
-
-	v_tipo_permiso := beltran.tipos_permisos_get_nombre_tipo(v_tipo_permiso_id);
-
-	RETURN v_tipo_permiso;
-END
-$$ LANGUAGE plpgsql STABLE STRICT
-SET search_path FROM CURRENT;
 
 
