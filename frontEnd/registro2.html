@@ -17,7 +17,7 @@
   <div class="section">
     <CENTER>
       <img class="imgLogo" src="img\logo.png">
-      <form name="registro">
+      <form name="registro" action="php/api/registrarClient.php" method="POST">
           <br> <label for="nombre"><b> NOMBRE </b></label>
           <br> <input type="text" name="nombre" required>
           <br> <label for="apellido"><b> APELLIDO </b></label>

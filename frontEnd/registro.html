@@ -17,7 +17,7 @@
   <div class="section">
     <CENTER>
       <img class="imgLogo" src="img\logo.png">
-      <form name="registro">
+      <form name="registro" action="php/api/sendEmail.php" method="POST">
           <br>  <label for="numCuenta"><b> NÚMERO DE CUENTA </b></label>
           <br> <input type="number" name="numCuenta" required>
           <br>  <label for="email"><b> CORREO ELECTRÓNICO </b></label>
