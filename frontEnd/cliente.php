@@ -33,10 +33,10 @@
     <div id="colorcito1" class="container" >
         <div class="row" >
 
-                                <div class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+                                <div class="col col-lg-3" style="margin-top: 3%;margin-left: 21%;margin-bottom: 3%">
                                     
                                     <div class="card" style="width: 18rem;">
-                                        <div class="card-body" style="min-width:286px;max-width: 286px;min-height:420px;max-height: 420px;">
+                                        <div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
                                           <h3 class="card-text">Generar Nuevo Reclamo</h3>
                                          
                                         </div>
@@ -48,11 +48,11 @@
                                     </div>
                                  </div>
 
-                                <div class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+                                <div class="col col-lg-3" style="margin-top: 3%;margin-left: 5%;margin-bottom: 3%">
                                    
                                     <!--Noticia 3-->
                                   <div class="card" style="width: 18rem;">
-                                        <div class="card-body"  style="min-width:286px;max-width: 286px;min-height:420px;max-height: 420px;">
+                                        <div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 330px;">
                                           <h3 class="card-text">Mis Reclamos</h3>
                                           
                                         </div>

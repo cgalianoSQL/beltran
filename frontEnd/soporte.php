@@ -36,7 +36,7 @@
                 <div  class="card" style="width: 18rem;">
                     <!--286x294 body -->
                     <!-- 286x286 img-->
-                    <div class="card-body" style="min-width:286px;max-width: 286px;min-height: 420px;max-height: 420px;">
+                     <div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
                       <h3 class="card-text">Reclamos</h3>
                     </div>
                     
@@ -54,7 +54,7 @@
                 <div  class="card" style="width: 18rem;">
                     <!--286x294 body -->
                     <!-- 286x286 img-->
-                    <div class="card-body" style="min-width:286px;max-width: 286px;min-height: 420px;max-height: 420px;">
+                     <div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
                       <h3 class="card-text">Estadísticas de Reclamos</h3>
                     </div>
                     
@@ -71,7 +71,7 @@
                                 <div class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
                                     
                                     <div class="card" style="width: 18rem;">
-                                        <div class="card-body" style="min-width:286px;max-width: 286px;min-height:420px;max-height: 420px;">
+                                         <div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
                                           <h3 class="card-text">Estadísticas de Servicios</h3>
                                          
                                         </div>
