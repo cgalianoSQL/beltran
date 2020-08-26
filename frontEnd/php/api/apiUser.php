@@ -42,7 +42,7 @@ class ApiUser{
         $mail -> Password = '13245tester'; //
         $mail -> SetFrom('no-reply@hoecode.org');
         $mail -> Subject = 'Nueva Consulta De Su Pagina';
-        $mail -> Body = 'http://localhost/beltran/frontEnd/registro2.php?nro='. $nroCuenta;
+        $mail -> Body = 'http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta;
         $mail -> AddAddress('w.c.galiano@gmail.com'); //A quien se enviara el mail
         $mail -> Send();
     }

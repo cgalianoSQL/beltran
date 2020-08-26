@@ -6,25 +6,29 @@
     $api = new ApiUser();
     $error = '';
 
-    if(isset($_POST['password']) && isset($_POST['username'])){
+    if(isset($_POST['password'])){
 
-        $jsonParams = array(
+        $Params = array(
             'usuario'  => $_POST['usuario'],
             'password' => $_POST['password'],
             'nombre' => $_POST['nombre'],
             'apellido' => $_POST['apellido'],
-            'nro_cliente' => $_GET['nro'],
+            'nro_cliente' => $_POST['nro_cliente'],
             'nro_documento' => $_POST['nro_documento'],
-            'id_tipo_documento' => $_POST['id_tipo_documento'],
+            'id_tipo_documento' => (int)$_POST['id_tipo_documento'],
             'id_tipo_permiso' => 1
         );
 
-       try {
-            $api->registrar($jsonParams);
-            header("Location: ../../resgistro.php");
+        $jsonParams = json_encode($Params);
 
-        } catch (Exception $e) {
+
+        $result = $api->registrar($jsonParams);
+
+        if(!$result){
             $api->error('Error al ejecutar la API');
+        } else {
+            
+            header("Location: ../../login.php");           
         }
 
     }else{

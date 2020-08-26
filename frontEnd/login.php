@@ -43,7 +43,7 @@
 					</label>
 					<br>
 					<label>
-						<button type="button" onclick="location.href='registro.html'">REGISTRARSE</button>
+						<button type="button" onclick="location.href='registro.php'">REGISTRARSE</button>
 					</label>
 					<br>
 					<label>

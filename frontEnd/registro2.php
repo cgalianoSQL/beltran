@@ -18,25 +18,26 @@
 		<CENTER>
 			<img class="imgLogo" src="img\logo.png">
 			<form name="registro" action="php/api/registrarClient.php" method="POST">
+				<input type="hidden" name="nro_cliente" value="<?php ECHO  $_GET['cliente'];?>" >
 				<br> <label for="nombre"><b> NOMBRE </b></label>
 				<br> <input type="text" name="nombre" required>
 				<br> <label for="apellido"><b> APELLIDO </b></label>
 				<br> <input type="text" name="apellido" required>
 				<br> <label for="tipdoc"><b> TIPO DE DOCUMENTO </b></label>
-				<br> <select name="tipdoc"> 
-					<option value ="dni" selected> DNI</option>
-					<option value ="lc">LIBRETA CÍVICA</option>
-					<option value ="le">LIBRETA DE ENROLAMIENTO</option>
-					<option value ="pasaporte">PASAPORTE</option>
+				<br> <select name="id_tipo_documento"> 
+					<option value ="1" selected> DNI</option>
+					<option value ="2">LIBRETA CÍVICA</option>
+					<option value ="3">LIBRETA DE ENROLAMIENTO</option>
+					<option value ="4">PASAPORTE</option>
 				</select>
 				<br> <label for="numdoc"><b> NUMERO DE DOCUMENTO </b></label>
-				<br> <input type="number" name="telefono" required>
+				<br> <input type="text" name="nro_documento" required>
 				<br> <label for="nombreuser"><b> NOMBRE DE USUARIO </b></label>
-				<br> <input type="text" name="telefono" required>          
+				<br> <input type="text" name="usuario" required>          
 				<br> <label for="password"><b> CONTRASEÑA </b></label>
 				<br> <input type="password" name="password" required>
 				<br> <label for="password"><b> REPETIR CONTRASEÑA </b></label>
-				<br> <input type="password" name="password" required>
+				<br> <input type="password" name="passwordVerificacion" required>
 				<br> <input type="submit" value="FINALIZAR REGISTRO">
 			</form>
 		</CENTER>

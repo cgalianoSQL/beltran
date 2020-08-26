@@ -10,12 +10,12 @@ CREATE SCHEMA beltran;
 
 CREATE TABLE beltran.tipos_permisos (
 	id_tipo_permiso               serial PRIMARY KEY,
-	tipo_permiso                  varchar(50)
+	tipo_permiso                  varchar(50) UNIQUE
 );
 
 CREATE TABLE beltran.tipos_documentos (
 	id_tipo_documento             serial PRIMARY KEY,
-	tipo_documento                varchar(50)
+	tipo_documento                varchar(50) UNIQUE
 );
 
 
