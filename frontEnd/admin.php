@@ -8,11 +8,12 @@
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
 	<title>ADMINISTRADOR</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">ADMINISTRADOR</a>
+		<a class="navbar-brand" href="#"><h4>ADMINISTRADOR</h4></a>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
@@ -37,13 +38,13 @@
 					<div  class="card" style="width: 18rem;">
 						<!--286x294 body -->
 						<!-- 286x286 img-->
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
-							<h3 class="card-text">Crear Servicio </h3>
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 310px;">
+							<h3 class="card-text">Crear Servicio</h3>
 						</div>
 						
 						<!-- Button trigger modal -->
 						<button id="boton1" type="button" class="btn btn-">
-							Click Aquí 
+							CLICK AQUÍ 
 						</button>
 						
 						
@@ -55,13 +56,13 @@
 					<div  class="card" style="width: 18rem;">
 						<!--286x294 body -->
 						<!-- 286x286 img-->
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 310px;">
 							<h3 class="card-text">Crear Cuenta Personal de Soporte</h3>
 						</div>
 						
 						<!-- Button trigger modal -->
 						<button id="boton1" type="button" class="btn btn-">
-							Click Aquí 
+							CLICK AQUÍ 
 						</button>
 						
 						
@@ -73,13 +74,13 @@
 					<div  class="card" style="width: 18rem;">
 						<!--286x294 body -->
 						<!-- 286x286 img-->
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 310px;">
 							<h3 class="card-text">Clientes </h3>
 						</div>
 						
 						<!-- Button trigger modal -->
 						<button id="boton1" type="button" class="btn btn-">
-							Click Aquí 
+							CLICK AQUÍ 
 						</button>
 						
 						
@@ -91,13 +92,13 @@
 					<div  class="card" style="width: 18rem;">
 						<!--286x294 body -->
 						<!-- 286x286 img-->
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 310px;">
 							<h3 class="card-text">Estadísticas de servicios</h3>
 						</div>
 						
 						<!-- Button trigger modal -->
 						<button id="boton1" type="button" class="btn btn-">
-							Click Aquí 
+							CLICK AQUÍ 
 						</button>
 						
 						
@@ -108,14 +109,14 @@
 				<div class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					
 					<div class="card" style="width: 18rem;">
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 310px;">
 							<h3 class="card-text">Estadísticas de Reclamos  </h3>
 							
 						</div>
 						
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-" id="boton1">
-							Click Aquí 
+							CLICK AQUÍ 
 						</button>
 						
 					</div>
@@ -125,8 +126,6 @@
 		</div>
 	</div>
 </div>
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
