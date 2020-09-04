@@ -41,8 +41,9 @@
 						  <h3>Lista de reclamos</h3>
 						</div>
 						</div>
-						<button type="button" class="btn btn-" id="boton1" onclick="location.href='listaReclamosSoporte.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='listaReclamosSoporte.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
 					</div>
 				</div>
@@ -54,13 +55,14 @@
 							  	<h3>Mis<br>Reclamos</h3>
 							</div>
 						</div>
-						<button id="boton1" type="button" class="btn btn-" onclick="location.href='misReclamosSoporte.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='misReclamosSoporte.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
 
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -40,9 +40,11 @@
 							</div>
 						</div>
 
-						<button id="boton1" type="button" class="btn btn-" onclick="location.href='reclamosSoporte.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='reclamosSoporte.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
+
 					</div>
 				</div>
 				<div  class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
@@ -52,9 +54,11 @@
 								<h3>Estadísticas de Reclamos</h3>
 							</div>
 						</div>
-						<button id="boton1" type="button" class="btn btn-" onclick="location.href='estadisticasDeReclamo.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='estadisticasDeReclamo.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
+
 					</div>
 				</div>
 
@@ -65,8 +69,9 @@
 						<h3>Estadísticas de Servicios</h3>
 						</div>	
 						</div>
-						<button type="button" class="btn btn-" id="boton1" onclick="location.href='estadisticasDeServicio.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='estadisticasDeServicio.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
 					</div>
 				</div>

@@ -66,9 +66,11 @@
 					</form>
 
 						</div>
-						<button type="button" class="btn btn-" id="boton1">
-							GENERAR 
+						<button type="button" class="btn btn-primary" onclick="location.href=''">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
+
 					</div>
 				</div>
 			</div>

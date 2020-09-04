@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +39,9 @@
 						  <h3>Generar Reclamo</h3>
 						</div>
 						</div>
-						<button type="button" class="btn btn-" id="boton1" onclick="location.href='GenerarReclamo.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='GenerarReclamo.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
 					</div>
 				</div>
@@ -54,8 +53,9 @@
 							  	<h3>Mis<br>Reclamos</h3>
 							</div>
 						</div>
-						<button id="boton1" type="button" class="btn btn-" onclick="location.href='misReclamos.php'">
-							CLICK AQUÍ 
+						<button type="button" class="btn btn-primary" onclick="location.href='misReclamos.php'">
+						CLICK AQUÍ
+						<span class="sr-only"></span>
 						</button>
 					</div>
 				</div>
