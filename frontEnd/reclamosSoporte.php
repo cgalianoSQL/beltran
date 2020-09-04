@@ -6,19 +6,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>CLIENTE</title>
+	<title>Reclamos Soporte</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#"><h4>CLIENTE</h4></a>	
+		<a class="navbar-brand" href="#"><h4>PERSONAL DE SOPORTE</h4></a>	
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">INICIO</a>
+					<a class="nav-link" href="soporte.php">INICIO</a>
 				</li>
 
 				<li class="nav-item">
@@ -38,10 +38,10 @@
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 							
 							<div class="alert alert-primary" role="alert">
-						  <h3>Generar Reclamo</h3>
+						  <h3>Lista de reclamos</h3>
 						</div>
 						</div>
-						<button type="button" class="btn btn-" id="boton1" onclick="location.href='GenerarReclamo.php'">
+						<button type="button" class="btn btn-" id="boton1" onclick="location.href='listaReclamosSoporte.php'">
 							CLICK AQUÍ 
 						</button>
 					</div>
@@ -54,7 +54,7 @@
 							  	<h3>Mis<br>Reclamos</h3>
 							</div>
 						</div>
-						<button id="boton1" type="button" class="btn btn-" onclick="location.href='misReclamos.php'">
+						<button id="boton1" type="button" class="btn btn-" onclick="location.href='misReclamosSoporte.php'">
 							CLICK AQUÍ 
 						</button>
 					</div>

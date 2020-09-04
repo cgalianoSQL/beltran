@@ -33,58 +33,43 @@
 		<div id="colorcito1" class="container" >
 			<div class="row" >
 				<div  class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
-					<!--Noticia 1-->
 					<div  class="card" style="width: 18rem;">
-						<!--286x294 body -->
-						<!-- 286x286 img-->
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
-							<h3 class="card-text">Reclamos</h3>
+							<div class="alert alert-primary" role="alert">
+							  <h3>Reclamos</h3>
+							</div>
 						</div>
 
-						<!-- Button trigger modal -->
-						<button id="boton1" type="button" class="btn btn-">
+						<button id="boton1" type="button" class="btn btn-" onclick="location.href='reclamosSoporte.php'">
 							CLICK AQUÍ 
 						</button>
-
-
 					</div>
 				</div>
-
 				<div  class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
-					<!--Noticia 1-->
 					<div  class="card" style="width: 18rem;">
-						<!--286x294 body -->
-						<!-- 286x286 img-->
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
-							<h3 class="card-text">Estadísticas de Reclamos</h3>
+							<div class="alert alert-warning" role="alert">
+								<h3>Estadísticas de Reclamos</h3>
+							</div>
 						</div>
-
-						<!-- Button trigger modal -->
-						<button id="boton1" type="button" class="btn btn-">
+						<button id="boton1" type="button" class="btn btn-" onclick="location.href='estadisticasDeReclamo.php'">
 							CLICK AQUÍ 
 						</button>
-
-
 					</div>
 				</div>
 
-				<!--Noticia 2 -->
 				<div class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
-
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
-							<h3 class="card-text">Estadísticas de Servicios</h3>
-
+						<div class="alert alert-success" role="alert">
+						<h3>Estadísticas de Servicios</h3>
+						</div>	
 						</div>
-
-						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-" id="boton1">
+						<button type="button" class="btn btn-" id="boton1" onclick="location.href='estadisticasDeServicio.php'">
 							CLICK AQUÍ 
 						</button>
-
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

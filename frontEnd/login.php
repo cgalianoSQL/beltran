@@ -47,9 +47,8 @@
 					</label>
 					<br>
 					<label>
-						<span class="psw">OLVIDE <a href="#"> MI CONTRASEÑA</a></span>
+						<span class="psw">OLVIDE <a href="#"> MI CONTRASEÑA <br></a></span>
 					</label>
-					<br>
 				</center>
 			</div>
 		</form>
