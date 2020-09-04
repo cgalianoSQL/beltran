@@ -43,7 +43,7 @@ class ApiUser{
         $mail -> SetFrom('no-reply@hoecode.org');
         $mail -> Subject = 'Nueva Consulta De Su Pagina';
         $mail -> Body = 'http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta;
-        $mail -> AddAddress('w.c.galiano@gmail.com'); //A quien se enviara el mail
+        $mail -> AddAddress($email); //A quien se enviara el mail
         $mail -> Send();
     }
 

@@ -16,7 +16,7 @@
             'nro_cliente' => $_POST['nro_cliente'],
             'nro_documento' => $_POST['nro_documento'],
             'id_tipo_documento' => (int)$_POST['id_tipo_documento'],
-            'id_tipo_permiso' => 1
+            'id_tipo_permiso' => 3
         );
 
         $jsonParams = json_encode($Params);
@@ -27,8 +27,8 @@
         if(!$result){
             $api->error('Error al ejecutar la API');
         } else {
-            
-            header("Location: ../../login.php");           
+           
+        header("Location: ../../login.php");           
         }
 
     }else{
