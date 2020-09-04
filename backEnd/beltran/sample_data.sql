@@ -41,10 +41,40 @@ INSERT INTO beltran.servicios (nombre, descripcion)
 INSERT INTO beltran.servicios (nombre, descripcion)
 	VALUES('INTERNET', 'PLUS');
 
+INSERT INTO beltran.servicios (nombre, descripcion)
+	VALUES('INTERNET PLUS' , 'Telecentro');
+
+INSERT INTO beltran.servicios (nombre, descripcion)
+	VALUES('TELEFONIA PLUS' , 'Telecentro');
+
+INSERT INTO beltran.servicios (nombre, descripcion)
+	VALUES('TV DIGITAL' , 'Telecentro');
+
+INSERT INTO beltran.servicios (nombre, descripcion)
+	VALUES('TELEFONIA MOVIL' , 'Telecentro');
+
 INSERT INTO beltran.servicios_nro_clientes (id_usuario, id_servicio)
 	VALUES(3 , 2);
 
 INSERT INTO beltran.servicios_nro_clientes (id_usuario, id_servicio)
 	VALUES(3 ,1);
+
+-- GENERADOR DE NUMERO DE CLIENTES
+DO $$
+declare
+	dato         integer;
+
+BEGIN
+    for dato IN 1..10
+    LOOP
+        INSERT INTO beltran.nro_clientes (nro_cliente)
+				VALUES( dato || 'bkw' || dato);
+
+    END LOOP;
+END$$;
+
+
+
+
 
 

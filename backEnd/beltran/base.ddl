@@ -25,7 +25,7 @@ CREATE TABLE beltran.usuarios (
 	password                      varchar(50) NOT NULL, 
 	nombre                        varchar(50) NOT NULL, 
 	apellido                      varchar(50) NOT NULL, 
-	nro_cliente                   varchar(50) UNIQUE, 
+	nro_cliente                   varchar(50) UNIQUE REFERENCES beltran.nro_clientes(nro_cliente) , 
 	nro_documento                 varchar(50) NOT NULL,
 	id_tipo_documento             integer REFERENCES beltran.tipos_documentos(id_tipo_documento),
 	id_tipo_permiso               integer REFERENCES beltran.tipos_permisos(id_tipo_permiso),
@@ -41,9 +41,14 @@ CREATE TABLE beltran.servicios (
 );
 
 CREATE TABLE beltran.servicios_nro_clientes (
-	id_usuario                    integer REFERENCES beltran.usuarios(id_usuario),
+	id_cliente                    varchar(50) REFERENCES beltran.nro_clientes(nro_cliente),
 	id_servicio                	  integer REFERENCES beltran.servicios(id_servicio),
 	PRIMARY KEY 				  (id_usuario, id_servicio)
+);
+
+
+CREATE TABLE beltran.nro_clientes (
+	nro_cliente                   varchar(50) PRIMARY KEY
 );
 
 
