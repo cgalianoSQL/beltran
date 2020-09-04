@@ -26,9 +26,8 @@
 				<br> <label for="tipdoc"><b> TIPO DE DOCUMENTO </b></label>
 				<br> <select name="id_tipo_documento"> 
 					<option value ="1" selected> DNI</option>
-					<option value ="2">LIBRETA CÍVICA</option>
-					<option value ="3">LIBRETA DE ENROLAMIENTO</option>
-					<option value ="4">PASAPORTE</option>
+					<option value ="2">PASAPORTE</option>
+					<option value ="3">EXTRANJERO</option>
 				</select>
 				<br> <label for="numdoc"><b> NUMERO DE DOCUMENTO </b></label>
 				<br> <input type="text" name="nro_documento" required>

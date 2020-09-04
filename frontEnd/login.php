@@ -1,4 +1,21 @@
+<?php
+session_start();
 
+if (isset($_SESSION['permiso']))
+{
+  switch($_SESSION['permiso']) {
+    case 'CLIENTE':
+        header("Location: cliente.php");
+    break;
+    case 'ADMINISTRADOR':
+        header("Location: admin.php");
+    break;
+    case 'SOPORTE':
+        header("Location: soporte.php");
+  }
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
