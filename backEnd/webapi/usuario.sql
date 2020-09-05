@@ -71,50 +71,9 @@ SECURITY DEFINER;
 ---------------------------------
 -- IDENTIFY AND SEARCH
 ---------------------------------
-CREATE OR REPLACE FUNCTION webapi.beltran_usuarios_creacion (
-	IN p_usuario                  text
-) RETURNS integer AS $$
-DECLARE
-	v_usuario_jsonb               jsonb;
-	v_usuario	                  beltran.usuarios;
-
-BEGIN
-	IF NOT webapi.is_text_valid_json(p_usuario)
-	THEN
-	    RAISE EXCEPTION 'webapi.beltran_usuarios_creacion EXCEPTION: parameter is not a valid JSON object';
-	END IF;
-
-	v_usuario_jsonb := p_usuario::jsonb;
-
-  	IF NOT webapi.beltran_usuarios_request_creation_dto_is_valid(v_usuario_jsonb)
-	THEN
-	   	RAISE EXCEPTION 'webapi.beltran_usuarios_creacion EXCEPTION: malformed JSON object';
-	END IF;
-
-    v_usuario := beltran.usuarios (
-        v_usuario_jsonb ->> 'usuario',
-        v_usuario_jsonb ->> 'password',
-        v_usuario_jsonb ->> 'nombre',
-        v_usuario_jsonb ->> 'apellido',
-        v_usuario_jsonb ->> 'nro_cliente',
-        v_usuario_jsonb ->> 'nro_documento',
-        (v_usuario_jsonb ->> 'id_tipo_documento')::integer,
-        (v_usuario_jsonb ->> 'id_tipo_permiso')::integer
-	);
-
-    RETURN v_usuario.id_usuario;
-END;
-$$ LANGUAGE plpgsql VOLATILE STRICT
-SET search_path FROM CURRENT
-SECURITY DEFINER;
-
-
-
-
-
 CREATE OR REPLACE PROCEDURE webapi.beltran_usuarios_creacion_procedimiento(
 	p_usuario                     text,
-	OUT estado                    boolean
+	inout p_estado                      boolean
 )
 LANGUAGE plpgsql    
 AS $$
@@ -147,5 +106,9 @@ BEGIN
 	);
 
     COMMIT;
+	   
+   	p_estado := true;
+   
+    return;
 
 END;$$

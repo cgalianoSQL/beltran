@@ -11,7 +11,7 @@ class User extends DB{
     }    
 
     function registrar($jsonParams){
-        $query = $this->connect()->prepare('SELECT webapi.beltran_usuarios_creacion(:jsonParams)');
+        $query = $this->connect()->prepare('CALL webapi.beltran_usuarios_creacion_procedimiento(:jsonParams, false)');
         $query->execute(['jsonParams' => $jsonParams]);
         return ($query);
     }    

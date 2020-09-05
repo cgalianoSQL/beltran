@@ -73,7 +73,7 @@ $$ LANGUAGE sql IMMUTABLE STRICT
 SET search_path FROM CURRENT;
 
 
-REATE OR REPLACE FUNCTION beltran.tipos_permisos_get_nombre_tipo (
+CREATE OR REPLACE FUNCTION beltran.tipos_permisos_get_nombre_tipo (
 	IN p_id                       integer
 ) RETURNS text AS
 $$
