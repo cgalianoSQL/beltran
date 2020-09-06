@@ -86,6 +86,14 @@ INSERT INTO beltran.usuarios (
 	VALUES('cliente', 'cliente', 'cliente', 'cliente', '23', 36754259, 1, 3);
 
 
+INSERT INTO beltran.estados (nombre_estado)
+	VALUES('ABIERTO');
+
+INSERT INTO beltran.estados (nombre_estado)
+	VALUES('EN CURSO');
+
+INSERT INTO beltran.estados (nombre_estado)
+	VALUES('CERRADA');
 
 
 

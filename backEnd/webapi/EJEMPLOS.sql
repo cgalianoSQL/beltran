@@ -12,3 +12,11 @@ select webapi.beltran_usuarios_creacion(
 	"id_tipo_permiso":3
 }'
 ::text);
+
+
+CALL  webapi.beltran_reclamos_creacion_procedimiento('{
+	 "id_servicio":1,
+	 "id_usuario_pertenece":9,
+	 "comentario":"INICIO DE RECLAMO"}'::text ,
+	 false
+);

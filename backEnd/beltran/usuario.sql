@@ -53,6 +53,24 @@ $$ LANGUAGE sql VOLATILE
 SET search_path FROM CURRENT;
 
 
+CREATE OR REPLACE FUNCTION beltran.usuarios_identify_by_id (
+	IN p_id                       integer 
+) RETURNS beltran.usuarios AS
+$$
+	select * from beltran.usuarios where id_usuario = p_id limit 1;
+$$ LANGUAGE sql VOLATILE
+SET search_path FROM CURRENT;
+
+
+CREATE OR REPLACE FUNCTION beltran.usuarios_get_name_complete (
+	IN p_usuario                  beltran.usuarios
+) RETURNS text AS
+$$
+	SELECT nombre(p_usuario) || ' ' || apellido(p_usuario);
+$$ LANGUAGE sql IMMUTABLE STRICT
+SET search_path FROM CURRENT;
+
+
 CREATE OR REPLACE FUNCTION beltran.usuarios_verificacion (
 	IN p_usuario                  text, 
 	IN p_password			      text

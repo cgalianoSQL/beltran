@@ -92,3 +92,30 @@ CREATE TABLE beltran.direcciones (
 	entre_calle_1                 varchar(45),
 	entre_calle_2                 varchar(45)
 );
+
+CREATE TABLE beltran.estados (
+	id_estados                   serial PRIMARY KEY,
+	nombre_estado                varchar(50) UNIQUE
+);
+
+CREATE TABLE beltran.movimientos_reclamo (
+	id_movimientos_reclamo        serial PRIMARY KEY,
+	creacion                      date,
+	comentario                    varchar(80),
+	realizado                     varchar(80)
+);
+
+CREATE TABLE beltran.reclamos (
+	id_reclamos                   serial PRIMARY KEY,
+	creacion                      date,
+	id_servicio                   integer REFERENCES beltran.servicios(id_servicio),
+	id_usuario_pertenece          integer REFERENCES beltran.usuarios(id_usuario),
+	id_usuario_asignado           integer REFERENCES beltran.usuarios(id_usuario),
+	id_estados                    integer REFERENCES beltran.estados(id_estados)
+);
+
+CREATE TABLE beltran.movimientos_de_reclamos (
+	id_reclamos                   integer REFERENCES beltran.reclamos(id_reclamos),
+	id_movimientos_reclamo        integer REFERENCES beltran.movimientos_reclamo(id_movimientos_reclamo),
+	PRIMARY KEY 				  (id_reclamos, id_movimientos_reclamo)
+);
