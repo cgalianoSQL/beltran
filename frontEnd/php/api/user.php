@@ -10,6 +10,13 @@ class User extends DB{
         return ($query);
     }    
 
+    function obtenerIdPorUsuario($user, $password){
+        $query = $this->connect()->prepare('SELECT webapi.beltran_usuarios_get_id(:user , :pass)');
+        $query->execute(['user' => $user, 'pass' => $password]);
+        return ($query);
+    }    
+
+
     function registrar($jsonParams){
         $query = $this->connect()->prepare('CALL webapi.beltran_usuarios_creacion_procedimiento(:jsonParams, false)');
         $query->execute(['jsonParams' => $jsonParams]);

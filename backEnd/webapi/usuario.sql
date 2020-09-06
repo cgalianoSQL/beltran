@@ -27,6 +27,27 @@ $$ LANGUAGE plpgsql STABLE STRICT
 SET search_path FROM CURRENT;
 
 
+CREATE OR REPLACE FUNCTION webapi.beltran_usuarios_get_id (
+	IN p_usuario                  text, 
+	IN p_password			      text
+) RETURNS integer AS $$
+DECLARE 
+	v_usuario                     beltran.usuarios;
+
+BEGIN
+	IF NOT beltran.usuarios_verificacion(p_usuario, p_password)
+	THEN
+		RETURN 'ERROR';
+	END IF;
+
+	v_usuario := x from beltran.usuarios x where usuario = p_usuario AND password = p_password limit 1;
+
+	RETURN v_usuario.id_usuario;
+END
+$$ LANGUAGE plpgsql STABLE STRICT
+SET search_path FROM CURRENT;
+
+
 ---------------------------------
 -- CONSTRUCTOR & DESTRUCTOR
 ---------------------------------

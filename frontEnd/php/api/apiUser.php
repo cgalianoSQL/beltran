@@ -18,6 +18,17 @@ class ApiUser{
     }
 
 
+    function obtenerId($username, $password){
+        $user = new User();
+
+        $res = $user->obtenerIdPorUsuario($username, $password);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
     function registrar($jsonParams){
         $user = new User();
 

@@ -14,18 +14,22 @@
     ##    );
 
        $permiso = $api->verificar($_POST['username'], $_POST['password']);
+       $id = $api->obtenerId($_POST['username'], $_POST['password']);
 
        switch($permiso["beltran_usuarios_verificacion"]) {
             case 'CLIENTE':
                 $_SESSION['permiso'] = 'CLIENTE';
+                $_SESSION['id'] = $id["beltran_usuarios_get_id"];
                 header("Location: ../../cliente.php");
             break;
             case 'ADMINISTRADOR':
                 $_SESSION['permiso'] = 'ADMINISTRADOR';
+                $_SESSION['id'] = $id["beltran_usuarios_get_id"];
                 header("Location: ../../admin.php");
             break;
             case 'SOPORTE':
                 $_SESSION['permiso'] = 'SOPORTE';
+                $_SESSION['id'] = $id["beltran_usuarios_get_id"];
                 header("Location: ../../soporte.php");
             break;
             default:
