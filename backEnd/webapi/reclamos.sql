@@ -55,3 +55,27 @@ BEGIN
     return;
 
 END;$$
+
+
+--SEARCH
+CREATE OR REPLACE FUNCTION webapi.beltran_reclamos_search (
+    IN p_id_pertenece             integer
+) RETURNS text AS $$
+DECLARE
+    v_reclamos                    beltran.reclamos[];
+	v_info                        jsonb;
+	v_data                        jsonb;
+	v_response                    jsonb;
+
+BEGIN
+	v_reclamos := beltran.reclamos_search();
+    
+	v_response := jsonb_build_object (
+		'reclamos',webapi.beltran_reclamos_to_response_dtos(v_reclamos)
+	);
+
+    RETURN v_response::text;
+END;
+$$ LANGUAGE plpgsql STABLE
+SET search_path FROM CURRENT
+SECURITY DEFINER;

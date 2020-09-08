@@ -68,3 +68,18 @@ $$ LANGUAGE sql VOLATILE STRICT
 SET search_path FROM CURRENT;
 
 
+
+CREATE OR REPLACE FUNCTION beltran.reclamos_search (
+) RETURNS beltran.reclamos[] AS $$
+DECLARE
+	v_reclamos                 beltran.reclamos[];
+BEGIN
+	EXECUTE FORMAT(
+		'SELECT array(SELECT a FROM beltran.reclamos a ORDER BY creacion DESC)'
+	) INTO v_reclamos;
+
+	RETURN v_reclamos;
+END;
+$$ LANGUAGE plpgsql STABLE
+SET search_path FROM CURRENT;
+
