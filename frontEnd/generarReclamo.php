@@ -61,7 +61,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 					  	<h3>Nuevo Reclamo</h3>
 					</div>
 
-					<form action="php/api/registroReclamo.php" method="POST">
+					<form action="php/api/registrarReclamo.php" method="POST">
 					<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 					  <div class="form-group">
 					  	Servicio
@@ -80,13 +80,10 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 					    <label for="formGroupExampleInput">Detalle</label>
 					    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario">
 					  </div>
-					</form>
 
-						</div>
-						<button type="button" class="btn btn-primary" onclick="location.href=''">
-						ENVIAR
-						<span class="sr-only"></span>
-						</button>
+					  <input type="submit" value="ACEPTAR">
+
+					</form>
 
 					</div>
 				</div>
