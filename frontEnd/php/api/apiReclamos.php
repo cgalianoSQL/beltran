@@ -8,9 +8,9 @@ class ApiReclamos{
 
 
     function registrar($jsonParams){
-        $user = new User();
+        $reclamos = new Reclamos();
 
-        $res = $user->registrarReclamo($jsonParams);
+        $res = $reclamos->registrarReclamo($jsonParams);
 
         $result = $res->fetch(PDO::FETCH_ASSOC);
 
