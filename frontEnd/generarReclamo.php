@@ -11,22 +11,35 @@
 </head>
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#"><h4>CLIENTE</h4></a>
+		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="cliente.php">INICIO</a>
+					<button class="btn btn-secondary" type="button" onclick="location.href='cliente.php'" style="border-color: white">
+				    INICIO
+				  </button>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">MI CUENTA</a>
+				<div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
+				    MI CUENTA
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="dropdown-item" href="#">Accion 1</a>
+				    <a class="dropdown-item" href="#">Accion 2</a>
+				    <a class="dropdown-item" href="#">Accion 3</a>
+				  </div>
+				</div>
+				
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="logout.php">CERRAR SESIÓN</a>
+					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
+				    CERRAR SESIÓN
+				  </button>
 				</li>
-
 			</ul>
 		</nav>
 		<div id="colorcito1" class="container" >
@@ -67,7 +80,7 @@
 
 						</div>
 						<button type="button" class="btn btn-primary" onclick="location.href=''">
-						CLICK AQUÍ
+						ENVIAR
 						<span class="sr-only"></span>
 						</button>
 
