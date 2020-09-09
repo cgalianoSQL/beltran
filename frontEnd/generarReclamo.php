@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
+{
+  header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,30 +61,24 @@
 					  	<h3>Nuevo Reclamo</h3>
 					</div>
 
-					<form>
+					<form action="php/api/registroReclamo.php" method="POST">
+					<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 					  <div class="form-group">
 					  	Servicio
-					    <select class="custom-select" required>
+					    <select class="custom-select" name="id_servicio" required>
 					      <option value="">Seleccione un servicio</option>
-					      <option value="1">Servicio 1</option>
-					      <option value="2">Servicio 2</option>
-					      <option value="3">Servicio 3</option>
-					    </select>
-					  </div>
-
-					    <div class="form-group">
-					    	Problema
-					    <select class="custom-select" required>
-					      <option value="">Seleccione un problema</option>
-					      <option value="1">Problema 1</option>
-					      <option value="2">Problema 2</option>
-					      <option value="3">Problema 3</option>
+					      <option value="1">TELEFONIA</option>
+					      <option value="2">INTERNET </option>
+					      <option value="3">INTERNET PLUS</option>
+					      <option value="4">TELEFONIA PLUS</option>
+					      <option value="5">TV DIGITAL</option>
+					      <option value="6">TELEFONIA MOVIL</option>
 					    </select>
 					  </div>
 						
 					  <div class="form-group">
 					    <label for="formGroupExampleInput">Detalle</label>
-					    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema">
+					    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario">
 					  </div>
 					</form>
 
