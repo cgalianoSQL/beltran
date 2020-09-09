@@ -17,6 +17,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SOPORTE')
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
 	<title>PERSONAL DE SOPORTE</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
@@ -70,6 +71,11 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SOPORTE')
 							<div class="alert alert-warning" role="alert">
 								<h3>Estadísticas de Reclamos</h3>
 							</div>
+							<h5>Total de reclamos <br> abieros:</h5>
+							<br>
+							<h5>Total de reclamos solucionados:</h5>
+							<br>
+							<h5>Total de reclamos:</h5>
 						</div>
 					</div>
 				</div>
