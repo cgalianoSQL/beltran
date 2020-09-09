@@ -17,72 +17,76 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SOPORTE')
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
 	<title>PERSONAL DE SOPORTE</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#"><h4>PERSONAL DE SOPORTE</h4></a>
+		<a class="navbar-brand" href="soporte.php"><h4>PERSONAL DE SOPORTE</h4></a>	
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="#">INICIO</a>
+					<button class="btn btn-secondary" type="button" onclick="location.href='soporte.php'" style="border-color: white">
+				    INICIO
+				  </button>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#">MI CUENTA</a>
+				<div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
+				    MI CUENTA
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="dropdown-item" href="#">Accion 1</a>
+				    <a class="dropdown-item" href="#">Accion 2</a>
+				    <a class="dropdown-item" href="#">Accion 3</a>
+				  </div>
+				</div>
+				
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="logout.php">CERRAR SESIÓN</a>
+					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
+				    CERRAR SESIÓN
+				  </button>
 				</li>
-
 			</ul>
 		</nav>
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div  class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div  class="col col-lg-3" onclick="location.href='reclamosSoporte.php'"style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div  class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 							<div class="alert alert-primary" role="alert">
 							  <h3>Reclamos</h3>
 							</div>
 						</div>
-
-						<button type="button" class="btn btn-primary" onclick="location.href='reclamosSoporte.php'">
-						CLICK AQUÍ
-						<span class="sr-only"></span>
-						</button>
-
 					</div>
 				</div>
-				<div  class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div  class="col col-lg-3" onclick="location.href='estadisticasDeReclamoSoporte.php'"style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div  class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 							<div class="alert alert-warning" role="alert">
 								<h3>Estadísticas de Reclamos</h3>
 							</div>
+							<h5>Total de reclamos <br> abieros:</h5>
+							<br>
+							<h5>Total de reclamos solucionados:</h5>
+							<br>
+							<h5>Total de reclamos:</h5>
 						</div>
-						<button type="button" class="btn btn-primary" onclick="location.href='estadisticasDeReclamo.php'">
-						CLICK AQUÍ
-						<span class="sr-only"></span>
-						</button>
-
 					</div>
 				</div>
 
-				<div class="col col-lg-3" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div class="col col-lg-3" onclick="location.href='estadisticasDeServicioSoporte.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 						<div class="alert alert-success" role="alert">
 						<h3>Estadísticas de Servicios</h3>
 						</div>	
 						</div>
-						<button type="button" class="btn btn-primary" onclick="location.href='estadisticasDeServicio.php'">
-						CLICK AQUÍ
-						<span class="sr-only"></span>
-						</button>
 					</div>
 				</div>
 			</div>
