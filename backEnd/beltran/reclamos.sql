@@ -25,7 +25,7 @@ $$
         current_date, 
         p_id_servicio, 
         p_id_usuario_pertenece, 
-        null, 
+        7, 
         1
     ) RETURNING *;
 $$ LANGUAGE sql VOLATILE STRICT
@@ -83,3 +83,27 @@ END;
 $$ LANGUAGE plpgsql STABLE
 SET search_path FROM CURRENT;
 
+
+CREATE OR REPLACE FUNCTION beltran.reclamos_vw_search (
+) RETURNS beltran.reclamos_vw[] AS
+ $$
+	SELECT array(SELECT a FROM  beltran.reclamos_vw a ORDER BY creacion DESC) 
+$$ LANGUAGE sql STABLE
+SET search_path FROM CURRENT;
+
+
+
+CREATE OR REPLACE FUNCTION beltran.reclamos_vw_filter_by_id_pertenece (
+	IN p_reclamos                 beltran.reclamos_vw[],
+	IN p_pertenece                integer
+) RETURNS beltran.reclamos_vw[] AS
+$$
+	WITH reclamos AS (
+			SELECT * FROM unnest(p_reclamos) x
+		)
+		SELECT array (
+			SELECT s::beltran.reclamos_vw FROM reclamos s
+			    WHERE id_usuario_pertenece = p_pertenece
+		);
+$$ LANGUAGE sql IMMUTABLE STRICT
+SET search_path FROM CURRENT;
