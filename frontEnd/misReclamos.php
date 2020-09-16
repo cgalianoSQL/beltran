@@ -1,19 +1,11 @@
 <?php
-
 include_once 'php/api/apiReclamos.php';
 session_start();
-
 $api = new ApiReclamos();
-
 $lista = $api->mostrar();
-
 $result = $lista->fetchAll();
-
-ECHO json_encode($result);
-
-
+//ECHO json_encode($result);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,12 +58,39 @@ ECHO json_encode($result);
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 330px;">
 						<div class="alert alert-warning" role="alert">
 							  	<h3>Mis Reclamos</h3>
-							</div>
-						</div>
+
+							  	
+			<table class="table table-striped table-hover">
+                <tr>
+                    <th>ID Reclamo</th>
+                    <th>Fecha de Creacion</th>
+                    <th>ID Servicio</th>
+                    <th>Pertenece</th>
+					<th>Asignado</th>
+					<th>Estado</th> 
+				</tr>
+
+				<?php 
+				echo'<table border="1">';
+				foreach($result as $r){
+				echo'<tr>';
+				foreach($r as $v){
+				echo'<td>'.$v.'</td>';
+				}
+				echo'</tr>';
+				}
+				echo'</table>';
+				?>  
+
+
+            </table>				  	
+
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
 
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
