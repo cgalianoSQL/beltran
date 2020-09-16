@@ -11,6 +11,14 @@ class Reclamos extends DB{
     }    
 
 
+    function mostrarApi(){
+        $query = $this->connect()->prepare('SELECT * FROM beltran.reclamos_vw');
+        $query->execute();
+        return ($query);
+    }    
+
+
+
 }
 
 ?>

@@ -1,3 +1,20 @@
+<?php
+
+include_once 'php/api/apiReclamos.php';
+session_start();
+
+$api = new ApiReclamos();
+
+$lista = $api->mostrar();
+
+$result = $lista->fetchAll();
+
+ECHO json_encode($result);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

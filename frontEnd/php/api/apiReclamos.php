@@ -17,6 +17,15 @@ class ApiReclamos{
         return $result;
     }
 
+
+    function mostrar(){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->mostrarApi();
+
+        return $res;
+    }
+
     function error($mensaje){
         echo '<code>' . json_encode(array('mensaje' => $mensaje)) . '</code>'; 
     }
