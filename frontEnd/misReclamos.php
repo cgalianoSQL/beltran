@@ -3,8 +3,8 @@ include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrar();
-$result = $lista->fetchAll();
-//ECHO json_encode($result);
+
+$result = $lista->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
