@@ -18,10 +18,10 @@ class ApiReclamos{
     }
 
 
-    function mostrar(){
+    function mostrar($id){
         $reclamos = new Reclamos();
 
-        $res = $reclamos->mostrarApi();
+        $res = $reclamos->mostrarApi($id);
 
         return $res;
     }
