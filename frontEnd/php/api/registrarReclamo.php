@@ -1,5 +1,6 @@
 <?php
 
+    
     include_once 'apiReclamos.php';
     session_start();
     
@@ -19,12 +20,14 @@
 
         $result = $api->registrar($jsonParams);
 
+        
+
         if(!$result){
             $api->error('Error al ejecutar la API');
         } else {
-           
-        header("Location: ../../misReclamos.php");           
-        }
+        echo '<script language="javascript">alert("Reclamo Creado con exito");window.location.href="../../misReclamos.php"</script>';          
+
+    }
 
     }else{
         $api->error('Error al llamar a la API');

@@ -12,7 +12,7 @@ class Reclamos extends DB{
 
 
     function mostrarApi($id){
-        $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado,nombre_estado FROM beltran.reclamos_vw where id_usuario_pertenece = :id');
+        $query = $this->connect()->prepare('SELECT * FROM beltran.reclamos_vw where id_usuario_pertenece = :id');
         $query->execute(['id' => $id]);
         return ($query);
     }    

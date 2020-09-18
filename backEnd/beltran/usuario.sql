@@ -53,14 +53,6 @@ $$ LANGUAGE sql VOLATILE
 SET search_path FROM CURRENT;
 
 
-CREATE OR REPLACE FUNCTION beltran.usuarios_existe_por_id (
-	IN p_usuario                  integer 
-) RETURNS boolean AS
-$$
-	select exists (select * from beltran.usuarios where id_usuario = p_usuario);
-$$ LANGUAGE sql VOLATILE
-SET search_path FROM CURRENT;
-
 CREATE OR REPLACE FUNCTION beltran.usuarios_identify_by_id (
 	IN p_id                       integer 
 ) RETURNS beltran.usuarios AS
@@ -105,16 +97,6 @@ CREATE OR REPLACE FUNCTION beltran.tipos_permisos_get_nombre_tipo (
 $$
 	SELECT tipo_permiso FROM beltran.tipos_permisos WHERE id_tipo_permiso = p_id;
 $$ LANGUAGE sql IMMUTABLE STRICT
-SET search_path FROM CURRENT;
-
-
-CREATE OR REPLACE FUNCTION beltran.usuarios_set_password (
-	IN p_id                       integer,
-    IN p_password                 text
-) RETURNS void AS
-$$
-	UPDATE beltran.usuarios SET password = p_password WHERE id_usuario = p_id;
-$$ LANGUAGE sql VOLATILE STRICT
 SET search_path FROM CURRENT;
 
 

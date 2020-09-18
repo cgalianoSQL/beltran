@@ -17,7 +17,17 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 	<title>Mis Reclamos</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+
+
+
+<script type="text/javascript">
+	  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+
 </head>
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -71,6 +81,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 					<th>Estado</th> 
 				</tr>
 
+
 				<?php 
 				echo'<table border="1">';
 				foreach($result as $r){
@@ -84,7 +95,32 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 				?>  
 
 
-            </table>				  	
+            </table>		
+
+
+			
+				<table id="table_id" class="display">
+					<thead>
+					<tr>
+						<th>ID Reclamo</th>
+						<th>Fecha de Creacion</th>
+						<th>ID Servicio</th>
+						<th>Pertenece</th>
+						<th>Asignado</th>
+						<th>Estado</th> 
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Row 1 Data 1</td>
+							<td>Row 1 Data 2</td>
+						</tr>
+						<tr>
+							<td>Row 2 Data 1</td>
+							<td>Row 2 Data 2</td>
+						</tr>
+					</tbody>
+				</table>		  	
 
 					</div>
 				</div>
@@ -97,5 +133,6 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 	</body>
 	</html>
