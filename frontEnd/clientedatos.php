@@ -53,7 +53,7 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 		<div id="colorcito1" class="container" >
 			<center>
-				<div class="col col-lg-3" onclick="location.href='misReclamos.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 10%">
+				<div class="col col-lg-3"  style="margin-top: 3%;margin-left: 5%;margin-bottom: 10%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 400px;">
 						
