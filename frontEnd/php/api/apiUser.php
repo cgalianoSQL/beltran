@@ -40,6 +40,17 @@ class ApiUser{
     }
 
 
+    function cambiarPassword($password, $id){
+        $user = new User();
+
+        $res = $user->cambiarPassword($password, $id);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
     function sendEmail($email, $nroCuenta){
         
         $mail = new PHPMailer();

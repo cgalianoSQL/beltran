@@ -57,15 +57,17 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 					  	<h3>Cambiar Contraseña</h3>
 
 
-							<form action="php/api/registrarReclamo.php" method="POST">
+							<form action="php/api/cambiarPassword.php" method="POST">
+									<input type="hidden" name="id" value="<?php ECHO  $_SESSION['id'];?>" >
+
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Nueva Contraseña</label>
-										<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nueva contraseña" name="comentario" required>
+										<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nueva contraseña" name="password" required>
 									</div>
 
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Repetir Nueva Contraseña</label>
-										<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Repita su nueva contraseña" name="comentario" required>
+										<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Repita su nueva contraseña" name="new_password" required>
 									</div>
 								<input type="submit" value="ACEPTAR">
 							</form>

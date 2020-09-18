@@ -24,6 +24,13 @@ class User extends DB{
     }    
 
 
+    function cambiarPassword($password, $id){
+        $query = $this->connect()->prepare('call webapi.beltran_usuarios_set_password(:id, :password ,false);');
+        $query->execute(['id' => $id, 'password' => $password]);
+        return ($query);
+    }    
+
+
 }
 
 ?>
