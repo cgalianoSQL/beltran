@@ -94,7 +94,7 @@ SECURITY DEFINER;
 ---------------------------------
 CREATE OR REPLACE PROCEDURE webapi.beltran_usuarios_creacion_procedimiento(
 	p_usuario                     text,
-	inout p_estado                      boolean
+	inout p_estado                boolean
 )
 LANGUAGE plpgsql    
 AS $$
@@ -125,6 +125,30 @@ BEGIN
         (v_usuario_jsonb ->> 'id_tipo_documento')::integer,
         (v_usuario_jsonb ->> 'id_tipo_permiso')::integer
 	);
+
+    COMMIT;
+	   
+   	p_estado := true;
+   
+    return;
+
+END;$$
+
+
+CREATE OR REPLACE PROCEDURE webapi.beltran_usuarios_set_password(
+	p_usuario_id                  integer,
+	p_password                    text,
+	inout p_estado                boolean
+)
+LANGUAGE plpgsql    
+AS $$
+BEGIN
+	IF NOT beltran.usuarios_existe_por_id(p_usuario_id)
+	THEN
+	   	RAISE EXCEPTION 'webapi.beltran_usuarios_set_password EXCEPTION: user not exist';
+	END IF;
+
+	PERFORM beltran.usuarios_set_password(p_usuario_id, p_password);
 
     COMMIT;
 	   
