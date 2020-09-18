@@ -25,7 +25,7 @@ $$
         current_date, 
         p_id_servicio, 
         p_id_usuario_pertenece, 
-        7, 
+        8, 
         1
     ) RETURNING *;
 $$ LANGUAGE sql VOLATILE STRICT
