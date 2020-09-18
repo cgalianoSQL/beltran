@@ -1,3 +1,12 @@
+<?php
+
+include_once 'php/api/apiReclamos.php';
+session_start();
+$api = new ApiReclamos();
+$lista = $api->mostrar($_SESSION['id']);
+
+$result = $lista->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <!doctype html>
 <html lang="en">
@@ -72,7 +81,17 @@
                                                             <th>Estado</th> 
                                                         </tr>
                                                     </thead>
-                                                    <tbody>     
+                                                    <tbody>   
+                                                    <?php 
+                                                    foreach($result as $r){
+                                                    echo'<tr>';
+                                                    foreach($r as $v){
+                                                    echo'<td>'.$v.'</td>';
+                                                    }
+                                                    echo'</tr>';
+                                                    }
+                                                    echo'</table>';
+                                                    ?>   
                                                     </tbody>                
                                                  </table>                  
                                             </div>
