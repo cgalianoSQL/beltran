@@ -57,53 +57,51 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
             </ul>
         </nav>
     <div style="height:50px"></div>
-     
-
-    <div id="colorcito1" class="container" >
-        <div class="row" >
-            <div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
-                <div id="tarjeta" class="card" style="width: 50rem;">
-                    <div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 330px;">
-                        <div class="alert alert-warning" role="alert">
-                            <h3>Mis Reclamos</h3>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="table-responsive">        
-                                                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>ID<br>Reclamo</th>
-                                                            <th>Fecha<br>Creacion</th>
-                                                            <th>ID<br>Servicio</th>
-                                                            <th>Pertenece</th>
-                                                            <th>Asignado</th>
-                                                            <th>Estado</th> 
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>   
-                                                    <?php 
-                                                    foreach($result as $r){
-                                                    echo'<tr>';
-                                                    foreach($r as $v){
-                                                    echo'<td>'.$v.'</td>';
-                                                    }
-                                                    echo'</tr>';
-                                                    }
-                                                    echo'</table>';
-                                                    ?>   
-                                                    </tbody>                
-                                                 </table>                  
+        <div id="colorcito1" class="container" >
+            <div class="row" >
+                <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
+                   <div id="tarjeta" class="card" style="width: 60rem;">
+                        <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
+                            <div class="alert alert-warning" role="alert">
+                                <h3>Mis Reclamos</h3>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="table-responsive">        
+                                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID<br>Reclamo</th>
+                                                                <th>Fecha<br>Creacion</th>
+                                                                <th>ID<br>Servicio</th>
+                                                                <th>Pertenece</th>
+                                                                <th>Asignado</th>
+                                                                <th>Estado</th> 
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>   
+                                                        <?php 
+                                                        foreach($result as $r){
+                                                        echo'<tr>';
+                                                        foreach($r as $v){
+                                                        echo'<td>'.$v.'</td>';
+                                                        }
+                                                        echo'</tr>';
+                                                        }
+                                                        echo'</table>';
+                                                        ?>   
+                                                        </tbody>                
+                                                    </table>                  
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>  
-                                 </div>    
+                                        </div>  
+                                    </div>    
+                                </div>
                             </div>
-                        </div>
-                 </div>  
-            </div> 
-        </div>  
-    </div>   
+                    </div>  
+                </div> 
+            </div>  
+        </div>   
       
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
