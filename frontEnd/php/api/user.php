@@ -31,6 +31,13 @@ class User extends DB{
     }    
 
 
+    function perfil($id){
+        $query = $this->connect()->prepare('select * from beltran.usuarios_vw where id_usuario = :id_session');
+        $query->execute(['id_session' => $id]);
+        return ($query);
+    }    
+
+
 }
 
 ?>

@@ -50,6 +50,16 @@ class ApiUser{
         return $result;
     }
 
+    function perfil($id){
+        $user = new User();
+
+        $res = $user->perfil($id);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
 
     function sendEmail($email, $nroCuenta){
         
