@@ -33,11 +33,17 @@
                 header("Location: ../../soporte.php");
             break;
             default:
-                header("Location: ../../resgistro.php");
+            
+                echo '<script language="javascript">alert("Error al ingresar credenciales");window.location.href="../../login.php"</script>';
+              
+            
+               // header("Location: ../../resgistro.php");
         }
 
-    }else{
-        $api->error('Error al llamar a la API');
     }
+    
+    //else{
+      //  $api->error('Error al llamar a la API');
+    //}
     
 ?>
