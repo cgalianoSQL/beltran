@@ -20,14 +20,6 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
 
-
-
-<script type="text/javascript">
-	  $(document).ready( function () {
-    $('#myTable').DataTable();
-} );
-</script>
-
 </head>
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -93,35 +85,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 				}
 				echo'</table>';
 				?>  
-
-
-            </table>		
-
-
-			
-				<table id="table_id" class="display">
-					<thead>
-					<tr>
-						<th>ID Reclamo</th>
-						<th>Fecha de Creacion</th>
-						<th>ID Servicio</th>
-						<th>Pertenece</th>
-						<th>Asignado</th>
-						<th>Estado</th> 
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Row 1 Data 1</td>
-							<td>Row 1 Data 2</td>
-						</tr>
-						<tr>
-							<td>Row 2 Data 1</td>
-							<td>Row 2 Data 2</td>
-						</tr>
-					</tbody>
-				</table>		  	
-
+            </table>			  	
 					</div>
 				</div>
 			</div>
