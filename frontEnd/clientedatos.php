@@ -6,7 +6,9 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
 }
-
+include_once 'php/api/apiUser.php';
+$api = new ApiUser();
+$perfil = $api->perfil($_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
@@ -38,8 +40,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="#">Accion 2</a>
-				    <a class="dropdown-item" href="#">Accion 3</a>
+				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>
 				</li>
@@ -52,20 +53,20 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 		</nav>
 		<div id="colorcito1" class="container" >
 			<center>
-				<div class="col col-lg-3" onclick="location.href='misReclamos.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 3%">
+				<div class="col col-lg-3" onclick="location.href='misReclamos.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 10%">
 					<div class="card" style="width: 18rem;">
-						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 330px;">
+						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 400px;">
 						
 							<div class="alert alert-warning" role="alert">
 							 <h3>Mis<br>datos</h3>
 							</div>
-							<h5>usuario:</h5>
+							<h5>Usuario: <?php ECHO $perfil['usuario']?> </h5>
 							<br>
-							<h5>Nombre completo:</h5>
+							<h5>Nombre Completo:<?php ECHO $perfil['nombre_completo']?> </h5>
 							<br>
-							<h5>numero de cliente: </h5>
+							<h5>Numero de Cliente: <?php ECHO $perfil['nro_cliente']?> </h5>
 							<br>
-							<h5>documento: </h5>
+							<h5>Documento: <?php ECHO $perfil['documento']?> </h5>
 						</div>
 					</div>
 				</div>

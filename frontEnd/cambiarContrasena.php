@@ -20,7 +20,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 	<link href="estilo/reclamos.css" rel="stylesheet" type="text/css">
 </head>
 <body >
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
@@ -36,8 +36,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="#">Accion 2</a>
-				    <a class="dropdown-item" href="#">Accion 3</a>
+				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>
 				</li>
