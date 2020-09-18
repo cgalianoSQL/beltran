@@ -21,3 +21,16 @@ create or replace  VIEW beltran.reclamos_vw AS
 	ORDER BY 
 		r.creacion DESC;
 
+
+create or replace  VIEW beltran.usuarios_vw AS
+	SELECT
+		u.id_usuario,
+		u.usuario,
+		u.nombre || ' ' || u.apellido AS nombre_completo,
+		u.nro_cliente,
+		t.tipo_documento || ' ' || u.nro_documento as documento
+	FROM
+		beltran.usuarios u
+		INNER JOIN beltran.tipos_documentos t ON t.id_tipo_documento = u.id_tipo_documento
+	ORDER BY 
+		u.id_usuario ASC;
