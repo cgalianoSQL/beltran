@@ -7,7 +7,6 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
   header("Location: login.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,6 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 <body >
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
-
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -31,7 +29,6 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 				    INICIO
 				  </button>
 				</li>
-
 				<li class="nav-item">
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
@@ -43,9 +40,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 				    <a class="dropdown-item" href="#">Accion 3</a>
 				  </div>
 				</div>
-				
 				</li>
-
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
 				    CERRAR SESIÓN
@@ -60,38 +55,33 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>Nuevo Reclamo</h3>
-					</div>
 
-					<form action="php/api/registrarReclamo.php" method="POST">
-					<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
-					  <div class="form-group">
-					  	Servicio
-					    <select class="custom-select" name="id_servicio" required>
-					      <option value="">Seleccione un servicio</option>
-					      <option value="1">TELEFONIA</option>
-					      <option value="2">INTERNET </option>
-					      <option value="3">INTERNET PLUS</option>
-					      <option value="4">TELEFONIA PLUS</option>
-					      <option value="5">TV DIGITAL</option>
-					      <option value="6">TELEFONIA MOVIL</option>
-					    </select>
-					  </div>
-						
-					  <div class="form-group">
-					    <label for="formGroupExampleInput">Detalle</label>
-					    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario">
-					  </div>
 
-					  <input type="submit" value="ACEPTAR">
-
-					</form>
-
+							<form action="php/api/registrarReclamo.php" method="POST">
+								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
+									<div class="form-group">
+										Servicio
+										<select class="custom-select" name="id_servicio" required>
+										<option value="">Seleccione un servicio</option>
+										<option value="1">TELEFONIA</option>
+										<option value="2">INTERNET </option>
+										<option value="3">INTERNET PLUS</option>
+										<option value="4">TELEFONIA PLUS</option>
+										<option value="5">TV DIGITAL</option>
+										<option value="6">TELEFONIA MOVIL</option>
+										</select>
+									</div>	
+									<div class="form-group">
+										<label for="formGroupExampleInput" >Detalle</label>
+										<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>
+									</div>
+								<input type="submit" value="ACEPTAR">
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
