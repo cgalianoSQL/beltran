@@ -11,7 +11,8 @@ create or replace  VIEW beltran.reclamos_vw AS
 		up.nombre AS pertenece,
 		ua.nombre AS asignado,
 		e.nombre_estado,
-		r.id_usuario_pertenece
+		r.id_usuario_pertenece,
+		r.id_usuario_asignado as id_asignado
 	FROM
 		beltran.reclamos r
 		INNER JOIN beltran.servicios s ON r.id_servicio = s.id_servicio
