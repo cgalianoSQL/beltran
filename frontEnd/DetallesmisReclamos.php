@@ -21,7 +21,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     <link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
-    <title>Mis Reclamos</title>
+    <title>Detalle Reclamo</title>
    
   <body> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -58,7 +58,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                    <div id="tarjeta" class="card" style="width: 60rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                             <div class="alert alert-warning" role="alert">
-                                <h3>Mis Reclamos</h3>
+                                <h3>Detalle de Reclamo</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -66,26 +66,13 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID<br>Reclamo</th>
-                                                                <th>Fecha<br>Creacion</th>
-                                                                <th>ID<br>Servicio</th>
-                                                                <th>Pertenece</th>
-                                                                <th>Asignado</th>
-                                                                <th>Estado</th> 
+                                                                <th>Creacion</th>
+                                                                <th>Comentario</th>
+                                                                <th>Reclamo</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody  onclick="location.href='DetallesMisReclamos.php'">   
-
-                                                        <?php 
-                                                        foreach($result as $r){
-                                                        echo'<tr>';
-                                                        foreach($r as $v){
-                                                        echo'<td>'.$v.'</td>';
-                                                        }
-                                                        echo'</tr>';
-                                                        }
-                                                        echo'</table>';
-                                                        ?>   
+                                                        <tbody>   
+  
                                                         </tbody>                
                                                     </table>                  
                                                 </div>
