@@ -26,6 +26,17 @@ class ApiReclamos{
         return $res;
     }
 
+
+    function mostrarReclamosSoporte(){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->mostrarReclamosSoporte();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     function error($mensaje){
         echo '<code>' . json_encode(array('mensaje' => $mensaje)) . '</code>'; 
     }

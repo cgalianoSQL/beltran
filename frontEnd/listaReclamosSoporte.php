@@ -3,9 +3,8 @@
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
-$lista = $api->mostrar($_SESSION['id']);
+$result = $api->mostrarReclamosSoporte();
 
-$result = $lista->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>

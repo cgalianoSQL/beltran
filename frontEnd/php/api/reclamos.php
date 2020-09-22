@@ -18,6 +18,13 @@ class Reclamos extends DB{
     }    
 
 
+    function mostrarReclamosSoporte(){
+        $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw where asignado = :soporte  ');
+        $query->execute(['soporte' => 'soporte']);
+        return ($query);
+    }    
+
+
 
 }
 
