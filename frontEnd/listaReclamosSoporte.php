@@ -52,8 +52,8 @@ $result = $api->mostrarReclamosSoporte();
 		<div style="height:50px"></div>
         <div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
-					<div id="tarjeta" class="card" style="width: 60rem;">
+				<div class="col col-lg-3" style="margin-top: 1%;margin-left:3% ;margin-bottom: 1%">
+					<div id="tarjeta" class="card" style="width: 70rem;">
 						<div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
 						<div class="alert alert-primary" role="alert">
 							  	<h3>Lista General de Reclamos</h3>
@@ -64,13 +64,13 @@ $result = $api->mostrarReclamosSoporte();
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID<br>Reclamo</th>
+                                                                <th>Reclamo #</th>
                                                                 <th>Fecha<br>Creacion</th>
-                                                                <th>ID<br>Servicio</th>
+                                                                <th>Servicio</th>
                                                                 <th>Pertenece</th>
                                                                 <th>Asignado</th>
                                                                 <th>Estado</th> 
-																<th>ver<br>Reclamo</th>
+																<th>ver<br>Movimientos</th>
 																<th>Tomar<br>Reclamo</th>
 															
 															
