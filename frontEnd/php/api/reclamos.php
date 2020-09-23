@@ -32,6 +32,13 @@ class Reclamos extends DB{
     }   
 
 
+    function mostrarMovimientos($id){
+        $query = $this->connect()->prepare('select creacion, comentario, realizado from beltran.reclamos_movimientos_vw where id_reclamos = :id ');
+        $query->execute(['id' => $id]);
+        return ($query);
+    }   
+
+
 
 }
 

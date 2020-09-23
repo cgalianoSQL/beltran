@@ -26,6 +26,14 @@ class ApiReclamos{
         return $res;
     }
 
+    function mostrarMovimientos($id){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->mostrarMovimientos($id);
+
+        return $res;
+    }
+
 
     function mostrarReclamosSoporte(){
         $reclamos = new Reclamos();
