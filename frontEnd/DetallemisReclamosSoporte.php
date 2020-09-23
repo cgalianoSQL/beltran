@@ -3,32 +3,33 @@
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
-$result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
+$lista = $api->mostrar($_SESSION['id']);
 
+$result = $lista->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">   
     <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
     <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
-	<title>Mis Reclamos soporte</title>
-  
-</head>
-<body >
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>PERSONAL DE SOPORTE</h4></a>	
+    <link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+    <title>Detalle Reclamo</title>
+   
+  <body> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="cliente.php"><h4>Personal de Soporte</h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='soporte.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='cliente.php'" style="border-color: white">
 				    INICIO
 				  </button>
 				</li>
@@ -38,8 +39,8 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
 				    MI CUENTA
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasenaSoporte.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="SoporteDatos.php">Mis Datos</a>
+				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
+				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>
 				</li>
@@ -50,14 +51,14 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
-		<div style="height:50px"></div>
+    <div style="height:50px"></div>
         <div id="colorcito1" class="container" >
             <div class="row" >
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                             <div class="alert alert-warning" role="alert">
-                                <h3>Mis Reclamos</h3>
+                                <h3>Detalle de Reclamo</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -65,26 +66,13 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID<br>Reclamo</th>
-                                                                <th>Fecha<br>Creacion</th>
-                                                                <th>ID<br>Servicio</th>
-                                                                <th>Pertenece</th>
-                                                                <th>Asignado</th>
-                                                                <th>Estado</th> 
+                                                                <th>Creacion</th>
+                                                                <th>Comentario</th>
+                                                                <th>Reclamo</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody  onclick="location.href='DetallemisReclamosSoporte.php'">   
-
-                                                        <?php 
-                                                        foreach($result as $r){
-                                                        echo'<tr>';
-                                                        foreach($r as $v){
-                                                        echo'<td>'.$v.'</td>';
-                                                        }
-                                                        echo'</tr>';
-                                                        }
-                                                        echo'</table>';
-                                                        ?>   
+                                                        <tbody>   
+  
                                                         </tbody>                
                                                     </table>                  
                                                 </div>
@@ -97,9 +85,8 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
                 </div> 
             </div>  
         </div>   
-
-
-		<script src="jquery/jquery-3.3.1.min.js"></script>
+      
+    <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="datatables/datatables.min.js"></script>    
@@ -109,4 +96,4 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 </body>
-	</html>
+</html>

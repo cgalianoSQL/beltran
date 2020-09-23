@@ -70,10 +70,13 @@ $result = $api->mostrarReclamosSoporte();
                                                                 <th>Pertenece</th>
                                                                 <th>Asignado</th>
                                                                 <th>Estado</th> 
+																<th>ver<br>Reclamo</th>
+																<th>Tomar<br>Reclamo</th>
+															
 															
                                                             </tr>
                                                         </thead>
-                                                        <tbody  onclick="location.href='DetallesMisReclamos.php'">   
+														<tbody >     
 
                                                         <?php 
                                                         foreach($result as $r){
@@ -82,6 +85,14 @@ $result = $api->mostrarReclamosSoporte();
 														echo'<td>'.$v.'</td>';
 														
 														}
+														
+														?>
+
+														<td><button onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver </button></td>
+														<td><button >Tomar</button></td>
+														<?php
+
+
 														echo'</tr>';
 														
                                                         }
