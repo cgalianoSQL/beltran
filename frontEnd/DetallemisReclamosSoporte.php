@@ -77,18 +77,12 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                                                         foreach($result as $r){
                                                         echo'<tr>';
                                                         foreach($r as $v){
-														echo'<td>'.$v.'</td>';
-														
-														}
-														
-												
-
-
-														echo'</tr>';
-														
+                                                        echo'<td>'.$v.'</td>';
                                                         }
-														echo'</table>'
-                                                        ?>    
+                                                        echo'</tr>';
+                                                        }
+                                                        echo'</table>';
+                                                        ?>   
   
                                                         </tbody>                
                                                     </table>                  
