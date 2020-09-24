@@ -22,7 +22,7 @@
         <script>
         swal({
             title: "RECLAMO CREADO CON ÉXITO",
-            text: "Puede ver el mismo en su lista de reclamos",
+            text: "Puede ver el mismo en la sección 'Mis Reclamos'",
             icon: "success",
             button: "OK",
           }).then(function() {

@@ -62,12 +62,12 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 										Servicio
 										<select class="custom-select" name="id_servicio" required>
 										<option value="">Seleccione un servicio</option>
-										<option value="1">TELEFONIA</option>
-										<option value="2">INTERNET </option>
-										<option value="3">INTERNET PLUS</option>
-										<option value="4">TELEFONIA PLUS</option>
-										<option value="5">TV DIGITAL</option>
-										<option value="6">TELEFONIA MOVIL</option>
+										<option value="1">INTERNET</option>
+										<option value="2">INTERNET PLUS</option>
+										<option value="3">TELEFONÍA </option>
+										<option value="4">TELEFONÍA MÓVIL</option>
+										<option value="5">TELEFONÍA PLUS </option>
+										<option value="6">TV DIGITAL</option>
 										</select>
 									</div>	
 									<div class="form-group">

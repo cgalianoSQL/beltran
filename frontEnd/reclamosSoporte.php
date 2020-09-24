@@ -46,8 +46,11 @@
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 							
 							<div class="alert alert-primary" role="alert">
-						  <h3>Lista General de reclamos</h3>
+						  <h3>Lista de reclamos<br>sin asignar</h3>
 						</div>
+						<center>
+						<h5>Total:</h5>
+						</center>
 						</div>
 					</div>
 				</div>
@@ -56,8 +59,11 @@
 						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 330px;">
 						
 							<div class="alert alert-warning" role="alert">
-							  	<h3>Mis<br>Reclamos</h3>
+							  	<h3>Mis<br>reclamos<br>asignados</h3>
 							</div>
+							<center>
+							<h5>Total:</h5>
+							</center>
 						</div>
 					</div>
 				</div>

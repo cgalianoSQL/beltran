@@ -66,7 +66,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SOPORTE')
 							<div class="alert alert-warning" role="alert">
 								<h3>Estadísticas de Reclamos</h3>
 							</div>
-							<h5>Total de reclamos <br> abieros:</h5>
+							<h5>Total de reclamos <br> abiertos:</h5>
 							<br>
 							<h5>Total de reclamos solucionados:</h5>
 							<br>
