@@ -17,18 +17,19 @@
             if(!$result){
             $api->error('Error al ejecutar la API');
         } else {
-        
-        echo 
-        '<script>     
+        ?>
+
+        <script>
         swal({
             title: "RECLAMO CREADO CON ÉXITO",
             text: "Puede ver el mismo en su lista de reclamos",
             icon: "success",
             button: "OK",
-          });
-          </script>';
-         
-          // echo '<script> window.location.href="../../misReclamos.php"</script>';          
+          }).then(function() {
+            window.location = "../../misReclamos.php";
+            });
+          </script>
+          <?php         
     }
 
     }else{

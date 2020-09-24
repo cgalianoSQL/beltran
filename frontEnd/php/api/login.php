@@ -36,23 +36,25 @@
                 header("Location: ../../soporte.php");
             break;
             default:
-            
-                echo 
-                '<script>     
+            ?>
+                 
+                <script>     
                 swal({
                     title: "ERROR!",
                     text: "Ha ingresado mal sus credenciales",
                     icon: "error",
-                    button: "OK",
-                  });
-                  </script>';
+                    confirmButtonText: 'OK',
+                  }).then(function() {
+                     window.location = "../../login.php";
+      });
+                  </script>
+                  <?php
                 
-                //("../../login.php");
                // header("Location: ../../resgistro.php");
-        }
-
+        }     
     }
     
+
     //else{
       //  $api->error('Error al llamar a la API');
     //}
