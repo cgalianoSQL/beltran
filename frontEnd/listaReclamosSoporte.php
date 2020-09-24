@@ -49,11 +49,11 @@ $result = $api->mostrarReclamosSoporte();
 				</li>
 			</ul>
 		</nav>
-		<div style="height:50px"></div>
+		<div style="height:30px" ></div>
         <div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%;margin-left:3% ;margin-bottom: 1%">
-					<div id="tarjeta" class="card" style="width: 70rem;">
+				<div class="col col-lg-3" style="margin-top: 1%; margin-left:1% ;margin-bottom: 1%">
+					<div id="tarjeta" class="card" style="width: 68rem;">
 						<div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
 						<div class="alert alert-primary" role="alert">
 							  	<h3>Lista General de Reclamos</h3>
@@ -64,16 +64,14 @@ $result = $api->mostrarReclamosSoporte();
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>Reclamo #</th>
-                                                                <th>Fecha<br>Creacion</th>
-                                                                <th>Servicio</th>
-                                                                <th>Pertenece</th>
+                                                                <th>Reclamo #:</th>
+                                                                <th>Fecha<br>Creacion:</th>
+                                                                <th>Servicio:</th>
+                                                                <th>Pertenece:</th>
                                                                 <th>Asignado</th>
                                                                 <th>Estado</th> 
-																<th>ver<br>Movimientos</th>
-																<th>Tomar<br>Reclamo</th>
-															
-															
+																<th>Movimientos</th>
+																<th>¿Tomar<br>Reclamo? </th>
                                                             </tr>
                                                         </thead>
 														<tbody >     
@@ -88,8 +86,8 @@ $result = $api->mostrarReclamosSoporte();
 														
 														?>
 
-														<td><button onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver </button></td>
-														<td><button >Tomar</button></td>
+														<td><button id=btn1 onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver movimientos </button></td>
+														<td><button id=btn2 >Tomar</button></td>
 														<?php
 
 
