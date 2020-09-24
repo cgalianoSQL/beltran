@@ -1,3 +1,6 @@
+<html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
 <?php
 
     include_once 'apiUser.php';
@@ -34,9 +37,17 @@
             break;
             default:
             
-                echo '<script language="javascript">alert("Error al ingresar credenciales");window.location.href="../../login.php"</script>';
-              
-            
+                echo 
+                '<script>     
+                swal({
+                    title: "ERROR!",
+                    text: "Ha ingresado mal sus credenciales",
+                    icon: "error",
+                    button: "OK",
+                  });
+                  </script>';
+                
+                //("../../login.php");
                // header("Location: ../../resgistro.php");
         }
 
