@@ -9,13 +9,26 @@
     if(isset($_POST['id_reclamo']) && isset($_POST['id_asignado'])){
 
        $Params = array(
-            'id_reclamo'  => $_POST[''],
-            'id_asignado' => $_POST['']
+            'id_reclamo'  => $_POST['id_reclamo'],
+            'id_asignado' => $_POST['id_asignado']
         );
+
         $jsonParams = json_encode($Params);
         $result = $api->tomar($jsonParams);
             if(!$result){
-            $api->error('Error al ejecutar la API');
+            ?>
+
+                <script>
+                swal({
+                    title: "ERROR QUERY",
+                    text: "Puede ver el mismo en la sección 'Mis Reclamos'",
+                    icon: "error",
+                    button: "OK",
+                  }).then(function() {
+                    window.location = "../../misReclamosSoporte.php";
+                    });
+                </script>
+            <?php     
         } else {
         ?>
 
@@ -26,14 +39,26 @@
             icon: "success",
             button: "OK",
           }).then(function() {
-            window.location = "../../listaReclamosSoporte.php";
+            window.location = "../../misReclamosSoporte.php";
             });
           </script>
           <?php         
     }
 
     }else{
-        $api->error('Error al llamar a la API');
+        ?>
+
+        <script>
+        swal({
+            title: "ERROR API",
+            text: "Puede ver el mismo en la sección 'Mis Reclamos'",
+            icon: "error",
+            button: "OK",
+          }).then(function() {
+            window.location = "../../misReclamosSoporte.php";
+            });
+        </script>
+    <?php         
     }
     
 ?>
