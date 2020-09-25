@@ -85,21 +85,16 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
 														}
 														
 														?>
-
 														<td><button id=btn1 onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver</button></td>
-														<td>
+														
 														<form action="php/api/tomarReclamo.php" method="POST">
-	
 															<input type="hidden" name="id_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
-															<input type="hidden" name="id_reclamo" value="<?php ECHO  json_encode($r['id_reclamos']); ?>" >
-																										
+															<input type="hidden" name="id_reclamo" value="<?php ECHO  json_encode($r['id_reclamos']); ?>" >											
 														</form>
 														</td>
 														<?php
 
-
 														echo'</tr>';
-														
                                                         }
 														echo'</table>'
                                                         ?>   

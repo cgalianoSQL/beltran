@@ -95,7 +95,6 @@ $result = $api->mostrarReclamosSoporte();
 															<input type="submit" value="TOMAR">
 													
 														</form>
-
 														</td>
 														<?php
 
