@@ -11,6 +11,13 @@ class Reclamos extends DB{
     }    
 
 
+    function tomarReclamo($jsonParams){
+        $query = $this->connect()->prepare('CALL webapi.beltran_reclamos_tomar_procedimiento(:jsonParams, false)');
+        $query->execute(['jsonParams' => $jsonParams]);
+        return ($query);
+    }    
+
+
     function mostrarApi($id){
         $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado,nombre_estado FROM beltran.reclamos_vw where id_usuario_pertenece = :id');
         $query->execute(['id' => $id]);

@@ -107,3 +107,32 @@ $$
 		);
 $$ LANGUAGE sql IMMUTABLE STRICT
 SET search_path FROM CURRENT;
+
+
+CREATE OR REPLACE FUNCTION beltran.reclamos_set_asignado (
+	IN p_id_reclamos              integer,
+	IN p_id_asignado              integer
+) RETURNS void AS
+$$
+	UPDATE beltran.reclamos SET id_usuario_asignado = p_id_asignado WHERE id_reclamos = p_id_reclamos;
+$$ LANGUAGE sql VOLATILE STRICT
+SET search_path FROM CURRENT;
+
+
+CREATE OR REPLACE FUNCTION beltran.reclamos_set_estado (
+	IN p_id_reclamos              integer,
+	IN p_id_estado                integer
+) RETURNS void AS
+$$
+	UPDATE beltran.reclamos SET id_estados = p_id_estado WHERE id_reclamos = p_id_reclamos;
+$$ LANGUAGE sql VOLATILE STRICT
+SET search_path FROM CURRENT;
+
+
+CREATE OR REPLACE FUNCTION beltran.reclamos_identify_by_id (
+	IN p_id                       integer 
+) RETURNS beltran.reclamos AS
+$$
+	select * from beltran.reclamos where id_reclamos = p_id limit 1;
+$$ LANGUAGE sql VOLATILE
+SET search_path FROM CURRENT;

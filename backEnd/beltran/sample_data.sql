@@ -85,6 +85,10 @@ INSERT INTO beltran.usuarios (
 		usuario, password, nombre, apellido, nro_cliente, nro_documento, id_tipo_documento , id_tipo_permiso)
 	VALUES('cliente', 'cliente', 'cliente', 'cliente', '23', 36754259, 1, 3);
 
+INSERT INTO beltran.usuarios (
+		usuario, password, nombre, apellido, nro_cliente, nro_documento, id_tipo_documento , id_tipo_permiso)
+	VALUES('jona', 'jona', 'jonathan', 'malito', NULL, 35754259, 1, 2);
+
 
 INSERT INTO beltran.estados (nombre_estado)
 	VALUES('ABIERTO');

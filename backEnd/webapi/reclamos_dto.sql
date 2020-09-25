@@ -20,6 +20,23 @@ $$ LANGUAGE plpgsql STABLE STRICT
 SET search_path FROM CURRENT;
 
 
+CREATE OR REPLACE FUNCTION webapi.beltran_reclamos_request_tomar_dto_is_valid (
+	IN p_reclamos                 jsonb
+) RETURNS boolean AS $$
+BEGIN 	
+    IF NOT p_reclamos ?& ARRAY [
+        'id_reclamo',
+        'id_asignado'
+    ]
+    THEN
+        RETURN FALSE;
+    END IF;
+
+    RETURN TRUE;
+END;
+$$ LANGUAGE plpgsql STABLE STRICT
+SET search_path FROM CURRENT;
+
 ---------------------------------
 -- RESPONSE DTO's
 ---------------------------------

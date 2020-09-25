@@ -18,6 +18,17 @@ class ApiReclamos{
     }
 
 
+    function tomar($jsonParams){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->tomarReclamo($jsonParams);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
     function mostrar($id){
         $reclamos = new Reclamos();
 
