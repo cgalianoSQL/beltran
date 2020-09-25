@@ -62,28 +62,46 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="table-responsive">        
-                                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID<br>Reclamo</th>
-                                                                <th>Fecha<br>Creacion</th>
-                                                                <th>ID<br>Servicio</th>
-                                                                <th>Pertenece</th>
+                                                                <th>Reclamo #:</th>
+                                                                <th>Fecha<br>Creacion:</th>
+                                                                <th>Servicio:</th>
+                                                                <th>Pertenece:</th>
                                                                 <th>Asignado</th>
                                                                 <th>Estado</th> 
-                                                            </tr>
+																<th>Movimientos</th>
+															    </tr>
                                                         </thead>
-                                                        <tbody  onclick="location.href='DetallemisReclamosSoporte.php'">   
+														<tbody >     
 
                                                         <?php 
                                                         foreach($result as $r){
                                                         echo'<tr>';
                                                         foreach($r as $v){
-                                                        echo'<td>'.$v.'</td>';
+														echo'<td>'.$v.'</td>';
+														
+														}
+														
+														?>
+
+														<td><button id=btn1 onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver</button></td>
+														<td>
+														<form action="php/api/tomarReclamo.php" method="POST">
+	
+															<input type="hidden" name="id_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
+															<input type="hidden" name="id_reclamo" value="<?php ECHO  json_encode($r['id_reclamos']); ?>" >
+																										
+														</form>
+														</td>
+														<?php
+
+
+														echo'</tr>';
+														
                                                         }
-                                                        echo'</tr>';
-                                                        }
-                                                        echo'</table>';
+														echo'</table>'
                                                         ?>   
                                                         </tbody>                
                                                     </table>                  
