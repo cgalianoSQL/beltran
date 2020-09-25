@@ -21,7 +21,6 @@
                 <script>
                 swal({
                     title: "ERROR QUERY",
-                    text: "Puede ver el mismo en la sección 'Mis Reclamos'",
                     icon: "error",
                     button: "OK",
                   }).then(function() {
@@ -51,7 +50,6 @@
         <script>
         swal({
             title: "ERROR API",
-            text: "Puede ver el mismo en la sección 'Mis Reclamos'",
             icon: "error",
             button: "OK",
           }).then(function() {
