@@ -44,7 +44,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                     <a class="dropdown-item" href="#">Accion 3</a>
                   </div>
                 </div>
-                
+
                 </li>
 
                 <li class="nav-item">
@@ -55,7 +55,6 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
             </ul>
         </nav>
     <div style="height:50px"></div>
-     
 
     <div id="colorcito1" class="container" >
         <div class="row" >

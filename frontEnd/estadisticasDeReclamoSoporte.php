@@ -15,7 +15,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='soporte.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='cliente.php'" style="border-color: white">
 				    INICIO
 				  </button>
 				</li>
@@ -26,7 +26,7 @@
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				    <a class="dropdown-item" href="cambiarContrasenaSoporte.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="SoporteDatos.php">Mis Datos</a>
+				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>
 				</li>

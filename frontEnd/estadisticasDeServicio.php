@@ -10,28 +10,25 @@
 	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
 </head>
 <body >
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="soporte.php"><h4>PERSONAL DE SOPORTE</h4></a>	
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="cliente.php"><h4>PERSONAL DE SOPORTE</h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='soporte.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='cliente.php'" style="border-color: white">
 				    INICIO
 				  </button>
 				</li>
-
 				<li class="nav-item">
 				<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
 				    MI CUENTA
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="#">Accion 1</a>
-				    <a class="dropdown-item" href="#">Accion 2</a>
-				    <a class="dropdown-item" href="#">Accion 3</a>
+				    <a class="dropdown-item" href="cambiarContrasenaSoporte.php">Cambiar mi contraseña</a>
+				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
-				</div>	
+				</div>
 				</li>
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
