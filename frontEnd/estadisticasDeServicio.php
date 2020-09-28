@@ -31,10 +31,8 @@
 				    <a class="dropdown-item" href="#">Accion 2</a>
 				    <a class="dropdown-item" href="#">Accion 3</a>
 				  </div>
-				</div>
-				
+				</div>	
 				</li>
-
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
 				    CERRAR SESIÓN

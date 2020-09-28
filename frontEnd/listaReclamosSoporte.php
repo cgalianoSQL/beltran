@@ -1,10 +1,8 @@
 <?php
-
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
 $result = $api->mostrarReclamosSoporte();
-
 ?>
 
 <!DOCTYPE html>

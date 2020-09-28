@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_SESSION['permiso']))
 {
   switch($_SESSION['permiso']) {
@@ -19,21 +18,15 @@ if (isset($_SESSION['permiso']))
 
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="estilo/login.css" rel="stylesheet" type="text/css">
-	
 	<!-- Bootstrap CSS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-
 	<title>Resolucion de reclamos online</title>
 </head>
-
 <body>
 
 	<div class="modal">

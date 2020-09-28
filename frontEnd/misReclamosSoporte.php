@@ -1,10 +1,8 @@
 <?php
-
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
 $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +18,6 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
 	<title>Mis Reclamos soporte</title>
-  
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
