@@ -73,11 +73,11 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Detalle</label>
 										<br>
-										<textarea rows="4" cols="80" >
+										<textarea rows="4" cols="80" name="comentario" >
 		
 
 										</textarea>
-										<input type="file" />
+										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 								<input type="submit" value="ACEPTAR">

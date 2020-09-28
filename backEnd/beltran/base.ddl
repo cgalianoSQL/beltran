@@ -101,6 +101,7 @@ CREATE TABLE beltran.movimientos_reclamo (
 	id_movimientos_reclamo        serial PRIMARY KEY,
 	creacion                      date,
 	comentario                    varchar(80),
+	archivo                       text,
 	realizado                     varchar(80)
 );
 

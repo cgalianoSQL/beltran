@@ -34,17 +34,20 @@ SET search_path FROM CURRENT;
 
 CREATE OR REPLACE FUNCTION beltran.movimientos_reclamo (
     IN p_comentario               text,
+    IN p_archivo                  text,
     IN p_realizado                text
 ) RETURNS beltran.movimientos_reclamo AS
 $$
 	INSERT INTO beltran.movimientos_reclamo (
         creacion, 
         comentario, 
+        archivo,
         realizado
     )
 	VALUES (
         current_date, 
         p_comentario, 
+        p_archivo,
         p_realizado
     ) RETURNING *;
 $$ LANGUAGE sql VOLATILE STRICT

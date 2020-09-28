@@ -7,15 +7,32 @@
     $api = new ApiReclamos();
     $error = '';
     if(isset($_POST['comentario'])){
+
+        ECHO file_get_contents($_POST['archivo']);
+
        $Params = array(
             'id_servicio'  => $_POST['id_servicio'],
             'comentario' => $_POST['comentario'],
+            'archivo' => base64_encode($_FILES['archivo']),
             'id_usuario_pertenece' => $_POST['id_usuario_pertenece']
         );
         $jsonParams = json_encode($Params);
+
         $result = $api->registrar($jsonParams);
-            if(!$result){
-            $api->error('Error al ejecutar la API');
+        if(!$result){
+                ?>
+
+                <script>
+                swal({
+                    title: "ERROR CON QUERY",
+                    text: "Puede ver el mismo en la sección 'Mis Reclamos'",
+                    icon: "success",
+                    button: "OK",
+                  }).then(function() {
+                    window.location = "../../misReclamos.php";
+                    });
+                  </script>
+                  <?php   
         } else {
         ?>
 
@@ -33,7 +50,19 @@
     }
 
     }else{
-        $api->error('Error al llamar a la API');
+        ?>
+
+        <script>
+        swal({
+            title: "ERROR DE API",
+            text: "Puede ver el mismo en la sección 'Mis Reclamos'",
+            icon: "error",
+            button: "OK",
+          }).then(function() {
+            window.location = "../../misReclamos.php";
+            });
+          </script>
+          <?php   
     }
     
 ?>

@@ -40,6 +40,7 @@ BEGIN
 
     v_movimiento := beltran.movimientos_reclamo (
         v_reclamo_jsonb ->> 'comentario',
+		v_reclamo_jsonb ->> 'archivo',
         v_realizado
 	);
 
