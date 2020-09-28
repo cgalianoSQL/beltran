@@ -4,6 +4,11 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
 }
+include_once 'php/api/apiServicio.php';
+$api = new ApiServicio();
+$reclamos = $api->misServios($_SESSION['id']);
+
+
 ?>
 
 <!DOCTYPE html>

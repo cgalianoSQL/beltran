@@ -4,9 +4,6 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
 }
-echo base64_decode('MjAxNi0wNC0wOSAxMS4yNi40Ni5qcGc='); 
-
-echo '<img src="data:image/jpeg;base64,'.base64_encode('MjAxNi0wNC0wOSAxMS4yNi40Ni5qcGc=').'">'; 
 
 
 ?>
