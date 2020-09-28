@@ -72,7 +72,13 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 									</div>	
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Detalle</label>
-										<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>
+										<br>
+										<textarea rows="4" cols="80" >
+		
+
+										</textarea>
+										<input type="file" />
+										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 								<input type="submit" value="ACEPTAR">
 							</form>
