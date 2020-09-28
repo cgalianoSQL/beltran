@@ -1,12 +1,11 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 				    MI CUENTA
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
+				    <a class="dropdown-item" href="cambiarContrasenaCliente.php">Cambiar mi contraseña</a>
 				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>
@@ -54,8 +53,6 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>Nuevo Reclamo</h3>
-
-
 							<form action="php/api/registrarReclamo.php" method="POST">
 								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 									<div class="form-group">

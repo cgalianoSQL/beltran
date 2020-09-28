@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
@@ -41,7 +39,7 @@ echo '<img src="data:image/jpeg;base64,'.base64_encode('MjAxNi0wNC0wOSAxMS4yNi40
 				    MI CUENTA
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
+				    <a class="dropdown-item" href="cambiarContrasenaCliente.php">Cambiar mi contraseña</a>
 				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>

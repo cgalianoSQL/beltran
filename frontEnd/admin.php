@@ -1,12 +1,9 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 {
   header("Location: login.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +106,6 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

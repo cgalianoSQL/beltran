@@ -1,10 +1,8 @@
 <?php
-
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrar($_SESSION['id']);
-
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -46,7 +44,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                     <a class="dropdown-item" href="#">Accion 3</a>
                   </div>
                 </div>
-                
+
                 </li>
 
                 <li class="nav-item">
@@ -57,7 +55,6 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
             </ul>
         </nav>
     <div style="height:50px"></div>
-     
 
     <div id="colorcito1" class="container" >
         <div class="row" >

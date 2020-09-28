@@ -1,10 +1,8 @@
 <?php
-
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
 $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +18,6 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
 	<title>Mis Reclamos soporte</title>
-  
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -116,7 +113,7 @@ $result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
     <script src="popper/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="datatables/datatables.min.js"></script>    
-    <script type="text/javascript" src="main.js"></script>  
+    <script type="text/javascript" src="js/main.js"></script>  
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

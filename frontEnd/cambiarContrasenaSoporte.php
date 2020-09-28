@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SOPORTE')
 {
   header("Location: login.php");
@@ -36,7 +34,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SOPORTE')
 				    MI CUENTA
 				  </button>
 				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
+				    <a class="dropdown-item" href="cambiarContrasenaSoporte.php">Cambiar mi contraseña</a>
 				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
 				  </div>
 				</div>
