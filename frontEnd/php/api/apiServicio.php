@@ -6,7 +6,7 @@ class ApiServicio{
 
 
     function misServios($id){
-        $user = new User();
+        $user = new Servicio();
 
         $res = $user->misServios($id);
 

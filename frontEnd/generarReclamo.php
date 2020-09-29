@@ -6,8 +6,14 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 }
 include_once 'php/api/apiServicio.php';
 $api = new ApiServicio();
-$reclamos = $api->misServios($_SESSION['id']);
+$servicios = $api->misServios($_SESSION['id']);
 
+ECHO json_encode($servicios);
+
+foreach($servicios as $servicio){
+	ECHO json_encode($servicio);
+
+}
 
 ?>
 
@@ -63,13 +69,16 @@ $reclamos = $api->misServios($_SESSION['id']);
 									<div class="form-group">
 										Servicio
 										<select class="custom-select" name="id_servicio" required>
-										<option value="">Seleccione un servicio</option>
-										<option value="2">INTERNET</option>
-										<option value="3">INTERNET PLUS</option>
-										<option value="1">TELEFONÍA </option>
-										<option value="6">TELEFONÍA MÓVIL</option>
-										<option value="4">TELEFONÍA PLUS </option>
-										<option value="5">TV DIGITAL</option>
+										<option value="">Seleccione un servicio</option>				
+										<?php 
+                                            foreach($servicios as $servicio){
+										?>
+
+										<option value="2"> <?php ECHO  json_encode($servicio['nombre']); ?></option>
+
+										<?php 				
+											}				
+										?>
 										</select>
 									</div>	
 									<div class="form-group">
