@@ -58,12 +58,13 @@ if (isset($_SESSION['permiso']))
 						<input type="checkbox" checked="checked" name="remember"> Recordar Usuario
 					</label>
 					<br>
-					<button type="button" class="btn btn-success" onclick="location.href='registro.php'">REGISTRARSE</button>
-					
-					<br>
 					<label>
 						<span class="psw">OLVIDE <a href="#"> MI CONTRASEÑA <br></a></span>
 					</label>
+					<br>
+					<button type="button" class="btn btn-primary" onclick="location.href='registro.php'">REGISTRARSE</button>
+					<br>
+					
 				</center>
 			</div>
 		</form>
