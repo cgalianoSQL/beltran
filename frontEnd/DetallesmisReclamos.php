@@ -54,7 +54,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert alert-info" role="alert">
                                 <h3>Detalle de Reclamo</h3>
                                     <div class="container">
                                         <div class="row">
@@ -72,8 +72,8 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
   
                                                         </tbody>                
                                                     </table>  
-                                                    <button onclick="location.href='respuestaReclamo.php'" >RESPONDER</button></td>
-                                                    <button onclick="location.href='.php'" >CERRAR</button></td>        
+                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php'">RESPONDER</button>
+                                                    <button type="submit" class="btn btn-danger">CERRAR</button>    
                                                 </div>
                                             </div>
                                         </div>  

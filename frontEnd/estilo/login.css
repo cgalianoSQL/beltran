@@ -4,43 +4,17 @@
              background-image: url("../img/fondo.jpg");
         }
 
-
-        input[type=number], input[type=email], input[type=text], input[type=password]
-        {
-            width: 50%;
-            padding: 10px 10px;
-            margin: 10px 0;
-            display: inline-block;
-            border: 2px solid #000;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        button, input[type=submit]
-        {   
-            width: 50%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 10px;
-            margin: 10px 0;
-            display: inline-block;
-            border: 2px solid #000;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-
-        .imgcontainer
+       .imgcontainer
         {
             text-align: center;
-            margin: 20px 0 12px 0;
+            margin: 15px 0 12px 0;
             position: relative;
         }
 
         img.avatar
         {
             width: 20%;
-            border-radius: 40%;
+            border-radius: 30%;
         }
 
 
@@ -61,7 +35,7 @@
         .modal-content
         {
             background-color: #fefefe;
-            margin: 5% auto 10% auto; 
+            margin: 3% auto 10% auto; 
             border: 2px solid #888;
             width: 70%;
         }

@@ -19,10 +19,15 @@ if (isset($_SESSION['permiso']))
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+	<title>CLIENTE</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 	<link href="estilo/login.css" rel="stylesheet" type="text/css">
-	<!-- Bootstrap CSS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<title>Resolucion de reclamos online</title>
@@ -46,15 +51,15 @@ if (isset($_SESSION['permiso']))
 					<br>
 					<input type="password" placeholder="Ingresar Contraseña" name="password" required> 
 					<br>
-					<input type="submit" value="ACEPTAR">
+					<button type="submit" class="btn btn-success">ACEPTAR</button>
+
 					<br>
 					<label>
 						<input type="checkbox" checked="checked" name="remember"> Recordar Usuario
 					</label>
 					<br>
-					<label>
-						<button type="button" onclick="location.href='registro.php'">REGISTRARSE</button>
-					</label>
+					<button type="button" class="btn btn-success" onclick="location.href='registro.php'">REGISTRARSE</button>
+					
 					<br>
 					<label>
 						<span class="psw">OLVIDE <a href="#"> MI CONTRASEÑA <br></a></span>
@@ -63,6 +68,8 @@ if (isset($_SESSION['permiso']))
 			</div>
 		</form>
 	</div>
-
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

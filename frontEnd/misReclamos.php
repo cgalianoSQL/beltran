@@ -51,14 +51,14 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 				  </button>
 				</li>
 			</ul>
-		</nav>
+        </nav>
     <div style="height:50px"></div>
         <div id="colorcito1" class="container" >
             <div class="row" >
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
-                            <div class="alert alert-warning" role="alert">
+                            <div class="alert alert-info" role="alert">
                                 <h3>Mis Reclamos</h3>
                                     <div class="container">
                                         <div class="row">
@@ -87,7 +87,8 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 														}
 														
 														?>
-														<td><button id=btn1 onclick="location.href='DetallesmisReclamos.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver</button></td>
+														<td>
+                                                        <button type="submit" class="btn btn-primary"onclick="location.href='DetallesmisReclamos.php?id=<?php echo json_encode($r['id_reclamos']); ?>'" >Ver</button></td>
 														
 														<form action="php/api/tomarReclamo.php" method="POST">
 															<input type="hidden" name="id_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
