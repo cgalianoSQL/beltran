@@ -16,7 +16,11 @@
         );
 
         $jsonParams = json_encode($Params);
-        $result = $api->tomar($jsonParams);
+        ECHO $jsonParams ;
+
+
+        $result = $api->actualizar($jsonParams);
+
             if(!$result){
             ?>
 

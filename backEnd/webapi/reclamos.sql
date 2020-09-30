@@ -180,7 +180,7 @@ BEGIN
 	);
 
 	PERFORM beltran.movimientos_de_reclamos (
-        v_reclamo_jsonb ->> 'id_reclamo',
+        (v_reclamo_jsonb ->> 'id_reclamo')::integer,
         v_movimiento.id_movimientos_reclamo
 	);
 
@@ -226,7 +226,7 @@ BEGIN
 	);
 
 	PERFORM beltran.movimientos_de_reclamos (
-        v_reclamo_jsonb ->> 'id_reclamo',
+        (v_reclamo_jsonb ->> 'id_reclamo')::integer,
         v_movimiento.id_movimientos_reclamo
 	);
 
