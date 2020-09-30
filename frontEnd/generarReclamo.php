@@ -55,7 +55,7 @@ $servicios = $api->misServios($_SESSION['id']);
 				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
-					<div class="alert alert-success" role="alert">
+					<div class="alert alert-primary" role="alert">
 					  	<h3>Nuevo Reclamo</h3>
 							<form action="php/api/registrarReclamo.php" method="POST">
 								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
@@ -81,8 +81,7 @@ $servicios = $api->misServios($_SESSION['id']);
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
-								<button type="submit" class="btn btn-success">ENVIAR</button>
-
+								<input type="submit" value="ENVIAR">
 							</form>
 						</div>
 					</div>
