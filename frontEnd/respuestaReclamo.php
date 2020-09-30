@@ -16,7 +16,7 @@ $servicios = $api->misServios($_SESSION['id']);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Generar reclamo</title>
+	<title>Respuesta</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
@@ -56,27 +56,13 @@ $servicios = $api->misServios($_SESSION['id']);
 					<div id="tarjeta" class="card" style="width: 50rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-primary" role="alert">
-					  	<h3>Nuevo Reclamo</h3>
+					  	<h3>Respuesta</h3>
 							<form action="php/api/registrarReclamo.php" method="POST">
 								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 									<div class="form-group">
-										Servicio 
-										
-										<select class="custom-select" name="id_servicio" required>
-										<option value="">Seleccione un servicio</option>				
-										<?php 
-                                            foreach($servicios as $servicio){
-										?>
-
-										<option value=<?php ECHO ($servicio['id_servicio']); ?> > <?php ECHO ($servicio['nombre']); ?></option>
-
-										<?php 				
-											}				
-										?>
-										</select>
 									</div>	
 									<div class="form-group">
-										<label for="formGroupExampleInput" >Detalle su problema</label>
+										<label for="formGroupExampleInput" >Agregar respuesta</label>
 										<textarea rows="3" cols="88" name="comentario"> </textarea>
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
