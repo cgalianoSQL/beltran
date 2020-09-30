@@ -13,9 +13,11 @@
        $Params = array(
             'id_servicio'  => $_POST['id_servicio'],
             'comentario' => $_POST['comentario'],
-            'archivo' => base64_encode($_FILES['archivo']),
+            'archivo' => base64_encode($_POST['archivo']),
             'id_usuario_pertenece' => $_POST['id_usuario_pertenece']
         );
+
+
         $jsonParams = json_encode($Params);
 
         $result = $api->registrar($jsonParams);
