@@ -10,7 +10,7 @@ class ApiServicio{
 
         $res = $user->misServios($id);
 
-        $result = $res->fetch(PDO::FETCH_ASSOC);
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
 
         return $result;
     }

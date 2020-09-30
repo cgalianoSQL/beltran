@@ -8,13 +8,6 @@ include_once 'php/api/apiServicio.php';
 $api = new ApiServicio();
 $servicios = $api->misServios($_SESSION['id']);
 
-ECHO json_encode($servicios);
-
-foreach($servicios as $servicio){
-	ECHO json_encode($servicio);
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +67,7 @@ foreach($servicios as $servicio){
                                             foreach($servicios as $servicio){
 										?>
 
-										<option value="2"> <?php ECHO  json_encode($servicio['nombre']); ?></option>
+										<option value=<?php ECHO ($servicio['id_servicio']); ?> > <?php ECHO ($servicio['nombre']); ?></option>
 
 										<?php 				
 											}				
