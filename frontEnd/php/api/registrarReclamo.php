@@ -8,8 +8,6 @@
     $error = '';
     if(isset($_POST['comentario'])){
 
-        ECHO file_get_contents($_POST['archivo']);
-
        $Params = array(
             'id_servicio'  => $_POST['id_servicio'],
             'comentario' => $_POST['comentario'],
