@@ -57,8 +57,9 @@ $servicios = $api->misServios($_SESSION['id']);
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-info" role="alert">
 					  	<h3>Respuesta</h3>
-							<form action="php/api/registrarReclamo.php" method="POST">
-								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
+						  <form action="php/api/actualizarReclamo.php" method="POST">
+								<input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
+								<input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >
 									<div class="form-group">
 									</div>	
 									<div class="form-group">
