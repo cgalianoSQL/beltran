@@ -29,6 +29,28 @@ class ApiReclamos{
     }
 
 
+    function actualizar($jsonParams){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->actualizarReclamo($jsonParams);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
+    function cerrar($jsonParams){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->cerrarReclamo($jsonParams);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
     function mostrar($id){
         $reclamos = new Reclamos();
 

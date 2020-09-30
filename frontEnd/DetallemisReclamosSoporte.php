@@ -84,8 +84,17 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
   
                                                         </tbody>                
                                                     </table>   
-                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamoSoporte.php'">RESPONDER</button>
-                                                    <button type="submit" class="btn btn-danger">CERRAR</button>                   
+                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamoSoporte.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>
+                                                    <form action="php/api/cerrarReclamo.php" method="POST">
+                                                       <input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
+                                                       <input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >
+                                                       <input type="hidden" name="comentario" value="RECLAMO FINALIZADO" >
+                                                       <input type="hidden" name="archivo" value="no pose" >
+
+                                                        <button type="submit" class="btn btn-danger">CERRAR</button>  
+                                                    </form>
+   
+
                                                 </div>
                                             </div>
                                         </div>  

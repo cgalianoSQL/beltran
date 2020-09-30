@@ -18,6 +18,20 @@ class Reclamos extends DB{
     }    
 
 
+    function actualizarReclamo($jsonParams){
+        $query = $this->connect()->prepare('CALL webapi.beltran_movimientos_reclamo_actualizacion(:jsonParams, false)');
+        $query->execute(['jsonParams' => $jsonParams]);
+        return ($query);
+    }    
+
+
+    function cerrarReclamo($jsonParams){
+        $query = $this->connect()->prepare('CALL webapi.beltran_movimientos_reclamo_cerrar(:jsonParams, false)');
+        $query->execute(['jsonParams' => $jsonParams]);
+        return ($query);
+    }    
+
+
     function mostrarApi($id){
         $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado,nombre_estado FROM beltran.reclamos_vw where id_usuario_pertenece = :id');
         $query->execute(['id' => $id]);

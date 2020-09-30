@@ -1,9 +1,6 @@
 <?php
-include_once 'php/api/apiReclamos.php';
 session_start();
-$api = new ApiReclamos();
-$lista = $api->mostrarMovimientos($_GET['id']);
-$result = $lista->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!doctype html>
@@ -55,8 +52,9 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-warning" role="alert">
 					  	<h3>Respuesta</h3>
-							<form action="php/api/registrarReclamo.php" method="POST">
-								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
+							<form action="php/api/actualizarReclamo.php" method="POST">
+								<input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
+								<input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >
 									<div class="form-group">
 									</div>	
 									<div class="form-group">

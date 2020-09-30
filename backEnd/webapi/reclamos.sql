@@ -142,3 +142,103 @@ END;
 $$ LANGUAGE plpgsql STABLE
 SET search_path FROM CURRENT
 SECURITY DEFINER;
+
+
+---------------------
+--  CREAR MOVIMIENTO
+----------------------
+CREATE OR REPLACE PROCEDURE webapi.beltran_movimientos_reclamo_actualizacion(
+	p_reclamo                     text,
+	inout p_estado                boolean
+)
+LANGUAGE plpgsql    
+AS $$
+DECLARE
+	v_reclamo_jsonb               jsonb;
+	v_reclamo	                  beltran.reclamos;
+	v_realizado                   text;
+	v_movimiento                  beltran.movimientos_reclamo;
+
+BEGIN
+	IF NOT webapi.is_text_valid_json(p_reclamo)
+	THEN
+	    RAISE EXCEPTION 'webapi.beltran_reclamos_creacion_procedimiento EXCEPTION: parameter is not a valid JSON object';
+	END IF;
+
+	v_reclamo_jsonb := p_reclamo::jsonb;
+
+	v_realizado := beltran.usuarios_get_name_complete(
+		beltran.usuarios_identify_by_id(
+			(v_reclamo_jsonb ->> 'id_usuario_asignado')::integer
+		)
+	);
+
+    v_movimiento := beltran.movimientos_reclamo (
+        v_reclamo_jsonb ->> 'comentario',
+		v_reclamo_jsonb ->> 'archivo',
+        v_realizado
+	);
+
+	PERFORM beltran.movimientos_de_reclamos (
+        v_reclamo_jsonb ->> 'id_reclamo',
+        v_movimiento.id_movimientos_reclamo
+	);
+
+    COMMIT;
+	   
+   	p_estado := true;
+   
+    return;
+
+END;$$
+
+
+CREATE OR REPLACE PROCEDURE webapi.beltran_movimientos_reclamo_cerrar(
+	p_reclamo                     text,
+	inout p_estado                boolean
+)
+LANGUAGE plpgsql    
+AS $$
+DECLARE
+	v_reclamo_jsonb               jsonb;
+	v_reclamo	                  beltran.reclamos;
+	v_realizado                   text;
+	v_movimiento                  beltran.movimientos_reclamo;
+
+BEGIN
+	IF NOT webapi.is_text_valid_json(p_reclamo)
+	THEN
+	    RAISE EXCEPTION 'webapi.beltran_reclamos_creacion_procedimiento EXCEPTION: parameter is not a valid JSON object';
+	END IF;
+
+	v_reclamo_jsonb := p_reclamo::jsonb;
+
+	v_realizado := beltran.usuarios_get_name_complete(
+		beltran.usuarios_identify_by_id(
+			(v_reclamo_jsonb ->> 'id_usuario_asignado')::integer
+		)
+	);
+
+    v_movimiento := beltran.movimientos_reclamo (
+        v_reclamo_jsonb ->> 'comentario',
+		v_reclamo_jsonb ->> 'archivo',
+        v_realizado
+	);
+
+	PERFORM beltran.movimientos_de_reclamos (
+        v_reclamo_jsonb ->> 'id_reclamo',
+        v_movimiento.id_movimientos_reclamo
+	);
+
+	PERFORM beltran.reclamos_set_estado (
+		(v_reclamo_jsonb ->> 'id_reclamo')::integer,
+		3
+	);
+
+    COMMIT;
+	   
+   	p_estado := true;
+   
+    return;
+
+END;$$
