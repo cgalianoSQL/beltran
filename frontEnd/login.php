@@ -52,11 +52,13 @@ if (isset($_SESSION['permiso']))
 					<input type="password" placeholder="Ingresar Contraseña" name="password" required> 
 					<br>
 					<button type="submit" class="btn btn-success">ACEPTAR</button>
-
 					<br>
+					<!--
 					<label>
 						<input type="checkbox" checked="checked" name="remember"> Recordar Usuario
 					</label>
+					l-->
+					
 					<br>
 					<label>
 						<span class="psw">OLVIDE <a href="#"> MI CONTRASEÑA <br></a></span>
