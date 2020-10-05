@@ -42,7 +42,8 @@ create or replace  VIEW beltran.reclamos_movimientos_vw AS
 		r.creacion as fecha,
 		r.comentario as detalle,
 		r.realizado,
-		m.id_reclamos
+		m.id_reclamos,
+		r.archivo
 	FROM
 		beltran.movimientos_reclamo r
 		INNER JOIN beltran.movimientos_de_reclamos m ON m.id_movimientos_reclamo = r.id_movimientos_reclamo

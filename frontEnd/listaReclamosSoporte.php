@@ -90,7 +90,7 @@ $result = $api->mostrarReclamosSoporte();
 	
 															<input type="hidden" name="id_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
 															<input type="hidden" name="id_reclamo" value="<?php ECHO  json_encode($r['id_reclamos']); ?>" >
-															<button type="submit" class="btn btn-success">Tomarx</button>
+															<button type="submit" class="btn btn-success">Tomar</button>
 													
 														</form>
 														</td>

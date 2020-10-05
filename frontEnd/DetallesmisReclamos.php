@@ -2,7 +2,7 @@
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
-$lista = $api->mostrar($_SESSION['id']);
+$lista = $api->mostrarMovimientos($_GET['id']);
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -66,10 +66,34 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                                                                 <th>Creacion</th>
                                                                 <th>Comentario</th>
                                                                 <th>Reclamo</th>
+                                                                <th>imagen</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>   
-  
+
+                                                        <?php 
+                                                        foreach($result as $r){
+                                                        echo'<tr>';
+                                                        foreach($r as $v){
+                                                            
+                                                        // FIJENSE ESTO <3 
+                                                        if (json_encode($r['archivo']) == $v ) {
+                                                          echo '<td>'
+                                                          ?>
+                                                          <img width="100" src="<?php ECHO $v ?>">
+                                                          <?php
+                                                         
+                                                          '</td>';
+                                                        } else {
+                                                          echo'<td>'.$v.'</td>';
+                                                        }
+                                                        
+                                                        }
+                                                        echo'</tr>';
+                                                        }
+                                                        echo'</table>';
+                                                        ?>   
+    
                                                         </tbody>                
                                                     </table>  
                                                     <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php'">RESPONDER</button>
