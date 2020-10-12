@@ -99,7 +99,7 @@ CREATE TABLE beltran.estados (
 
 CREATE TABLE beltran.movimientos_reclamo (
 	id_movimientos_reclamo        serial PRIMARY KEY,
-	creacion                      date,
+	creacion                      timestamp,
 	comentario                    varchar(80),
 	archivo                       text,
 	realizado                     varchar(80)
@@ -107,7 +107,7 @@ CREATE TABLE beltran.movimientos_reclamo (
 
 CREATE TABLE beltran.reclamos (
 	id_reclamos                   serial PRIMARY KEY,
-	creacion                      date,
+	creacion                      timestamp,
 	id_servicio                   integer REFERENCES beltran.servicios(id_servicio),
 	id_usuario_pertenece          integer REFERENCES beltran.usuarios(id_usuario),
 	id_usuario_asignado           integer REFERENCES beltran.usuarios(id_usuario),

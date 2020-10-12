@@ -3,10 +3,11 @@
 -------------------------------------------
 -- VISTAS
 -------------------------------------------
-create or replace  VIEW beltran.reclamos_vw AS
+create or replace VIEW beltran.reclamos_vw AS
 	SELECT
 		r.id_reclamos,
-		r.creacion,
+		r.creacion::date as fecha,
+		to_char(r.creacion, 'HH12:MI') as hora,
 		s.nombre AS servicio,
 		up.nombre AS pertenece,
 		ua.nombre AS asignado,
@@ -39,7 +40,8 @@ create or replace  VIEW beltran.usuarios_vw AS
 
 create or replace  VIEW beltran.reclamos_movimientos_vw AS
 	SELECT
-		r.creacion as fecha,
+		r.creacion::date as fecha,
+		to_char(r.creacion, 'HH12:MI') as hora,
 		r.comentario as detalle,
 		r.realizado,
 		m.id_reclamos,
