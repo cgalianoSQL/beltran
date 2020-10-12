@@ -4,8 +4,9 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
 }
-
-
+include_once 'php/api/apiUser.php';
+$api = new ApiUser();
+$perfil = $api->perfil($_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +19,12 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
+		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -31,15 +33,9 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 				  </button>
 				</li>
 				<li class="nav-item">
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaCliente.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasenaCliente.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
-				  </div>
-				</div>
 				</li>
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
@@ -55,7 +51,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 							
 							<div class="alert alert-success" role="alert">
-						  <h3>Generar Reclamo</h3>
+						  <h3>GENERAR RECLAMO</h3>
 						</div>
 						</div>
 					</div>
@@ -65,7 +61,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 330px;">
 						
 							<div class="alert alert-info" role="alert">
-							 <h3>Mis<br>Reclamos</h3>
+							 <h3>MIS<br>RECLAMOS</h3>
 							</div>
 							<h5>Abiertos:</h5>
 							<br>

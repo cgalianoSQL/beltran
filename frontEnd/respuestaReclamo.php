@@ -8,6 +8,9 @@ include_once 'php/api/apiServicio.php';
 $api = new ApiServicio();
 $servicios = $api->misServios($_SESSION['id']);
 
+include_once 'php/api/apiUser.php';
+$api = new ApiUser();
+$perfil = $api->perfil($_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +27,7 @@ $servicios = $api->misServios($_SESSION['id']);
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
+		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -33,15 +36,9 @@ $servicios = $api->misServios($_SESSION['id']);
 				  </button>
 				</li>
 				<li class="nav-item">
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaCliente.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasenaCliente.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
-				  </div>
-				</div>
 				</li>
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
@@ -56,7 +53,7 @@ $servicios = $api->misServios($_SESSION['id']);
 					<div id="tarjeta" class="card" style="width: 50rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-info" role="alert">
-					  	<h3>Respuesta</h3>
+					  	<h3>RESPUESTA</h3>
 						  <form action="php/api/actualizarReclamo.php" method="POST">
 								<input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
 								<input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >

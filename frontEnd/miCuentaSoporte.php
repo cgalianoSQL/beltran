@@ -12,14 +12,13 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>PERSONAL DE SOPORTE</title>
+	<title>Cambiar Contraseña</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
@@ -45,16 +44,37 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 
+
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 330px;">
-							<div class="alert alert-warning" role="alert">
-								<h3>ESTADÍSTICAS DE RECLAMOS</h3>
-							</div>
+				<div class="col col-lg-3" style="margin-top: 1%;margin-left:15% ;margin-bottom: 5%">
+					<div id="tarjeta" class="card" style="width: 55rem;">
+						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:220px;max-height: 400px;">
+							<div class="alert alert-primary" role="alert">
+								<h3>MIS DATOS</h3>
+								<h5>NOMBRE:	<?php ECHO $perfil['nombre_completo']?> </h5> 
+								<h5>USUARIO: <?php ECHO $perfil['usuario']?></h5>
+								<h5>TIPO Y Nro DE DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
 							</div>
 						</div>
+					
+
+					<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 450px;">
+						<div class="alert alert-primary" role="alert">
+					  		<h3>CAMBIAR CONTRASEÑA</h3>
+							<form action="php/api/cambiarPassword.php" method="POST">
+								<input type="hidden" name="id" value="<?php ECHO  $_SESSION['id'];?>" >
+								<div class="form-group">
+								<label for="formGroupExampleInput" >Nueva Contraseña</label> <br>
+								<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nueva contraseña" name="password" required>
+								<div class="form-group">
+									<label for="formGroupExampleInput" >Repetir Nueva Contraseña</label> <br>
+									<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Repita su nueva contraseña" name="new_password" required>
+								</div>
+								<button type="submit" class="btn btn-success">ENVIAR</button>
+							</form>
+						</div>
+						
 					</div>
 				</div>
 			</div>

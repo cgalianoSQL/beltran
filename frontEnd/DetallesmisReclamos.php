@@ -4,6 +4,10 @@ session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrarMovimientos($_GET['id']);
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
+
+include_once 'php/api/apiUser.php';
+$api = new ApiUser();
+$perfil = $api->perfil($_SESSION['id']);
 ?>
 
 <!doctype html>
@@ -17,12 +21,13 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-    <link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
-    <title>Detalle Reclamo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+    <title>DETALLE RECLAMO</title>
    
   <body> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE</h4></a>	
+		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -31,15 +36,9 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 				  </button>
 				</li>
 				<li class="nav-item">
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaCliente.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="cambiarContrasena.php">Cambiar mi contraseña</a>
-				    <a class="dropdown-item" href="clientedatos.php">Mis Datos</a>
-				  </div>
-				</div>
 				</li>
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
@@ -55,7 +54,7 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                    <div id="tarjeta" class="card" style="width: 60rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                             <div class="alert alert-info" role="alert">
-                                <h3>Detalle de Reclamo</h3>
+                                <h3>DETALLE DE RECLAMOS</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -95,9 +94,15 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                                                         ?>   
     
                                                         </tbody>                
-                                                    </table>  
+                                                    </table>
+                                                    <center>
+                                                    <br>
                                                     <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php'">RESPONDER</button>
-                                                    <button type="submit" class="btn btn-danger">CERRAR</button>    
+                                                    <br>
+                                                    <br>
+                                                    <button type="submit" class="btn btn-danger">CERRAR</button>  
+                                                    </center>
+  
                                                 </div>
                                             </div>
                                         </div>  

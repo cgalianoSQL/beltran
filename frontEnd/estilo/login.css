@@ -1,67 +1,131 @@
+body {font-family: Arial, Helvetica, sans-serif; background-image: url("../img/fondo.jpg");
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-            background-image: url("../img/fondo.jpg");
-    }
-
-    .imgcontainer
-    {
-        text-align: center;
-        margin: 15px 0 12px 0;
-        position: relative;
-    }
-
-    img.avatar
-    {
-        width: 20%;
-        border-radius: 30%;
-    }
-
-
-    .modal
-    {
-        display: block; 
-        position: fixed; 
-        z-index: 1; 
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%; 
-        overflow: auto; 
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0,0.4);
-    }
-
-    .modal-content
-    {
-        background-color: #fefefe;
-        margin: 3% auto 10% auto; 
-        border: 2px solid #888;
-        width: 70%;
-    }
-
-    .animate
-    {
-        -webkit-animation: animatezoom 0.5s;
-        animation: animatezoom 0.5s
-    }
-
-    @-webkit-keyframes animatezoom
-    {
-        from {-webkit-transform: scale(0)} 
-        to {-webkit-transform: scale(1)}
-    }
+h4{
+        font-family: 'Lora', serif;
+        text-shadow: 1px 1px 1px #00000065;
+        color: #000000af;
     
-    @keyframes animatezoom
-    {
-        from {transform: scale(0)} 
-        to {transform: scale(1)}
     }
 
-    @media screen and (max-width: 100px)
+    h5{
+        font-family: 'Lora', serif;
+        text-shadow: 1px 1px 1px #00000065;
+        color: #000000af;
+    
+    }
+
+input[type=text], input[type=password], input[type=number], input[type=email]
     {
-        span.psw
-        {
-            display: block;
-            float: none;
-        }
+        width: 45%;
+        padding: 5px 5px;
+        margin: 2px 0;
+        border: 2px solid rgba(0, 0, 0, 0.596);
+        
+    }
+
+#opciondoc
+{
+    width: 45%;
+    padding: 5px 5px;
+    margin: 2px 0;
+    border: 2px solid rgba(0, 0, 0, 0.596);
+    
+}
+
+button
+{
+    padding: 5px 5px;;
+    margin: 10px;
+    width: 20%;
+}
+
+label{
+    padding: 1px 1px;;
+    margin: 1px;
+}
+
+button:hover
+{
+    opacity: 0.8;
+}
+
+.imgcontainer
+{
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar
+{
+    width: 15%;
+    border-radius: 40%;
+}
+
+.container
+{
+    padding: 10px;
+
+}
+
+.imgLogo{
+    width: 15%;
+    border-radius: 20%;
+
+}
+span.psw
+{
+    float: right;
+    padding-top: 10px;
+}
+
+.modal
+{
+    display: block; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 20px;
+}
+
+.modal-content
+{
+    background-color: #fefefe;
+    margin: 2% auto 2% auto; 
+    border: 3px solid rgba(0, 0, 0, 0);
+    width: 60%;
+}
+
+
+.animate
+{
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom
+{
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom
+{
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+@media screen and (max-width: 100px)
+{
+    span.psw
+    {
+     display: block;
+     float: none;
+ }

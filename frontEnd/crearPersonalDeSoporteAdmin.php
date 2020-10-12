@@ -1,9 +1,11 @@
 <?php
+
 session_start();
-if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
+if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 {
   header("Location: login.php");
 }
+
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
@@ -23,16 +25,16 @@ $perfil = $api->perfil($_SESSION['id']);
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="cliente.php"><h4>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='cliente.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='admin.php'" style="border-color: white">
 				    INICIO
 				  </button>
 				</li>
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaCliente.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaadmin.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
 				</li>
@@ -45,37 +47,35 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
+				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 4%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
+						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 470px;">
 					<div class="alert alert-primary" role="alert">
-					  	<h3>NUEVO RECLAMO</h3>
-							<form action="php/api/registrarReclamo.php" method="POST" enctype="multipart/form-data">
-								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
-									<div class="form-group">
-										Servicio 
-										
-										<select class="custom-select" name="id_servicio" required>
-										<option value="">Seleccione un servicio</option>				
-										<?php 
-                                            foreach($servicios as $servicio){
-										?>
-
-										<option value=<?php ECHO ($servicio['id_servicio']); ?> > <?php ECHO ($servicio['nombre']); ?></option>
-
-										<?php 				
-											}				
-										?>
-										</select>
-									</div>	
-									<div class="form-group">
-										<label for="formGroupExampleInput" >Detalle su problema</label>
-										<textarea rows="3" cols="88" name="comentario"> </textarea>
-										<input type="file" name="archivo" accept="image/*,.pdf" />
-										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
-									</div>
-									<button type="submit" class="btn btn-success">ENVIAR</button>
-							</form>
+					  	<h3>NUEVO PERSONAL DE SOPORTE</h3>
+ 
+				<form name="registro" action="php/api/registrarClient.php" method="POST">
+					<input type="hidden" name="nro_cliente" value="<?php ECHO  $_GET['cliente'];?>" >
+					<br> <label for="nombre"><h5>NOMBRE</h5></label>
+					<input type="text" name="nombre" required>
+					<br> <label for="apellido"><h5>APELLIDO</h5></label>
+					<input type="text" name="apellido" required>
+					<br> <label for="tipdoc"><h5>TIPO DE DOCUMENTO</h5></label>
+					<select id="opciondoc" name="id_tipo_documento"> 
+						<option value ="1" selected>DNI</option>
+						<option value ="2">PASAPORTE</option>
+						<option value ="3">EXTRANJERO</option>
+					</select>
+					<br> <label for="numdoc"><h5>NUMERO DE DOCUMENTO</h5></label>
+					<input type="text" name="nro_documento" required>
+					<br> <label for="nombreuser"><h5>NOMBRE DE USUARIO</h5></label>
+					<input type="text" name="usuario" required>          
+					<br> <label for="password"><h5>CONTRASEÑA</h5></label>
+					<input type="password" name="password" required>
+					<br> <label for="password"><h5>REPETIR CONTRASEÑA</h5></label>
+					<input type="password" name="passwordVerificacion" required>
+					<br>
+					<br><button type="submit" class="btn btn-success">CREAR CUENTA</button>
+				</form>						
 						</div>
 					</div>
 				</div>

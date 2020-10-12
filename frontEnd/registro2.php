@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="estilo/registro.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+	<title>CLIENTE</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<title>RR Resolucion de reclamos online</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="estilo/login.css" rel="stylesheet" type="text/css">
+	<title>Resolucion de reclamos online</title>
 </head>
 <body>
 
@@ -15,25 +19,25 @@
 			<img class="imgLogo" src="img\logo.png">
 			<form name="registro" action="php/api/registrarClient.php" method="POST">
 				<input type="hidden" name="nro_cliente" value="<?php ECHO  $_GET['cliente'];?>" >
-				<br> <label for="nombre"><b> NOMBRE </b></label>
+				<br> <label for="nombre"><h5>NOMBRE</h5></label>
 				<br> <input type="text" name="nombre" required>
-				<br> <label for="apellido"><b> APELLIDO </b></label>
+				<br> <label for="apellido"><h5>APELLIDO</h5></label>
 				<br> <input type="text" name="apellido" required>
-				<br> <label for="tipdoc"><b> TIPO DE DOCUMENTO </b></label>
-				<br> <select name="id_tipo_documento"> 
-					<option value ="1" selected> DNI</option>
+				<br> <label for="tipdoc"><h5>TIPO DE DOCUMENTO</h5></label>
+				<br> <select id="opciondoc" name="id_tipo_documento"> 
+					<option value ="1" selected>DNI</option>
 					<option value ="2">PASAPORTE</option>
 					<option value ="3">EXTRANJERO</option>
 				</select>
-				<br> <label for="numdoc"><b> NUMERO DE DOCUMENTO </b></label>
+				<br> <label for="numdoc"><h5>NUMERO DE DOCUMENTO</h5></label>
 				<br> <input type="text" name="nro_documento" required>
-				<br> <label for="nombreuser"><b> NOMBRE DE USUARIO </b></label>
+				<br> <label for="nombreuser"><h5>NOMBRE DE USUARIO</h5></label>
 				<br> <input type="text" name="usuario" required>          
-				<br> <label for="password"><b> CONTRASEÑA </b></label>
+				<br> <label for="password"><h5>CONTRASEÑA</h5></label>
 				<br> <input type="password" name="password" required>
-				<br> <label for="password"><b> REPETIR CONTRASEÑA </b></label>
+				<br> <label for="password"><h5>REPETIR CONTRASEÑA</h5></label>
 				<br> <input type="password" name="passwordVerificacion" required>
-				<br> <input type="submit" value="FINALIZAR REGISTRO">
+				<br><button type="submit" class="btn btn-success">FINALIZAR REGISTRO</button>
 			</form>
 		</CENTER>
 	</div>

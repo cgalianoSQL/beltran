@@ -1,9 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
+if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 {
   header("Location: login.php");
 }
+
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
@@ -15,7 +16,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Generar reclamo</title>
+	<title>ADMINISTRADOR</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
@@ -23,16 +24,16 @@ $perfil = $api->perfil($_SESSION['id']);
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="admin.php"><h4>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='cliente.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='admin.php'" style="border-color: white">
 				    INICIO
 				  </button>
 				</li>
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaCliente.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaAdmin.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
 				</li>
@@ -43,40 +44,39 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
+
+
+
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
-					<div class="alert alert-primary" role="alert">
-					  	<h3>NUEVO RECLAMO</h3>
-							<form action="php/api/registrarReclamo.php" method="POST" enctype="multipart/form-data">
-								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
-									<div class="form-group">
-										Servicio 
-										
-										<select class="custom-select" name="id_servicio" required>
-										<option value="">Seleccione un servicio</option>				
-										<?php 
-                                            foreach($servicios as $servicio){
-										?>
+				<div class="col col-lg-3" style="margin-top: 1%;margin-left:15% ;margin-bottom: 5%">
+					<div id="tarjeta" class="card" style="width: 55rem;">
+						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:220px;max-height: 400px;">
+							<div class="alert alert-primary" role="alert">
+								<h3>MIS DATOS</h3>
+								<h5>NOMBRE:	<?php ECHO $perfil['nombre_completo']?> </h5> 
+								<h5>USUARIO: <?php ECHO $perfil['usuario']?></h5>
+								<h5>TIPO Y Nro DE DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
+							</div>
+						</div>
+					
 
-										<option value=<?php ECHO ($servicio['id_servicio']); ?> > <?php ECHO ($servicio['nombre']); ?></option>
-
-										<?php 				
-											}				
-										?>
-										</select>
-									</div>	
-									<div class="form-group">
-										<label for="formGroupExampleInput" >Detalle su problema</label>
-										<textarea rows="3" cols="88" name="comentario"> </textarea>
-										<input type="file" name="archivo" accept="image/*,.pdf" />
-										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
-									</div>
-									<button type="submit" class="btn btn-success">ENVIAR</button>
+					<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 450px;">
+						<div class="alert alert-primary" role="alert">
+					  		<h3>CAMBIAR CONTRASEÑA</h3>
+							<form action="php/api/cambiarPassword.php" method="POST">
+								<input type="hidden" name="id" value="<?php ECHO  $_SESSION['id'];?>" >
+								<div class="form-group">
+								<label for="formGroupExampleInput" >Nueva Contraseña</label> <br>
+								<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su nueva contraseña" name="password" required>
+								<div class="form-group">
+									<label for="formGroupExampleInput" >Repetir Nueva Contraseña</label> <br>
+									<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Repita su nueva contraseña" name="new_password" required>
+								</div>
+								<button type="submit" class="btn btn-success">ENVIAR</button>
 							</form>
 						</div>
+						
 					</div>
 				</div>
 			</div>

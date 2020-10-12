@@ -4,6 +4,10 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 {
   header("Location: login.php");
 }
+
+include_once 'php/api/apiUser.php';
+$api = new ApiUser();
+$perfil = $api->perfil($_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +22,8 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="admin.php"><h4>ADMINISTRADOR</h4></a>	
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="admin.php"><h4>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -28,21 +31,11 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 				    INICIO
 				  </button>
 				</li>
-
 				<li class="nav-item">
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaAdmin.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="#">Accion 1</a>
-				    <a class="dropdown-item" href="#">Accion 2</a>
-				    <a class="dropdown-item" href="#">Accion 3</a>
-				  </div>
-				</div>
-				
 				</li>
-
 				<li class="nav-item">
 					<button class="btn btn-secondary" type="button" onclick="location.href='logout.php'" style="border-color: white">
 				    CERRAR SESIÓN
@@ -51,25 +44,26 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 			</ul>
 		</nav>
 
+
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" onclick="location.href='.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div class="col col-lg-3" onclick="location.href='crearServicioAdmin.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
 							<div class="alert alert-primary" role="alert">
-						  <h3>Crear Servicio</h3>
+						  <h3>CREAR SERVICIO</h3>
 						</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="col col-lg-3" onclick="location.href='.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div class="col col-lg-3" onclick="location.href='crearPersonalDeSoporteAdmin.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
 							<div class="alert alert-warning" role="alert">
-						  <h3>Crear Cuenta Personal de Soporte</h3>
+						  <h3>CREAR CUENTA PERSONAL DE SOPORTE</h3>
 						</div>
 						</div>
 					</div>
@@ -80,7 +74,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
 							<div class="alert alert-success" role="alert">
-						  <h3>Clientes</h3>
+						  <h3>CLIENTES</h3>
 						</div>
 						</div>
 					</div>
@@ -91,7 +85,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
 							<div class="alert alert-secondary" role="alert">
-						  <h3>Estadísticas de servicios</h3>
+						  <h3>ESTADÍSTICAS DE SERVICIOS</h3>
 						</div>
 						</div>
 					</div>
@@ -101,7 +95,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							<div class="alert alert-info" role="alert">
-						  <h3>Estadísticas de Reclamos</h3>
+						  <h3>ESTADÍSTICAS DE RECLAMOS</h3>
 						</div>
 						</div>
 					</div>
