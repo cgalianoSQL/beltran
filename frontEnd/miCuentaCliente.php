@@ -14,10 +14,10 @@ $perfil = $api->perfil($_SESSION['id']);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Cambiar Contraseña</title>
+	<title>Mi Cuenta</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
@@ -48,17 +48,18 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
+		
 		<div id="colorcito1" class="container" >
 			<div class="row" >
 				<div class="col col-lg-3" style="margin-top: 1%;margin-left:15% ;margin-bottom: 5%">
 					<div id="tarjeta" class="card" style="width: 55rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 500px;">
 							<div class="alert alert-primary" role="alert">
-								<h3>MIS DATOS</h3>
-								<h5>NOMBRE:<br></h5>         <?php ECHO $perfil['nombre_completo']?> 
-								<h5>USUARIO:<br></h5>        <?php ECHO $perfil['usuario']?>
-								<h5>Nro DE CLIENTE:<br></h5> <?php ECHO $perfil['nro_cliente']?>
-								<h5>TIPO Y Nro DE DOCUMENTO:<br></h5>      <?php ECHO $perfil['documento']?>
+								<h3>MIS DATOS: 
+								<h5>NOMBRE:<br> <?php ECHO $perfil['nombre_completo']?> </h5>          
+								<h5>USUARIO:<br> <?php ECHO $perfil['usuario']?> </h5>       
+								<h5>Nro DE CLIENTE:<br> <?php ECHO $perfil['nro_cliente']?></h5> 
+								<h5>TIPO Y Nro DE DOCUMENTO:<br> <?php ECHO $perfil['documento']?></h5>      
 							</div>
 						</div>
 					
