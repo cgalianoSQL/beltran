@@ -33,28 +33,28 @@ class Reclamos extends DB{
 
 
     function mostrarApi($id){
-        $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado,nombre_estado FROM beltran.reclamos_vw where id_usuario_pertenece = :id');
+        $query = $this->connect()->prepare('SELECT id_reclamos, fecha, hora, servicio, pertenece, asignado,nombre_estado FROM beltran.reclamos_vw where id_usuario_pertenece = :id');
         $query->execute(['id' => $id]);
         return ($query);
     }    
 
 
     function mostrarReclamosSoporte(){
-        $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw WHERE asignado = :soporte AND  nombre_estado = :estado');
+        $query = $this->connect()->prepare('SELECT id_reclamos, fecha, hora, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw WHERE asignado = :soporte AND  nombre_estado = :estado');
         $query->execute(['soporte' => 'soporte', 'estado' => 'ABIERTO']);
         return ($query);
     }    
 
 
     function mostrarMisReclamosSoporte($id){
-        $query = $this->connect()->prepare('SELECT id_reclamos, creacion, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw where id_asignado = :id ');
+        $query = $this->connect()->prepare('SELECT id_reclamos, fecha, hora, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw where id_asignado = :id ');
         $query->execute(['id' => $id]);
         return ($query);
     }   
 
 
     function mostrarMovimientos($id){
-        $query = $this->connect()->prepare('SELECT creacion, comentario, realizado, archivo from beltran.reclamos_movimientos_vw where id_reclamos = :id ');
+        $query = $this->connect()->prepare('SELECT fecha, hora, detalle, realizado, archivo from beltran.reclamos_movimientos_vw where id_reclamos = :id ');
         $query->execute(['id' => $id]);
         return ($query);
     }   

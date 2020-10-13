@@ -62,7 +62,8 @@ $perfil = $api->perfil($_SESSION['id']);
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>Creacion</th>
+                                                                <th>Fecha</th>
+                                                                <th>Hora</th>
                                                                 <th>Comentario</th>
                                                                 <th>Reclamo</th>
                                                                 <th>imagen</th>

@@ -22,7 +22,7 @@ $$
         id_estados
     )
 	VALUES (
-        current_date, 
+        current_timestamp, 
         p_id_servicio, 
         p_id_usuario_pertenece, 
         8, 
@@ -45,7 +45,7 @@ $$
         realizado
     )
 	VALUES (
-        current_date, 
+        current_timestamp, 
         p_comentario, 
         p_archivo,
         p_realizado
@@ -90,7 +90,7 @@ SET search_path FROM CURRENT;
 CREATE OR REPLACE FUNCTION beltran.reclamos_vw_search (
 ) RETURNS beltran.reclamos_vw[] AS
  $$
-	SELECT array(SELECT a FROM  beltran.reclamos_vw a ORDER BY creacion DESC) 
+	SELECT array(SELECT a FROM  beltran.reclamos_vw a ORDER BY fecha DESC) 
 $$ LANGUAGE sql STABLE
 SET search_path FROM CURRENT;
 

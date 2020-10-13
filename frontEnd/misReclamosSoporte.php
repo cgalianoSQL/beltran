@@ -63,7 +63,8 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         <thead>
                                                             <tr>
                                                                 <th>Reclamo #:</th>
-                                                                <th>Fecha<br>Creacion:</th>
+                                                                <th>Fecha:</th>
+                                                                <th>Hora:</th>
                                                                 <th>Servicio:</th>
                                                                 <th>Pertenece:</th>
                                                                 <th>Asignado</th>

@@ -71,7 +71,8 @@ $result = $lista->fetchAll(PDO::FETCH_ASSOC);
                                                     <thead>
                                                         <tr>
                                                             <th>ID<br>Reclamo</th>
-                                                            <th>Fecha<br>Creacion</th>
+                                                            <th>Fecha:</th>
+                                                            <th>Hora:</th>
                                                             <th>ID<br>Servicio</th>
                                                             <th>Pertenece</th>
                                                             <th>Asignado</th>
