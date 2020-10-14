@@ -40,7 +40,7 @@ $$
         p_id_tipo_documento, 
         p_id_tipo_permiso
     ) RETURNING *;
-$$ LANGUAGE sql VOLATILE STRICT
+$$ LANGUAGE sql VOLATILE 
 SET search_path FROM CURRENT;
 
 
