@@ -4,6 +4,8 @@ session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrarMovimientos($_GET['id']);
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
+$reclamo = $api->identify($_GET['id']);
+
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
@@ -52,9 +54,17 @@ $perfil = $api->perfil($_SESSION['id']);
             <div class="row" >
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
+                             <h3>DETALLE DE RECLAMOS</h3> 
+								<h5>Reclamo #: <?php ECHO json_encode($reclamo['id_reclamos']); ?> </h5>          
+								<h5>Fecha: <?php ECHO json_encode($reclamo['fecha']); ?></h5>       
+								<h5>Hora: <?php ECHO json_encode($reclamo['hora']); ?> </h5> 
+								<h5>Servicio: <?php ECHO json_encode($reclamo['servicio']); ?> </h5>      
+								<h5>Pertenece: <?php ECHO json_encode($reclamo['pertenece']); ?> </h5>       
+								<h5>Asignado: <?php ECHO json_encode($reclamo['asignado']); ?></h5> 
+								<h5>Estado: <?php ECHO json_encode($reclamo['nombre_estado']); ?></h5> 
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                             <div class="alert alert-info" role="alert">
-                                <h3> DETALLE MIS RECLAMOS</h3>
+                                <h3> MOVIMIENTOS DE RECLAMOS</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
