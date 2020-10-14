@@ -12,16 +12,16 @@ $perfil = $api->perfil($_SESSION['id']);
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/js/bootstrap.min.js">  
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">  
     <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
     <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-    <link href="estilo/principal.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
     <title>MIS RECLAMOS</title>
    
   <body> 
@@ -112,7 +112,7 @@ $perfil = $api->perfil($_SESSION['id']);
             </div>  
         </div>   
       
-    <script src="jquery/jquery-3.3.1.min.js"></script>
+        <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="datatables/datatables.min.js"></script>    
