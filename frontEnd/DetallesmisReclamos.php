@@ -75,6 +75,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         foreach($result as $r){
                                                         echo'<tr>';
                                                         foreach($r as $v){
+                                                        
                                                             
                                                         if (preg_match("/^data/", $v)) {
                                                           echo '<td>'
