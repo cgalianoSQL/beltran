@@ -18,51 +18,95 @@
         $jsonParams = json_encode($Params);
         ECHO $jsonParams ;
 
-
         $result = $api->actualizar($jsonParams);
 
             if(!$result){
-            ?>
-
-                <script>
-                swal({
-                    title: "ERROR QUERY",
-                    icon: "error",
-                    button: "OK",
-                  }).then(function() {
-                    window.location = "../../misReclamosSoporte.php";
-                    });
-                </script>
-            <?php     
+              switch($_SESSION['permiso']) {
+                case 'CLIENTE':
+                  ?>
+                  <script>
+                  swal({
+                      title: "ERROR QUERY",
+                      icon: "error",
+                      button: "OK",
+                    }).then(function() {
+                      window.location = "../../misReclamos.php";
+                      });
+                  </script>
+              <?php ;
+                break;
+                case 'SOPORTE':
+                  ?>
+                  <script>
+                  swal({
+                      title: "ERROR QUERY",
+                      icon: "error",
+                      button: "OK",
+                    }).then(function() {
+                      window.location = "../../misReclamosSoporte.php";
+                      });
+                  </script>
+              <?php 
+              }    
         } else {
-        ?>
 
-        <script>
-        swal({
-            title: "RECLAMO TOMADO CON ÉXITO",
-            text: "Puede ver el mismo en la sección 'Mis Reclamos'",
+          switch($_SESSION['permiso']) {
+            case 'CLIENTE':
+              ?>
+              <script>
+              swal({
+                title: "ENVIADO",
+            text: "Ha enviado una respuesta corrrectamente",
             icon: "success",
             button: "OK",
           }).then(function() {
-            window.location = "../../misReclamosSoporte.php";
+            window.location = "../../DetallesmisReclamos.php";
             });
           </script>
+          <?php ;
+            break;
+            case 'SOPORTE':
+              ?>
+              <script>
+              swal({
+                title: "ENVIADO",
+            text: "Ha enviado una respuesta corrrectamente",
+            icon: "success",
+            button: "OK",
+          }).then(function() {
+            window.location = "../../DetallemisReclamosSoporte.php";
+            });
+              </script>
           <?php         
-    }
+              }  
+            }  
+      } else {
 
-    }else{
-        ?>
-
-        <script>
-        swal({
+          switch($_SESSION['permiso']) {
+            case 'CLIENTE':
+              ?>
+              <script>
+            swal({
+            title: "ERROR API",
+            icon: "error",
+            button: "OK",
+          }).then(function() {
+            window.location = "../../misReclamos.php";
+            });
+          </script>
+          <?php ;
+            break;
+            case 'SOPORTE':
+              ?>
+            <script>
+            swal({
             title: "ERROR API",
             icon: "error",
             button: "OK",
           }).then(function() {
             window.location = "../../misReclamosSoporte.php";
             });
-        </script>
-    <?php         
-    }
-    
-?>
+            </script>
+        <?php         
+        } }
+    ?>

@@ -86,7 +86,7 @@ $perfil = $api->perfil($_SESSION['id']);
 														}
 														
                                                         ?>
-                                                                                                           <center>
+                                                       <center>
 														<td>
                                                      <!-- Botón en HTML (lanza el modal en Bootstrap) -->
                                                     <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
@@ -106,8 +106,6 @@ $perfil = $api->perfil($_SESSION['id']);
                                                             </div>
                                                         </div>
                                                     </div>
-  
-                                                        
                                                         </td>
                                                         </center>
 													

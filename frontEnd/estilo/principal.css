@@ -19,18 +19,19 @@ body {
 
 
 h3{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Assistant', sans-serif;
 	text-align: center;
-	text-shadow: 2px 2px 2px #2E1070;
+	text-shadow: 1px #2E1070;
 	color: #3C0DA8;
 
 }
 
 h4{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Assistant', sans-serif;
 	text-align: center;
-	text-shadow: 1px 2px 2px #1F2756;
-	color: #1F2756;
+	text-shadow: 1px #2E1070;
+	color: #3C0DA8;
+
 }
 
 h5{

@@ -50,63 +50,99 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 
-    <div style="height:50px"></div>
+        <div style="height:50px"></div>
         <div id="colorcito1" class="container" >
             <div class="row" >
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
-                            <div class="alert alert-warning" role="alert">
-                                <h3>MOVIMIENTOS DE RECLAMO #<?php echo $_GET['id']  ?> </h3>
+                            <div class="alert alert-info" role="alert">
+                                <h3>DETALLE DE RECLAMOS</h3>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
+                                            Reclamo #: 
+                                            Servicio: 
+                                            Pertenece: 
+                                            Asignado: 
+                                            Estado: 
+                                            <br>
+                                            <br>
                                                 <div class="table-responsive">        
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>Fecha</th>
-                                                                <th>Detalle</th>
-                                                                <th>Realizado Por </th>
+                                                                <th>Hora</th>
+                                                                <th>Comentario</th>
+                                                                <th>Realizado</th>
+                                                                <th>Imagen</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>  
-                                                        
+                                                        <tbody>   
+
                                                         <?php 
                                                         foreach($result as $r){
                                                         echo'<tr>';
                                                         foreach($r as $v){
-                                                        echo'<td>'.$v.'</td>';
+                                                        
+                                                            
+                                                        if (preg_match("/^data/", $v)) {
+                                                          ?>
+                                                                                                                 <center>
+														<td>
+                                                     <!-- Botón en HTML (lanza el modal en Bootstrap) -->
+                                                    <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
+                                                    
+                                                    <!-- Modal / Ventana / Overlay en HTML -->
+                                                    <div id="victorModal" class="modal fade">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                <center>
+                                                                <img width="400" src="<?php ECHO $v ?> ">
+                                                                </center>
+                                                                    </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        </td>
+                                                        </center>
+                                                          <?php
+                                                         
+                                                        } else {
+                                                          echo'<td>'.$v.'</td>';
+                                                        }
+                                                        
                                                         }
                                                         echo'</tr>';
                                                         }
                                                         echo'</table>';
                                                         ?>   
-  
+    
                                                         </tbody>                
-                                                    </table> 
-                                                    <CENTER>
-                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamoSoporte.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>             
-                                                    <form action="php/api/cerrarReclamo.php" method="POST">
-                                                       <input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
-                                                       <input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >
-                                                       <input type="hidden" name="comentario" value="RECLAMO FINALIZADO" >
-                                                       <input type="hidden" name="archivo" value="no pose" >
-                                                       <BR>
-                                                       <button type="submit" class="btn btn-danger">CERRAR</button>  
-                                                    </form>
-                                                    </CENTER>
-                                                    
+                                                    </table>
+                                                    <center>
+                                                    <br>
+                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamoSoporte.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>
+                                                    <br>
+                                                    <br>
+                                                    <button type="submit" class="btn btn-danger">CERRAR</button>  
+                                                    </center>
+  
                                                 </div>
                                             </div>
                                         </div>  
                                     </div>    
                                 </div>
-                            </div>
+                         </div>
                     </div>  
                 </div> 
             </div>  
-        </div>   
+        </di
       
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>

@@ -4,7 +4,6 @@ session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrarMovimientos($_GET['id']);
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
-
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
@@ -47,6 +46,7 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
+		
     <div style="height:50px"></div>
         <div id="colorcito1" class="container" >
             <div class="row" >
@@ -58,6 +58,13 @@ $perfil = $api->perfil($_SESSION['id']);
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
+                                            Reclamo #: 
+                                            Servicio: 
+                                            Pertenece: 
+                                            Asignado: 
+                                            Estado: 
+                                            <br>
+                                            <br>
                                                 <div class="table-responsive">        
                                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
@@ -65,8 +72,8 @@ $perfil = $api->perfil($_SESSION['id']);
                                                                 <th>Fecha</th>
                                                                 <th>Hora</th>
                                                                 <th>Comentario</th>
-                                                                <th>Reclamo</th>
-                                                                <th>imagen</th>
+                                                                <th>Realizado</th>
+                                                                <th>Imagen</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>   
@@ -78,12 +85,31 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         
                                                             
                                                         if (preg_match("/^data/", $v)) {
-                                                          echo '<td>'
                                                           ?>
-                                                          <img width="100" src="<?php ECHO $v ?>">
+                                                                                                                 <center>
+														<td>
+                                                     <!-- Botón en HTML (lanza el modal en Bootstrap) -->
+                                                    <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
+                                                    
+                                                    <!-- Modal / Ventana / Overlay en HTML -->
+                                                    <div id="victorModal" class="modal fade">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                <center>
+                                                                <img width="400" src="<?php ECHO $v ?> ">
+                                                                </center>
+                                                                    </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        </td>
+                                                        </center>
                                                           <?php
                                                          
-                                                          '</td>';
                                                         } else {
                                                           echo'<td>'.$v.'</td>';
                                                         }
@@ -98,7 +124,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                     </table>
                                                     <center>
                                                     <br>
-                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php'">RESPONDER</button>
+                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>
                                                     <br>
                                                     <br>
                                                     <button type="submit" class="btn btn-danger">CERRAR</button>  

@@ -3,23 +3,19 @@ include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrar($_SESSION['id']);
-
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
-
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/js/bootstrap.min.js">
-    <link rel="stylesheet" href="main.css">   
+    <link rel="stylesheet" href="bootstrap/js/bootstrap.min.js">  
     <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
     <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">

@@ -16,13 +16,12 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Respuesta</title>
+	<title>RESPUESTA</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@600&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
 </head>
 <body >
@@ -54,19 +53,21 @@ $perfil = $api->perfil($_SESSION['id']);
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-info" role="alert">
 					  	<h3>RESPUESTA</h3>
-						  <form action="php/api/actualizarReclamo.php" method="POST">
+						  <center>
+						  	    <form action="php/api/actualizarReclamo.php" method="POST">
 								<input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
 								<input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >
 									<div class="form-group">
 									</div>	
 									<div class="form-group">
-										<label for="formGroupExampleInput" >Agregar respuesta</label>
+										<label for="formGroupExampleInput" >Agregar respuesta:</label>
 										<textarea rows="3" cols="88" name="comentario"> </textarea>
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
 							</form>
+							</center>
 						</div>
 					</div>
 				</div>

@@ -53,7 +53,8 @@ $perfil = $api->perfil($_SESSION['id']);
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO RECLAMO</h3>
-							<form action="php/api/registrarReclamo.php" method="POST" enctype="multipart/form-data">
+						  <center>
+						  <form action="php/api/registrarReclamo.php" method="POST" enctype="multipart/form-data">
 								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 									<div class="form-group">
 										Servicio 
@@ -73,12 +74,13 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>	
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Detalle su problema</label>
-										<textarea rows="3" cols="88" name="comentario"> </textarea>
+										<textarea rows="3" cols="95" name="comentario"> </textarea>
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
 							</form>
+							</center>
 						</div>
 					</div>
 				</div>
