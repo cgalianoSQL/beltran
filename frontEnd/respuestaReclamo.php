@@ -54,7 +54,7 @@ $perfil = $api->perfil($_SESSION['id']);
 					<div class="alert alert-info" role="alert">
 					  	<h3>RESPUESTA</h3>
 						  <center>
-						  	    <form action="php/api/actualizarReclamo.php" method="POST">
+						  	    <form action="php/api/actualizarReclamo.php" method="POST" enctype="multipart/form-data">
 								<input type="hidden" name="id_usuario_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
 								<input type="hidden" name="id_reclamo" value="<?php ECHO  $_GET['id'];?>" >
 									<div class="form-group">

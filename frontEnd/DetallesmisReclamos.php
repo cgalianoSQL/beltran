@@ -125,13 +125,21 @@ $perfil = $api->perfil($_SESSION['id']);
     
                                                         </tbody>                
                                                     </table>
-                                                    <center>
-                                                    <br>
-                                                    <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>
-                                                    <br>
-                                                    <br>
-                                                    <button type="submit" class="btn btn-danger" onclick="location.href='cerrarReclamo.php?id=<?php ECHO  $_GET['id'];?>'">CERRAR</button>
-                                                    </center>
+                                                    <?php
+                                                    if (json_decode(json_encode($reclamo['nombre_estado'])) != "CERRADA") {
+                                                    ?>
+                                                        <center>
+                                                        <br>
+                                                        <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamo.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>
+                                                        <br>
+                                                        <br>
+                                                        <button type="submit" class="btn btn-danger" onclick="location.href='cerrarReclamo.php?id=<?php ECHO  $_GET['id'];?>'">CERRAR</button>
+                                                        </center>
+
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                    
   
                                                     </div>
                                             </div>
