@@ -51,7 +51,7 @@ $perfil = $api->perfil($_SESSION['id']);
 				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
-					<div class="btn btn-danger" role="alert">
+					<div class="alert alert-warning" role="alert">
 					  	<h3>CERRAR RECLAMO</h3>
 						  <center>
 						  	    <form action="php/api/actualizarReclamo.php" method="POST">
