@@ -130,7 +130,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                     <button type="submit" class="btn btn-success" onclick="location.href='respuestaReclamoSoporte.php?id=<?php ECHO  $_GET['id'];?>'">RESPONDER</button>
                                                     <br>
                                                     <br>
-                                                    <button type="submit" class="btn btn-danger">CERRAR</button>  
+                                                    <button type="submit" class="btn btn-danger" onclick="location.href='cerrarReclamoSoporte.php?id=<?php ECHO  $_GET['id'];?>'">CERRAR</button>
                                                     </center>
   
                                                 </div>
