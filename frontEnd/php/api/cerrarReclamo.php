@@ -42,8 +42,7 @@
 
         <script>
         swal({
-            title: "RECLAMO TOMADO CON ÉXITO",
-            text: "Puede ver el mismo en la sección 'Mis Reclamos'",
+            title: "RECLAMO CERRADO",
             icon: "success",
             button: "OK",
           }).then(function() {
