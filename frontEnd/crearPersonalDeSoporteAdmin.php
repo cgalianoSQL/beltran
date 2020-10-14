@@ -53,8 +53,7 @@ $perfil = $api->perfil($_SESSION['id']);
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO PERSONAL DE SOPORTE</h3>
  
-				<form name="registro" action="php/api/registrarClient.php" method="POST">
-					<input type="hidden" name="nro_cliente" value="<?php ECHO  $_GET['cliente'];?>" >
+				<form name="registro" action="php/api/registrarSoporte.php" method="POST">
 					<br> <label for="nombre"><h5>NOMBRE</h5></label>
 					<input type="text" name="nombre" required>
 					<br> <label for="apellido"><h5>APELLIDO</h5></label>
