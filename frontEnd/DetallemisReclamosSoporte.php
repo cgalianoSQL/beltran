@@ -90,6 +90,8 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         
                                                             
                                                         if (preg_match("/^data/", $v)) {
+                                                            $count = $count + 1 ;
+
                                                           ?>
                                                                                                                  <center>
 														<td>
@@ -106,7 +108,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                                 </center>
                                                                     </div>
                                                                 <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar <?php ECHO $count ?> </button>
                                                                 </div>
                                                             </div>
                                                         </div>
