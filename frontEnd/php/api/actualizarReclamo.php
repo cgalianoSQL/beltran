@@ -37,7 +37,7 @@
                       icon: "error",
                       button: "OK",
                     }).then(function() {
-                      window.location = "../../misReclamos.php";
+                      window.location = "../../misReclamos.php?id=<?php  ECHO $_POST['id_reclamo'] ?>";
                       });
                   </script>
               <?php ;
@@ -50,7 +50,7 @@
                       icon: "error",
                       button: "OK",
                     }).then(function() {
-                      window.location = "../../misReclamosSoporte.php";
+                      window.location = "../../misReclamosSoporte.php?id=<?php  ECHO $_POST['id_reclamo'] ?>";
                       });
                   </script>
               <?php 
@@ -67,7 +67,7 @@
             icon: "success",
             button: "OK",
           }).then(function() {
-            window.location = "../../DetallesmisReclamos.php";
+            window.location = "../../DetallesmisReclamos.php?id=<?php  ECHO $_POST['id_reclamo'] ?>";
             });
           </script>
           <?php ;
@@ -81,7 +81,7 @@
             icon: "success",
             button: "OK",
           }).then(function() {
-            window.location = "../../DetallemisReclamosSoporte.php";
+            window.location = "../../DetallemisReclamosSoporte.php?id=<?php  ECHO $_POST['id_reclamo'] ?>";
             });
               </script>
           <?php         
