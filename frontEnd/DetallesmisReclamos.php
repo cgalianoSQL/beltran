@@ -76,8 +76,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         echo'<tr>';
                                                         foreach($r as $v){
                                                             
-                                                        // FIJENSE ESTO <3 
-                                                        if (json_encode($r['archivo']) == $v ) {
+                                                        if (preg_match("/^data/", $v)) {
                                                           echo '<td>'
                                                           ?>
                                                           <img width="100" src="<?php ECHO $v ?>">
