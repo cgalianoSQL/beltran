@@ -59,6 +59,18 @@ class ApiReclamos{
         return $res;
     }
 
+
+    function identify($id){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->identify($id);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+
+        return $result;
+    }
+
     function mostrarMovimientos($id){
         $reclamos = new Reclamos();
 

@@ -2,7 +2,7 @@
 include_once 'php/api/apiReclamos.php';
 session_start();
 $api = new ApiReclamos();
-$result = $api->mostrarReclamosSoporte();
+$result = $api->mostrarMisReclamosSoporte($_SESSION['id']);
 
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();

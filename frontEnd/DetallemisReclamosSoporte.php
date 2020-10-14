@@ -5,6 +5,7 @@ session_start();
 $api = new ApiReclamos();
 $lista = $api->mostrarMovimientos($_GET['id']);
 $result = $lista->fetchAll(PDO::FETCH_ASSOC);
+$reclamo = $api->identify($_GET['id']);
 
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
@@ -61,11 +62,13 @@ $perfil = $api->perfil($_SESSION['id']);
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                            Reclamo #: 
-                                            Servicio: 
-                                            Pertenece: 
-                                            Asignado: 
-                                            Estado: 
+                                            Reclamo #: <?php ECHO json_encode($reclamo['id_reclamos']); ?> 
+                                            Fecha: <?php ECHO json_encode($reclamo['fecha']); ?>
+                                            Hora: <?php ECHO json_encode($reclamo['hora']); ?> 
+                                            Servicio: <?php ECHO json_encode($reclamo['servicio']); ?> 
+                                            Pertenece: <?php ECHO json_encode($reclamo['pertenece']); ?> 
+                                            Asignado: <?php ECHO json_encode($reclamo['asignado']); ?> 
+                                            Estado: <?php ECHO json_encode($reclamo['nombre_estado']); ?>
                                             <br>
                                             <br>
                                                 <div class="table-responsive">        
