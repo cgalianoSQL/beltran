@@ -50,8 +50,8 @@ $perfil = $api->perfil($_SESSION['id']);
 		<div style="height:50px"></div>
         <div id="colorcito1" class="container" >
             <div class="row" >
-                <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
-                   <div id="tarjeta" class="card" style="width: 60rem;">
+                <div class="col col-lg-3" style="margin-top: 1%;margin-left:1% ;margin-bottom: 1%">
+                   <div id="tarjeta" class="card" style="width: 73rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                             <div class="alert alert-warning" role="alert">
                                 <h3>MIS RECLAMOS</h3>

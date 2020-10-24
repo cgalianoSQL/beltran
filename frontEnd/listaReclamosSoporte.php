@@ -48,11 +48,11 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 
 
-		<div style="height:30px" ></div>
+		<div style="height:40px" ></div>
         <div id="colorcito1" class="container" >
 			<div class="row" >
 				<div class="col col-lg-3" style="margin-top: 1%; margin-left:1% ;margin-bottom: 1%">
-					<div id="tarjeta" class="card" style="width: 68rem;">
+					<div id="tarjeta" class="card" style="width: 73rem;">
 						<div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
 						<div class="alert alert-primary" role="alert">
 							  	<h3>LISTA DE RECLAMOS</h3>

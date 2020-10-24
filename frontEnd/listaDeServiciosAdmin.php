@@ -64,11 +64,12 @@ $perfil = $api->perfil($_SESSION['id']);
                                                                 <th>Nombre:</th>
                                                                 <th>Descipcion:</th>
                                                                 <th>Estado:</th>
+                                                                <th>-</th>
+                                                                <th>-</th>
 															    </tr>
                                                         </thead>
 														<tbody >     
-
-                                                    
+    
                                                         </tbody>                
                                                     </table>             
                                                 </div>
