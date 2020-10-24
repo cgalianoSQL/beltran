@@ -16,6 +16,17 @@ class ApiServicio{
     }
 
 
+    function listaServios(){
+        $servicio = new Servicio();
+
+        $res = $servicio->lista();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
     function crear($jsonParams){
         $servicio = new Servicio();
 

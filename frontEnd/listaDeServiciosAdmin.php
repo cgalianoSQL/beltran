@@ -9,6 +9,11 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
+
+include_once 'php/api/apiServicio.php';
+$api = new ApiServicio();
+$result = $api->listaServios();
+
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +73,49 @@ $perfil = $api->perfil($_SESSION['id']);
                                                                 <th>-</th>
 															    </tr>
                                                         </thead>
-														<tbody >     
+														<tbody >   
+
+                                                        
+                                                        <?php 
+                                                        foreach($result as $r){
+                                                        echo'<tr>';
+                                                        foreach($r as $v){
+
+                                                            if ('1' == $v) {
+                                                                echo'<td>Habilitado</td>';
+                                                            
+                                                            } elseif ('0' == $v) {
+                                                                echo'<td>Deshabilitado</td>';
+                                                            
+                                                            } else {
+                                                                echo'<td>'.$v.'</td>';
+                                                            }
+														
+														}
+														
+														?>
+
+														<td>
+														<CENTER>
+														<button class="btn btn-primary" onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']);?>'" >Ver</button></td>
+														</CENTER>
+														<td>
+														<form action="php/api/tomarReclamo.php" method="POST">
+	
+															<input type="hidden" name="id_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
+															<input type="hidden" name="id_reclamo" value="<?php ECHO  json_encode($r['id_reclamos']); ?>" >
+															<button type="submit" class="btn btn-success">Tomar</button>
+													
+														</form>
+														</td>
+														<?php
+
+
+														echo'</tr>';
+														
+                                                        }
+														echo'</table>'
+                                                        ?>    
     
                                                         </tbody>                
                                                     </table>             
