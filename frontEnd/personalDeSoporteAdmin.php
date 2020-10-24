@@ -47,22 +47,22 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" onclick="location.href='crearServicioAdmin.php'" style=" margin-top: 3%;margin-left: 21%;margin-bottom: 3%">
-					<div class="card" style="width: 18rem;">
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
+				<div class="col col-lg-3" onclick="location.href='crearPersonalDeSoporteAdmin.php'" style=" margin-top: 3%;margin-left: 21%;margin-bottom: 3%">
+					<div class="card" style="width: 20rem;">
+						<div class="card-body" style="min-width:310px;max-width: 310px;min-height:330px;max-height: 330px;">
 							
 							<div class="alert alert-success" role="alert">
-						  <h3>CREAR SERVICIOS</h3>
+						  <h3>CREAR CUENTA PERSONAL DE SOPORTE</h3>
 						</div>
 						</div>
 					</div>
 				</div>
-				<div class="col col-lg-3" onclick="location.href='listaDeServiciosAdmin.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 3%">
-					<div class="card" style="width: 18rem;">
-						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 330px;">
+				<div class="col col-lg-3" onclick="location.href='listaPersonalDeSoporteAdmin.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 3%">
+					<div class="card" style="width: 20rem;">
+						<div class="card-body"  style="min-width:310px;max-width: 310px;min-height: 330px;max-height: 330px;">
 						
 							<div class="alert alert-info" role="alert">
-							 <h3>LISTA DE <br>SERVICIOS</h3>
+							 <h3>LISTA DE <br>PERSONAL DE SOPORTE</h3>
 						</div>
 					</div>
 				</div>
