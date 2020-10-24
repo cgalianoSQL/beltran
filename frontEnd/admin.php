@@ -47,12 +47,12 @@ $perfil = $api->perfil($_SESSION['id']);
 
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" onclick="location.href='crearServicioAdmin.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div class="col col-lg-3" onclick="location.href='ServiciosAdmin.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
 							<div class="alert alert-primary" role="alert">
-						  <h3>CREAR SERVICIO</h3>
+						  <h3>SERVICIOS</h3>
 						</div>
 						</div>
 					</div>
