@@ -53,11 +53,13 @@ $perfil = $api->perfil($_SESSION['id']);
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO SERVICIO</h3>
 						  <center>
-						  <form name="registro" action="php/api/sendEmail.php" method="POST">
+						  <form name="registro" action="" method="POST">
 							<br> <label for="nomServ"><h5>NOMBRE DE SERVICIO</h5></label>
 							<br> <input type="TEXT" name="nomServ" required>
-							<br> <label for="nomServ"><h5>DETALLE</h5></label>
-							<br> <input type="text" name="nomServ" required>
+							<div class="form-group">
+							<label for="formGroupExampleInput" >DETALLE</label>
+							<textarea rows="3" cols="95" name="comentario"> </textarea>
+							</div>
 							<br>
 							<br>
 							<button type="submit" class="btn btn-success">CREAR</button>
