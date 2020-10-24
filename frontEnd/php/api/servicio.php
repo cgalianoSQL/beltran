@@ -10,6 +10,17 @@ class Servicio extends DB{
         return ($query);
     }    
 
+    function crearServicio($json){
+        $query = $this->connect()->prepare('call webapi.beltran_servicios_creacion_procedimiento(:json, false)');
+        $query->execute(['json' => $json]);
+        return ($query);
+    }    
+
+    function setHabilitado($id, $boolean){
+        $query = $this->connect()->prepare('call webapi.beltran_servicios_set_habilitado_procedimiento(:id, :boolean, false)');
+        $query->execute(['id' => $id, 'boolean' => $boolean]);
+        return ($query);
+    }    
 
 }
 
