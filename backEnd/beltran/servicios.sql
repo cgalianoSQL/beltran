@@ -27,11 +27,10 @@ SET search_path FROM CURRENT;
 
 
 CREATE OR REPLACE FUNCTION beltran.servicios_set_habilitado (
-	IN p_id_servicio              integer,
-    IN p_habilitado               boolean
+	IN p_id_servicio              integer
 ) RETURNS void AS
 $$
-	UPDATE beltran.servicios SET habilitado = p_habilitado WHERE id_servicio = p_id_servicio;
+	UPDATE beltran.servicios SET habilitado = NOT habilitado WHERE id_servicio = p_id_servicio;
 $$ LANGUAGE sql VOLATILE STRICT
 SET search_path FROM CURRENT;
 

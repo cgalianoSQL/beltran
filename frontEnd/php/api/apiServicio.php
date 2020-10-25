@@ -38,10 +38,10 @@ class ApiServicio{
     }
 
 
-    function setHabilitado($id, $boolean){
+    function setHabilitado($id){
         $servicio = new Servicio();
 
-        $res = $servicio->setHabilitado($id, $boolean);
+        $res = $servicio->setHabilitado($id);
 
         $result = $res->fetch(PDO::FETCH_ASSOC);
 

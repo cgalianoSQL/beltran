@@ -6,25 +6,17 @@
     session_start();
     $api = new ApiServicio();
     $error = '';
-    if(isset($_POST['nomServ'])){
+    if(isset($_POST['id'])){
 
 
-       $Params = array(
-            'nombre'  => $_POST['nomServ'],
-            'descripcion' => $_POST['comentario']
-        );
-
-
-        $jsonParams = json_encode($Params);
-
-        $result = $api->crear($jsonParams);
+        $result = $api->setHabilitado($_POST['id']);
         if(!$result){
                 ?>
 
                 <script>
                 swal({
                     title: "ERROR CON QUERY",
-                    text: "Verifique capaz ya existe el servicio 'Lista De Servicios'",
+                    text: "Algo inesperado sucedio 'Lista De Servicios'",
                     icon: "error",
                     button: "OK",
                   }).then(function() {
@@ -37,8 +29,8 @@
 
         <script>
         swal({
-            title: "SERVICIO CREADO CON ÉXITO",
-            text: "Puede ver el mismo en la sección 'Lista De Servicios'",
+            title: "SERVICIO MODIFICADO CON ÉXITO",
+            text: "Ya se modifico estado de servicio 'Lista De Servicios'",
             icon: "success",
             button: "OK",
           }).then(function() {

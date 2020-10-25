@@ -42,7 +42,6 @@ END;$$
 
 CREATE OR REPLACE PROCEDURE webapi.beltran_servicios_set_habilitado_procedimiento(
 	p_servicio                    integer,
-	p_habilitado                  boolean,
 	inout p_estado                boolean
 )
 LANGUAGE plpgsql    
@@ -51,8 +50,7 @@ BEGIN
 	PERFORM beltran.servicios_identify_by_id(p_servicio);
 
 	PERFORM beltran.servicios_set_habilitado (
-        p_servicio,
-        p_habilitado
+        p_servicio
 	);
 
     COMMIT;

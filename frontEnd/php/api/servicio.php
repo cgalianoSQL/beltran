@@ -22,9 +22,9 @@ class Servicio extends DB{
         return ($query);
     }    
 
-    function setHabilitado($id, $boolean){
-        $query = $this->connect()->prepare('call webapi.beltran_servicios_set_habilitado_procedimiento(:id, :boolean, false)');
-        $query->execute(['id' => $id, 'boolean' => $boolean]);
+    function setHabilitado($id){
+        $query = $this->connect()->prepare('call webapi.beltran_servicios_set_habilitado_procedimiento(:id, false)');
+        $query->execute(['id' => $id]);
         return ($query);
     }    
 

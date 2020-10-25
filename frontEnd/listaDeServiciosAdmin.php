@@ -69,8 +69,7 @@ $result = $api->listaServios();
                                                                 <th>Nombre:</th>
                                                                 <th>Descipcion:</th>
                                                                 <th>Estado:</th>
-                                                                <th>-</th>
-                                                                <th>-</th>
+                                                                <th>Accion</th>
 															    </tr>
                                                         </thead>
 														<tbody >   
@@ -79,34 +78,29 @@ $result = $api->listaServios();
                                                         <?php 
                                                         foreach($result as $r){
                                                         echo'<tr>';
-                                                        foreach($r as $v){
-
-                                                            if ('1' == $v) {
+                                                        
+                                                           echo'<td>'.json_decode(json_encode($r['id_servicio'])).'</td>';
+                                                           echo'<td>'.json_decode(json_encode($r['nombre'])).'</td>';
+                                                           echo'<td>'.json_decode(json_encode($r['descripcion'])).'</td>';
+                                                           
+                                                           if (json_decode(json_encode($r['habilitado'])) == 1)
+                                                           {
                                                                 echo'<td>Habilitado</td>';
-                                                            
-                                                            } elseif ('0' == $v) {
+
+                                                           } else {
                                                                 echo'<td>Deshabilitado</td>';
                                                             
-                                                            } else {
-                                                                echo'<td>'.$v.'</td>';
-                                                            }
-														
-														}
+                                                           }
 														
 														?>
 
 														<td>
-														<CENTER>
-														<button class="btn btn-primary" onclick="location.href='DetallemisReclamosSoporte.php?id=<?php echo json_encode($r['id_reclamos']);?>'" >Ver</button></td>
-														</CENTER>
-														<td>
-														<form action="php/api/tomarReclamo.php" method="POST">
-	
-															<input type="hidden" name="id_asignado" value="<?php ECHO  $_SESSION['id'];?>" >
-															<input type="hidden" name="id_reclamo" value="<?php ECHO  json_encode($r['id_reclamos']); ?>" >
-															<button type="submit" class="btn btn-success">Tomar</button>
-													
-														</form>
+                                                            <form action="php/api/servicioSet.php" method="POST">
+
+                                                                <input type="hidden" name="id" value="<?php ECHO  json_encode($r['id_servicio']); ?>" >
+                                                                <button type="submit" class="btn btn-success">Cambiar Estado</button>
+                                                        
+                                                            </form>
 														</td>
 														<?php
 
