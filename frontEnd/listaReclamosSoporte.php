@@ -12,7 +12,7 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css"> 
     <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
@@ -51,8 +51,8 @@ $perfil = $api->perfil($_SESSION['id']);
 		<div style="height:40px" ></div>
         <div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%; margin-left:1% ;margin-bottom: 1%">
-					<div id="tarjeta" class="card" style="width: 73rem;">
+				<div class="col col-lg-3" style="margin-top: 1%; margin-bottom: 1%; margin-right: 2%">
+					<div id="tarjeta" class="card" style="width: 72rem;">
 						<div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
 						<div class="alert alert-primary" role="alert">
 							  	<h3>LISTA DE RECLAMOS</h3>
