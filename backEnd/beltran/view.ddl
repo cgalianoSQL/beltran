@@ -7,7 +7,7 @@ create or replace VIEW beltran.reclamos_vw AS
 	SELECT
 		r.id_reclamos,
 		r.creacion::date as fecha,
-		to_char(r.creacion, 'HH12:MI') as hora,
+		to_char(r.creacion, 'HH24:MI') as hora,
 		s.nombre AS servicio,
 		up.nombre AS pertenece,
 		ua.nombre AS asignado,
@@ -30,7 +30,11 @@ create or replace  VIEW beltran.usuarios_vw AS
 		u.usuario,
 		u.nombre || ' ' || u.apellido AS nombre_completo,
 		u.nro_cliente,
-		t.tipo_documento || ' ' || u.nro_documento as documento
+		t.tipo_documento || ' ' || u.nro_documento as documento,
+		u.id_tipo_permiso,
+		CASE WHEN u.estado THEN 'Habilitado'
+            ELSE 'deshabilitado'
+       	END AS estado
 	FROM
 		beltran.usuarios u
 		INNER JOIN beltran.tipos_documentos t ON t.id_tipo_documento = u.id_tipo_documento
@@ -41,7 +45,7 @@ create or replace  VIEW beltran.usuarios_vw AS
 create or replace  VIEW beltran.reclamos_movimientos_vw AS
 	SELECT
 		r.creacion::date as fecha,
-		to_char(r.creacion, 'HH12:MI') as hora,
+		to_char(r.creacion, 'HH24:MI') as hora,
 		r.comentario as detalle,
 		r.realizado,
 		m.id_reclamos,

@@ -45,6 +45,7 @@ CREATE TABLE beltran.usuarios (
 	nro_documento                 varchar(50) NOT NULL,
 	id_tipo_documento             integer REFERENCES beltran.tipos_documentos(id_tipo_documento),
 	id_tipo_permiso               integer REFERENCES beltran.tipos_permisos(id_tipo_permiso),
+	estado                        boolean DEFAULT true,
 	UNIQUE                        (nro_documento, id_tipo_documento)
 );
 

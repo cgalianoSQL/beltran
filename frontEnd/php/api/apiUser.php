@@ -61,6 +61,29 @@ class ApiUser{
     }
 
 
+    function listaSoporte(){
+        $user = new User();
+
+        $res = $user->listaSoporte();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
+    function listaCliente(){
+        $user = new User();
+
+        $res = $user->listaCliente();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
+
     function sendEmail($email, $nroCuenta){
         
         $mail = new PHPMailer();

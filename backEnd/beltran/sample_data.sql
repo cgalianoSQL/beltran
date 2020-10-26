@@ -14,6 +14,9 @@ INSERT INTO beltran.tipos_permisos (tipo_permiso)
 INSERT INTO beltran.tipos_permisos (tipo_permiso)
 	VALUES('CLIENTE');
 
+INSERT INTO beltran.tipos_permisos (tipo_permiso)
+	VALUES('SUPERVISOR');
+
 INSERT INTO beltran.tipos_documentos (tipo_documento)
 	VALUES('DNI');
 	
@@ -92,6 +95,10 @@ INSERT INTO beltran.usuarios (
 INSERT INTO beltran.usuarios (
 		usuario, password, nombre, apellido, nro_cliente, nro_documento, id_tipo_documento , id_tipo_permiso)
 	VALUES('cliente01', 'cliente01', 'Nazareno', 'Martinez', '15', 38751259, 1, 3);
+
+INSERT INTO beltran.usuarios (
+		usuario, password, nombre, apellido, nro_documento, id_tipo_documento , id_tipo_permiso)
+	VALUES('supervisor', 'supervisor', 'Christian', 'G', 38151259, 1, 4);
 
 
 INSERT INTO beltran.estados (nombre_estado)

@@ -9,6 +9,8 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
+$lista = $api->listaSoporte();
+
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +19,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Generar reclamo</title>
+	<title>Personal de soporte</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
@@ -60,13 +62,42 @@ $perfil = $api->perfil($_SESSION['id']);
                                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID #:</th>
-                                                                <th>Nombre:</th>
-                                                                <th>Descipcion:</th>
-                                                                <th>Estado:</th>
-															    </tr>
+                                                                <th>ID </th>
+                                                                <th>Usuario</th>
+                                                                <th>Nombre y Apellido</th>
+                                                                <th>Documento</th>
+                                                                <th>Estado</th>
+                                                                <th>Accion</th>
+															</tr>
                                                         </thead>
-														<tbody >     
+														<tbody >    
+
+                                                            <?php 
+                                                            foreach($lista as $r){
+                                                            echo'<tr>';
+                                                            foreach($r as $v){
+                                                            echo'<td>'.$v.'</td>';
+                                                            
+                                                            }
+                                                            
+                                                            ?>
+
+                                                            <td>
+                                                                <form action="" method="POST">
+            
+                                                                    <input type="hidden" name="id_soporte" value="<?php ECHO  $_SESSION['id'];?>" >
+                                                                    <button type="submit" class="btn btn-primary">Cambiar Password</button>
+                                                            
+                                                                </form>
+                                                            </td>
+                                                            <?php
+
+
+                                                            echo'</tr>';
+                                                            
+                                                            }
+                                                            echo'</table>'
+                                                            ?>  
 
                                                     
                                                         </tbody>                

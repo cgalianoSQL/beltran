@@ -18,7 +18,7 @@ class User extends DB{
 
 
     function registrar($jsonParams){
-        $query = $this->connect()->prepare('CALL webapi.beltran_usuarios_creacion_procedimiento(:jsonParams, false)');
+        $query = $this->connect()->prepare('call webapi.beltran_usuarios_creacion_procedimiento(:jsonParams, false)');
         $query->execute(['jsonParams' => $jsonParams]);
         return ($query);
     }    
@@ -32,8 +32,21 @@ class User extends DB{
 
 
     function perfil($id){
-        $query = $this->connect()->prepare('select * from beltran.usuarios_vw where id_usuario = :id_session');
+        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, nro_cliente, documento from beltran.usuarios_vw where id_usuario = :id_session');
         $query->execute(['id_session' => $id]);
+        return ($query);
+    }    
+
+
+    function listaSoporte(){
+        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, estado from beltran.usuarios_vw where id_tipo_permiso = :id_permiso');
+        $query->execute(['id_permiso' => 2]);
+        return ($query);
+    }    
+
+    function listaCliente(){
+        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, nro_cliente, estado  from beltran.usuarios_vw where id_tipo_permiso = :id_permiso');
+        $query->execute(['id_permiso' => 3]);
         return ($query);
     }    
 
