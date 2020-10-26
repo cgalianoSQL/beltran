@@ -110,6 +110,9 @@ INSERT INTO beltran.estados (nombre_estado)
 INSERT INTO beltran.estados (nombre_estado)
 	VALUES('CERRADA');
 
+INSERT INTO beltran.estados (nombre_estado)
+	VALUES('REABIERTO');
+
 
 
 

@@ -91,24 +91,24 @@ $perfil = $api->perfil($_SESSION['id']);
                                                           ?>
                                                                                                                  <center>
 														<td>
-                                                     <!-- Botón en HTML (lanza el modal en Bootstrap) -->
-                                                    <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen </a>
+                                                    <!-- Botón en HTML (lanza el modal en Bootstrap) -->
+                                                             <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen </a>
                                                     
                                                     <!-- Modal / Ventana / Overlay en HTML -->
-                                                    <div id="victorModal" class="modal fade">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-body">
-                                                                <center>
-                                                                <img width="400" src="<?php ECHO $v ?> ">
-                                                                </center>
+                                                            <div id="victorModal" class="modal fade">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body">
+                                                                        <center>
+                                                                        <img width="400" src="<?php ECHO json_decode(json_encode($r['archivo']))?> ">
+                                                                        </center>
+                                                                            </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar </button>
+                                                                        </div>
                                                                     </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar </button>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
                                                         </td>
                                                         </center>
                                                           <?php
@@ -134,6 +134,17 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         <br>
                                                         <br>
                                                         <button type="submit" class="btn btn-danger" onclick="location.href='cerrarReclamo.php?id=<?php ECHO  $_GET['id'];?>'">CERRAR</button>
+                                                        </center>
+
+                                                    <?php
+                                                    }
+                                                    ?>
+
+                                                    <?php
+                                                    if (json_decode(json_encode($reclamo['nombre_estado'])) == "CERRADA") {
+                                                    ?>
+                                                        <center>
+                                                            <button type="submit" class="btn btn-info" onclick="location.href='reabrirReclamo.php?id=<?php ECHO  $_GET['id'];?>'">REABRIR</button>
                                                         </center>
 
                                                     <?php

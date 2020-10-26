@@ -29,6 +29,13 @@ class Reclamos extends DB{
         $query = $this->connect()->prepare('CALL webapi.beltran_movimientos_reclamo_cerrar(:jsonParams, false)');
         $query->execute(['jsonParams' => $jsonParams]);
         return ($query);
+    }   
+    
+    
+    function reabrirReclamo($jsonParams){
+        $query = $this->connect()->prepare('CALL webapi.beltran_movimientos_reclamo_reabrir(:jsonParams, false)');
+        $query->execute(['jsonParams' => $jsonParams]);
+        return ($query);
     }    
 
 
