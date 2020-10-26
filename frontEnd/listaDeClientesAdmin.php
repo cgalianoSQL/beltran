@@ -84,7 +84,7 @@ $lista = $api->listaCliente();
                                                             <td>
                                                                 <form action="" method="POST">
                                                                     <input type="hidden" name="id_soporte" value="<?php ECHO  $_SESSION['id'];?>" >
-                                                                    <button type="submit" class="btn btn-primary">Cambiar Password</button>
+                                                                    <button type="submit" class="btn btn-primary">modificar</button>
                                                             
                                                                 </form>
                                                             </td>
