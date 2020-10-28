@@ -35,6 +35,11 @@
                 $_SESSION['id'] = $id["beltran_usuarios_get_id"];
                 header("Location: ../../soporte.php");
             break;
+            case 'SUPERVISOR':
+                $_SESSION['permiso'] = 'SUPERVISOR';
+                $_SESSION['id'] = $id["beltran_usuarios_get_id"];
+                header("Location: ../../supervisor.php");
+            break;
             default:
             ?>
                  

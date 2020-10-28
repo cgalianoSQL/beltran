@@ -27,12 +27,12 @@ $perfil = $api->perfil($_SESSION['id']);
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='admin.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='supervisor.php'" style="border-color: white">
 				    INICIO
 				  </button>
 				</li>
 				<li class="nav-item">
-					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaAdmin.php'" style="border-color: white">
+					<button class="btn btn-secondary" type="button" onclick="location.href='miCuentaSupervisor.php'" style="border-color: white">
 				    MI CUENTA
 				  </button>
 				</li>
