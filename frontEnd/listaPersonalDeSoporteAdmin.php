@@ -16,14 +16,17 @@ $lista = $api->listaSoporte();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Personal de soporte</title>
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<title>LISTA DE PERSONAL DE SOPORTE</title>
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -67,7 +70,7 @@ $lista = $api->listaSoporte();
                                                                 <th>Nombre y Apellido</th>
                                                                 <th>Documento</th>
                                                                 <th>Estado</th>
-                                                                <th>Accion</th>
+                                                                <th>Modificar Estado</th>
 															</tr>
                                                         </thead>
 														<tbody >    
@@ -86,7 +89,9 @@ $lista = $api->listaSoporte();
                                                                 <form action="" method="POST">
             
                                                                     <input type="hidden" name="id_soporte" value="<?php ECHO  $_SESSION['id'];?>" >
-                                                                    <button type="submit" class="btn btn-primary">Modificar</button>
+                                                                    <center>
+                                                               <button type="submit" class="btn btn-primary">Habilitar/Deshabilitar</button>                                                          
+                                                               </center> 
                                                             
                                                                 </form>
                                                             </td>
@@ -113,7 +118,7 @@ $lista = $api->listaSoporte();
             </div>  
         </div>   
       
-        <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="datatables/datatables.min.js"></script>    
