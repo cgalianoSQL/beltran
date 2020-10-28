@@ -16,7 +16,7 @@
                 <script>
                 swal({
                     title: "ERROR CON QUERY",
-                    text: "Algo inesperado sucedio 'Lista De Servicios'",
+                    text: "Algo inesperado sucedió",
                     icon: "error",
                     button: "OK",
                   }).then(function() {
@@ -29,8 +29,8 @@
 
         <script>
         swal({
-            title: "SERVICIO MODIFICADO CON ÉXITO",
-            text: "Ya se modifico estado de servicio 'Lista De Servicios'",
+            title: "ESTADO MODIFICADO",
+            text: "Ha modifico el estado del servicio con éxito",
             icon: "success",
             button: "OK",
           }).then(function() {
@@ -46,7 +46,7 @@
         <script>
         swal({
             title: "ERROR DE API",
-            text: "Verifique los campos ingresados no son validos",
+            text: "Verifique los campos ingresados",
             icon: "error",
             button: "OK",
           }).then(function() {
