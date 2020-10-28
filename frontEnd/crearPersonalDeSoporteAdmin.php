@@ -20,8 +20,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<title>Generar reclamo</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="estilo/secundario.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -49,32 +48,34 @@ $perfil = $api->perfil($_SESSION['id']);
 			<div class="row" >
 				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 4%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 470px;">
+						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 730px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO PERSONAL DE SOPORTE</h3>
-				
+				<center>
 				<form name="registro" action="php/api/registrarSoporte.php" method="POST">
-					<br> <label for="nombre"><h5>NOMBRE</h5></label>
+					<br> <label for="nombre"><h5>NOMBRE:</h5></label><br>
 					<input type="text" name="nombre" required>
-					<br> <label for="apellido"><h5>APELLIDO</h5></label>
+					<br> <label for="apellido"><h5>APELLIDO</h5></label><br>
 					<input type="text" name="apellido" required>
-					<br> <label for="tipdoc"><h5>TIPO DE DOCUMENTO</h5></label>
+					<br> <label for="tipdoc"><h5>TIPO DE DOCUMENTO</h5></label><br>
 					<select id="opciondoc" name="id_tipo_documento"> 
 						<option value ="1" selected>DNI</option>
 						<option value ="2">PASAPORTE</option>
 						<option value ="3">EXTRANJERO</option>
 					</select>
-					<br> <label for="numdoc"><h5>NUMERO DE DOCUMENTO</h5></label>
+					<br> <label for="numdoc"><h5>NUMERO DE DOCUMENTO</h5></label><br>
 					<input type="text" name="nro_documento" required>
-					<br> <label for="nombreuser"><h5>NOMBRE DE USUARIO</h5></label>
+					<br> <label for="nombreuser"><h5>NOMBRE DE USUARIO</h5></label><br>
 					<input type="text" name="usuario" required>          
-					<br> <label for="password"><h5>CONTRASEÑA</h5></label>
+					<br> <label for="password"><h5>CONTRASEÑA</h5></label><br>
 					<input type="password" name="password" required>
-					<br> <label for="password"><h5>REPETIR CONTRASEÑA</h5></label>
+					<br> <label for="password"><h5>REPETIR CONTRASEÑA</h5></label><br>
 					<input type="password" name="passwordVerificacion" required>
 					<br>
 					<br><button type="submit" class="btn btn-success">CREAR CUENTA</button>
 				</form>						
+				</center>
+				
 						</div>
 					</div>
 				</div>

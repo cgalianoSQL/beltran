@@ -47,14 +47,14 @@ $perfil = $api->perfil($_SESSION['id']);
 
 		<div id="colorcito1" class="container" >
 			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%;margin-left:15% ;margin-bottom: 5%">
+				<div class="col col-lg-3" style="margin-top: 1%;margin-left:11% ;margin-bottom: 3%">
 					<div id="tarjeta" class="card" style="width: 55rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:220px;max-height: 400px;">
 							<div class="alert alert-primary" role="alert">
-								<h3>MIS DATOS</h3>
-								<h5>NOMBRE:	<?php ECHO $perfil['nombre_completo']?> </h5> 
+							
+							<h3>MIS DATOS</h3>
 								<h5>USUARIO: <?php ECHO $perfil['usuario']?></h5>
-								<h5>TIPO Y Nro DE DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
+								<h5>DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
 							</div>
 						</div>
 					
@@ -62,7 +62,8 @@ $perfil = $api->perfil($_SESSION['id']);
 					<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 450px;">
 						<div class="alert alert-primary" role="alert">
 					  		<h3>CAMBIAR CONTRASEÑA</h3>
-							<form action="php/api/cambiarPassword.php" method="POST">
+							  <center>
+							  <form action="php/api/cambiarPassword.php" method="POST">
 								<input type="hidden" name="id" value="<?php ECHO  $_SESSION['id'];?>" >
 								<div class="form-group">
 								<label for="formGroupExampleInput" >Nueva Contraseña</label> <br>
@@ -72,7 +73,8 @@ $perfil = $api->perfil($_SESSION['id']);
 									<input type="password" class="form-control" id="formGroupExampleInput" placeholder="Repita su nueva contraseña" name="new_password" required>
 								</div>
 								<button type="submit" class="btn btn-success">ENVIAR</button>
-							</form>
+							</form>							  
+							  </center>
 						</div>
 						
 					</div>

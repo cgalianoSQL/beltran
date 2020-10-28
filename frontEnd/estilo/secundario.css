@@ -1,0 +1,62 @@
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-image: url("../img/fondo.jpg");
+}
+
+
+#colorcito1, #{ 
+	background-color:#F9F9F9;
+	margin-top: 2%;
+	height: auto;
+	width: auto;
+	text-align: center;
+}
+
+
+h3{
+	font-family: 'Assistant', sans-serif;
+	text-align: center;
+	text-shadow: 1px #2E1070;
+	color: #3C0DA8;
+
+}
+
+h4{
+	font-family: 'Assistant', sans-serif;
+	text-align: center;
+	text-shadow: 1px #2E1070;
+	color: #3C0DA8;
+
+}
+
+h5{
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	}
+
+	input[type=text],input[type=password], input[type=submit]{
+        width: 70%;
+        padding: 5px 5px;
+        margin: 2px 0;
+		display: inline-block;
+        
+	}
+	label{
+		padding: 1px 1px;;
+		margin: 1px;
+		display: inline-block;
+		
+	}
+
+	#opciondoc{
+        width: 70%;
+        padding: 5px 5px;
+        margin: 2px 0;
+		display: inline-block;
+        
+}

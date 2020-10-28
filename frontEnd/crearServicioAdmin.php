@@ -20,8 +20,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<title>Generar reclamo</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="estilo/secundario.css" rel="stylesheet" type="text/css">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -49,18 +48,18 @@ $perfil = $api->perfil($_SESSION['id']);
 			<div class="row" >
 				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
+						<div class="card-body" style="min-width:100%;max-width: 280px;min-height:280px;max-height: 395px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO SERVICIO</h3>
 						  <center>
 						 	<form name="registro" action="php/api/crearServicio.php" method="POST">
 								<br> <label for="nomServ"><h5>NOMBRE DE SERVICIO</h5></label>
-								<br> <input type="TEXT" name="nomServ" required>
+								<br> <input type="text" name="nomServ" required>
 								<div class="form-group">
 								<label for="formGroupExampleInput" >DETALLE</label>
-								<textarea rows="3" cols="95" name="comentario"> </textarea>
-								</div>
 								<br>
+								<textarea rows="3" cols="65" name="comentario"> </textarea>
+								</div>
 								<br>
 								<button type="submit" class="btn btn-success">CREAR</button>
 							</form>						  
