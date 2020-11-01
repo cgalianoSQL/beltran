@@ -92,26 +92,28 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         if (preg_match("/^data/", $v)) {
 
                                                           ?>
-                                                                                                                 <center>
+                                                        <center>
 														<td>
                                                      <!-- Botón en HTML (lanza el modal en Bootstrap) -->
-                                                    <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
+                                                    <img width="100" src="<?php ECHO json_decode(json_encode($r['archivo']))?> ">
                                                     
-                                                    <!-- Modal / Ventana / Overlay en HTML -->
-                                                    <div id="victorModal" class="modal fade">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-body">
-                                                                <center>
-                                                                <img width="400" src="<?php ECHO $v ?> ">
-                                                                </center>
+                                                            <a href="#victorModal" value="s" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
+                                                            
+                                                            <!-- Modal / Ventana / Overlay en HTML -->
+                                                            <div id="victorModal" class="modal fade">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body">
+                                                                        <center>
+                                                                        <img width="400" src="<?php ECHO json_decode(json_encode($r['archivo'])) ?> ">
+                                                                        </center>
+                                                                            </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar </button>
+                                                                        </div>
                                                                     </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar </button>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
                                                         </td>
                                                         </center>
                                                           <?php
