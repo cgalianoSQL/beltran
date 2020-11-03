@@ -133,3 +133,38 @@ BEGIN
     return;
 
 END;$$
+
+
+CREATE OR REPLACE PROCEDURE webapi.beltran_usuarios_verificacion_nro_cliente_procedimiento(
+	p_nro_cliente                 text,
+	inout p_estado                boolean
+)
+LANGUAGE plpgsql    
+AS $$
+BEGIN
+	IF NOT webapi.beltran_usuarios_verificacion_nro_cliente(p_nro_cliente)
+	THEN
+	    RAISE EXCEPTION 'webapi.beltran_usuarios_verificacion_nro_cliente_procedimiento EXCEPTION: not exists';
+	END IF;
+
+    COMMIT;
+	   
+   	p_estado := true;
+   
+    return;
+
+END;$$
+
+
+
+CREATE OR REPLACE FUNCTION webapi.beltran_usuarios_verificacion_nro_cliente (
+	IN p_nro_cliente              text
+) RETURNS boolean AS 
+$$
+	SELECT exists(
+		select 1 from beltran.nro_clientes where nro_cliente = p_nro_cliente
+	);
+
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT;
+

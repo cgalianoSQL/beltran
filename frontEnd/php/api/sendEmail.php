@@ -1,3 +1,6 @@
+<html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
 <?php
 
     include_once 'apiUser.php';
@@ -8,16 +11,73 @@
 
     if(isset($_POST['numCuenta']) && isset($_POST['email'])){
 
-       try {
-            $api->sendEmail($_POST['email'], $_POST['numCuenta']);
-            header("Location: ../../login.php");
+        $result = $api->validarCliente($_POST['numCuenta']);
 
-        } catch (Exception $e) {
-            $api->error('Error al ejecutar la API');
-        }
+        if(!$result){
+
+            ?>
+                <script>
+                    swal({
+                        title: "Numero de cliente no valido",
+                        text: "",
+                        icon: "error",
+                        button: "OK",
+                    }).then(function() {
+                        window.location = "../../registro.php";
+                        });
+                </script>
+            <?php   
+
+        } else 
+        {
+
+            try {
+                    $api->sendEmail($_POST['email'], $_POST['numCuenta']);
+                    ?>
+
+                        <script>
+                        swal({
+                            title: "Revise su Email",
+                            text: "",
+                            icon: "success",
+                            button: "OK",
+                        }).then(function() {
+                            window.location = "../../login.php";
+                            });
+                    </script>
+                    <?php   
+
+                } catch (Exception $e) {
+                    ?>
+
+                        <script>
+                        swal({
+                            title: "Error revise los datos",
+                            text: "",
+                            icon: "error",
+                            button: "OK",
+                        }).then(function() {
+                            window.location = "../../login.php";
+                            });
+                    </script>
+                    <?php   
+                }
+            }
 
     }else{
-        $api->error('Error al llamar a la API');
+        ?>
+
+            <script>
+            swal({
+                title: "ERROR: Revise los datos enviados",
+                text: "",
+                icon: "success",
+                button: "error",
+            }).then(function() {
+                window.location = "../../login.php";
+                });
+        </script>
+        <?php   
     }
     
 ?>

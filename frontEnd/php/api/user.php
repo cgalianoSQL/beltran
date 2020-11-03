@@ -10,6 +10,12 @@ class User extends DB{
         return ($query);
     }    
 
+    function verificarNroCliente($nroCliente){
+        $query = $this->connect()->prepare('call webapi.beltran_usuarios_verificacion_nro_cliente_procedimiento(:nroCliente, false)');
+        $query->execute(['nroCliente' => $nroCliente]);
+        return ($query);
+    }    
+
     function obtenerIdPorUsuario($user, $password){
         $query = $this->connect()->prepare('SELECT webapi.beltran_usuarios_get_id(:user , :pass)');
         $query->execute(['user' => $user, 'pass' => $password]);

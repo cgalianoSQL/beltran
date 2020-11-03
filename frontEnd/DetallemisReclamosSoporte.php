@@ -95,9 +95,9 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         <center>
 														<td>
                                                      <!-- Botón en HTML (lanza el modal en Bootstrap) -->
-                                                    <img width="100" src="<?php ECHO json_decode(json_encode($r['archivo']))?> ">
+                                                    <img width="100"  class="img-fluid" src="<?php ECHO json_decode(json_encode($r['archivo']))?> ">
                                                     
-                                                            <a href="#victorModal" value="s" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
+                                                            <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen</a>
                                                             
                                                             <!-- Modal / Ventana / Overlay en HTML -->
                                                             <div id="victorModal" class="modal fade">
@@ -105,7 +105,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                                     <div class="modal-content">
                                                                         <div class="modal-body">
                                                                         <center>
-                                                                        <img width="400" src="<?php ECHO json_decode(json_encode($r['archivo'])) ?> ">
+                                                                        <img width="400" src="<?php $_REQUEST['img'] ?> ">
                                                                         </center>
                                                                             </div>
                                                                         <div class="modal-footer">

@@ -97,10 +97,60 @@ class ApiUser{
         $mail -> Password = '13245tester'; //
         $mail -> SetFrom('no-reply@hoecode.org');
         $mail -> Subject = 'Nueva Consulta De Su Pagina';
-        $mail -> Body = 'http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta;
+        $mail -> Body = '
+        
+
+                <html>
+                <body>
+
+                    <td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0;">
+                        <h1>RR-ONLINE</h1>
+                        <h3>Le da la bienvenida</h3>
+                        <img src="https://www.socialchef.es/wp-content/uploads/atencion_cliente_social-media.jpg" alt="Magic" width="300" height="190" style="display: block;" />
+                        <p>Termine su registro usando el siguiente link.</p>
+                        <a href="http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta.'" style="background: white;  outline: none;
+                        text-decoration: none;
+                        display: inline-block;
+                        text-align: center;
+                        font-family: Times New Roman;
+                        border: none;
+                        outline: none;
+                        background: #1f8b40;
+                        color: #fff;
+                        font-size: 18px;
+                        border-radius: 15px;
+                        margin-top: 5px;
+                        ">Terminar Registro</a>
+                        <br><br>
+                        http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta.'
+                        
+                    </td>
+                        
+        
+        
+        
+    
+        
+            </body>
+        </html>
+        
+        ';
         $mail -> AddAddress($email); //A quien se enviara el mail
         $mail -> Send();
     }
+
+    
+    function validarCliente($nroCliente){
+        $user = new User();
+
+        $res = $user->verificarNroCliente($nroCliente);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
 
 
     function error($mensaje){
