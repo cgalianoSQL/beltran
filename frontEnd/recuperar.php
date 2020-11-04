@@ -9,7 +9,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
 	<link href="estilo/login.css" rel="stylesheet" type="text/css">
-	<title>REGISTRO</title>
+	<title>Recuperar Contraseña</title>
 </head>
 <body>
 
@@ -17,18 +17,14 @@
 		<center>
 			<br>
 			<img class="imgLogo" src="img\logo.png">
-			<form name="registro" action="php/api/sendEmail.php" method="POST">
-				<br> <label for="numCuenta"><h5>NÚMERO DE CUENTA</h5></label>
-				<br> <input type="text" name="numCuenta" required>
+			<form name="registro" action="php/api/recuperar.php" method="POST">
+				<br> <label for="username"><h5>NOMBRE DE USUARIO</h5></label>
+				<br> <input type="text" name="username" required>
 				<br> <label for="email"><h5>CORREO ELECTRÓNICO</h5></label>
 				<br> <input type="email" name="email" required>
-				<br> <button type="submit" class="btn btn-success">REGISTRAR CUENTA</button>
+				<br> <button type="submit" class="btn btn-success">Recuperar Contraseña</button>
 				<br>
-				<!--<label>
-					<input type="checkbox" checked="checked" name="terminos" required> ACEPTAR - Términos de uso y Políticas de privacidad
-				</label> 
-				<br> -->
-				<button type="button" class="btn btn-primary" onclick="location.href='login.php'"> INGRESAR CON UNA CUENTA EXISTENTE</button>
+				<button type="button" class="btn btn-info" onclick="location.href='login.php'"> Volver a Login</button>
 			</form>
 			</div>
 		</center>

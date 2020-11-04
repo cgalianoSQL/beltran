@@ -18,6 +18,7 @@
 			<img class="imgLogo" src="img\logo.png">
 			<form name="registro" action="php/api/registrarClient.php" method="POST">
 				<input type="hidden" name="nro_cliente" value="<?php ECHO  $_GET['cliente'];?>" >
+				<input type="hidden" name="email" value="<?php ECHO  $_GET['email'];?>" >
 				<br> <label for="nombre"><h5>NOMBRE</h5></label>
 				<br> <input type="text" name="nombre" required>
 				<br> <label for="apellido"><h5>APELLIDO</h5></label>

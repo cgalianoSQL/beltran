@@ -89,6 +89,29 @@ SET search_path FROM CURRENT
 SECURITY DEFINER;
 
 
+CREATE OR REPLACE FUNCTION webapi.beltran_usuarios_recuperar_password (
+	IN p_usuario                  text,
+	IN p_email                    text
+) RETURNS text AS $$
+DECLARE
+	v_usuario_jsonb               jsonb;
+	v_usuario	                  beltran.usuarios;
+
+BEGIN
+	IF not exists (select * from beltran.usuarios_vw where usuario = p_usuario AND email = p_email )
+	THEN
+	    RAISE EXCEPTION 'webapi.beltran_usuarios_recuperar_password EXCEPTION: parameter is not a valid params';
+	END IF;
+
+    v_usuario := beltran.usuarios_identify_by_usuario(p_usuario);
+
+    RETURN v_usuario.password;
+END;
+$$ LANGUAGE plpgsql VOLATILE STRICT
+SET search_path FROM CURRENT
+SECURITY DEFINER;
+
+
 ---------------------------------
 -- IDENTIFY AND SEARCH
 ---------------------------------
@@ -124,6 +147,12 @@ BEGIN
         v_usuario_jsonb ->> 'nro_documento',
         (v_usuario_jsonb ->> 'id_tipo_documento')::integer,
         (v_usuario_jsonb ->> 'id_tipo_permiso')::integer
+	);
+
+	PERFORM beltran.usuarios_contactos(
+		v_usuario.id_usuario,
+		1,
+		v_usuario_jsonb ->> 'email' 
 	);
 
     COMMIT;

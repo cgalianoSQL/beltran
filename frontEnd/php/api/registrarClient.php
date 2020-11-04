@@ -1,3 +1,6 @@
+<html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
 <?php
 
     include_once 'apiUser.php';
@@ -16,7 +19,8 @@
             'nro_cliente' => $_POST['nro_cliente'],
             'nro_documento' => $_POST['nro_documento'],
             'id_tipo_documento' => (int)$_POST['id_tipo_documento'],
-            'id_tipo_permiso' => 3
+            'id_tipo_permiso' => 3,
+            'email' => $_POST['email']
         );
 
         $jsonParams = json_encode($Params);
@@ -25,14 +29,47 @@
         $result = $api->registrar($jsonParams);
 
         if(!$result){
-            $api->error('Error al ejecutar la API');
+            ?>
+                <script>
+                    swal({
+                        title: "Error de Query",
+                        text: "",
+                        icon: "error",
+                        button: "OK",
+                    }).then(function() {
+                        window.location = "../../login.php";
+                        });
+                </script>
+            <?php  
         } else {
            
-        header("Location: ../../login.php");           
+        ?>
+            <script>
+                swal({
+                    title: "Creacion exitosa",
+                    text: "",
+                    icon: "success",
+                    button: "OK",
+                }).then(function() {
+                    window.location = "../../login.php";
+                    });
+            </script>
+        <?php          
         }
 
     }else{
-        $api->error('Error al llamar a la API');
+        ?>
+            <script>
+                swal({
+                    title: "Error de Api",
+                    text: "",
+                    icon: "error",
+                    button: "OK",
+                }).then(function() {
+                    window.location = "../../login.php";
+                    });
+            </script>
+        <?php  
     }
     
 ?>
