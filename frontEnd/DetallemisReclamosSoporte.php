@@ -131,7 +131,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         </tbody>                
                                                     </table>
                                                 <?php
-                                                if (json_decode(json_encode($reclamo['nombre_estado'])) != "CERRADA") {
+                                                if (json_decode(json_encode($reclamo['nombre_estado'])) != "CERRADA" && json_decode(json_encode($reclamo['asignado'])) != 'soporte'  ) {
                                                 ?>
                                                     <center>
                                                         <br>

@@ -93,7 +93,7 @@ $perfil = $api->perfil($_SESSION['id']);
 														<td>
                                                             <img width="100" src="<?php ECHO json_decode(json_encode($r['archivo']))?> ">
                                                               <!-- Botón en HTML (lanza el modal en Bootstrap) -->
-                                                             <a href="#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen </a>
+                                                             <a href="?id=ss#victorModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Ver Imagen </a>
                                                     
                                                              <!-- Modal / Ventana / Overlay en HTML -->
                                                             <div id="victorModal" class="modal fade">
