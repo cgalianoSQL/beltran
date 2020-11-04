@@ -288,6 +288,11 @@ BEGIN
 		4
 	);
 
+	PERFORM beltran.reclamos_set_asignado(
+		(v_reclamo_jsonb ->> 'id_reclamo')::integer,
+		8
+	);
+
     COMMIT;
 	   
    	p_estado := true;

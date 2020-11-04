@@ -54,8 +54,8 @@ class Reclamos extends DB{
 
 
     function mostrarReclamosSoporte(){
-        $query = $this->connect()->prepare('SELECT id_reclamos, fecha, hora, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw WHERE asignado = :soporte AND  nombre_estado = :estado');
-        $query->execute(['soporte' => 'soporte', 'estado' => 'ABIERTO']);
+        $query = $this->connect()->prepare('SELECT id_reclamos, fecha, hora, servicio, pertenece, asignado, nombre_estado FROM beltran.reclamos_vw WHERE asignado = :soporte AND  (nombre_estado = :estado or nombre_estado = :estado2 )');
+        $query->execute(['soporte' => 'soporte', 'estado' => 'ABIERTO', 'estado2' => 'REABIERTO']);
         return ($query);
     }    
 
