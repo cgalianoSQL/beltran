@@ -8,12 +8,19 @@
     $error = '';
     if(isset($_POST['comentario'])){
 
-      $tipoArchivo = $_FILES['archivo']['type'];
-      $nombreArchivo = $_FILES['archivo']['name'];
-      $tamanoArchivo = $_FILES['archivo']['size'];
-      $imagenSubida = fopen($_FILES['archivo']['tmp_name'], 'r');
-      $binariosImagen = fread($imagenSubida, $tamanoArchivo);
-      $base64 = 'data:image/' . $tipoArchivo . ';base64,' . base64_encode($binariosImagen);
+      if ($_FILES['archivo']['size'] > 0)
+      {
+        $tipoArchivo = $_FILES['archivo']['type'];
+        $nombreArchivo = $_FILES['archivo']['name'];
+        $tamanoArchivo = $_FILES['archivo']['size'];
+        $imagenSubida = fopen($_FILES['archivo']['tmp_name'], 'r');
+        $binariosImagen = fread($imagenSubida, $tamanoArchivo);
+        $base64 = 'data:image/' . $tipoArchivo . ';base64,' . base64_encode($binariosImagen);
+      } else {
+        $imagenSubida = fopen("../../img/imagen.jpg", 'r');
+        $binariosImagen = fread($imagenSubida, 3000000);
+        $base64 = 'data:image/jpg;base64,' . base64_encode($binariosImagen);
+      }
 
        $Params = array(
             'id_servicio'  => $_POST['id_servicio'],
