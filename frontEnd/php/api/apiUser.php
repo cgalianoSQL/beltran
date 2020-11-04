@@ -60,7 +60,6 @@ class ApiUser{
         return $result;
     }
 
-
     function listaSoporte(){
         $user = new User();
 

@@ -4,6 +4,12 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'CLIENTE')
 {
   header("Location: login.php");
 }
+include_once 'php/api/apiReclamos.php';
+$api = new ApiReclamos();
+$abierto = $api->misReclamosInfo(1, $_SESSION['id']);
+$cancelado = $api->misReclamosInfo(3, $_SESSION['id']);
+$curso = $api->misReclamosInfo(2, $_SESSION['id']);
+
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
@@ -61,11 +67,11 @@ $perfil = $api->perfil($_SESSION['id']);
 							<div class="alert alert-info" role="alert">
 							 <h3>MIS<br>RECLAMOS</h3>
 							</div>
-							<h5>Abiertos:</h5>
+							<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
 							<br>
-							<h5>Cerrados:</h5>
+							<h5>Cerrados: <?php ECHO $cancelado["count"]; ?></h5>
 							<br>
-							<h5>En proceso de solución: </h5>
+							<h5>En proceso de solución: <?php ECHO $curso["count"]; ?></h5>
 						</div>
 					</div>
 				</div>

@@ -82,6 +82,17 @@ class ApiReclamos{
         return $result;
     }
 
+
+    function misReclamosInfo($id, $pertenece){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->misReclamosInfo($id, $pertenece);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     function mostrarMovimientos($id){
         $reclamos = new Reclamos();
 

@@ -73,6 +73,12 @@ class Reclamos extends DB{
         return ($query);
     }   
 
+    function misReclamosInfo($id, $id_pertenece){
+        $query = $this->connect()->prepare('SELECT count(*) from beltran.reclamos where id_estados = :id AND id_usuario_pertenece = :id_pertenece ');
+        $query->execute(['id' => $id, 'id_pertenece' => $id_pertenece]);
+        return ($query);
+    }   
+
 
 
 }

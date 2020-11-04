@@ -34,12 +34,14 @@ create or replace  VIEW beltran.usuarios_vw AS
 		u.id_tipo_permiso,
 		CASE WHEN u.estado THEN 'Habilitado'
             ELSE 'deshabilitado'
-       	END AS estado
+       	END AS estado,
+       	c.descripcion as email
 	FROM
 		beltran.usuarios u
 		INNER JOIN beltran.tipos_documentos t ON t.id_tipo_documento = u.id_tipo_documento
+		INNER JOIN beltran.usuarios_contactos c ON c.id_usuario = u.id_usuario and c.id_tipo_contacto = 1
 	ORDER BY 
-		u.id_usuario ASC;
+		u.id_usuario asc;
 
 
 create or replace  VIEW beltran.reclamos_movimientos_vw AS
