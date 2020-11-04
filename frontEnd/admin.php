@@ -100,6 +100,17 @@ $perfil = $api->perfil($_SESSION['id']);
 						</div>
 					</div>
 				</div>
+				
+				<div class="col col-lg-3" onclick="location.href='altanumCliente.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
+							<div class="alert alert-info" role="alert">
+						  <h3>Numeros de clientes</h3>
+						</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
