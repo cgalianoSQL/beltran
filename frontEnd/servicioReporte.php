@@ -47,8 +47,8 @@ $perfil = $api->perfil($_SESSION['id']);
 
 		<center>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-		<div>
-		<canvas id="myChart" style = "width=20; height=20;"></canvas>
+		<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+		<canvas id="myChart" ></canvas>
 		</div>
 
 		<script>
