@@ -80,7 +80,7 @@ $perfil = $api->perfil($_SESSION['id']);
 					</div>
 				</div>
 
-				<div class="col col-lg-3" onclick="location.href='.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div class="col col-lg-3" onclick="location.href='servicioReporte.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
