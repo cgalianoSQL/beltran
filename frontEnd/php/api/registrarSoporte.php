@@ -16,7 +16,6 @@
             'password' => $_POST['password'],
             'nombre' => $_POST['nombre'],
             'apellido' => $_POST['apellido'],
-            'nro_cliente' => null,
             'nro_documento' => $_POST['nro_documento'],
             'id_tipo_documento' => (int)$_POST['id_tipo_documento'],
             'id_tipo_permiso' => 2

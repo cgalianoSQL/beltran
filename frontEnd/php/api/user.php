@@ -9,12 +9,7 @@ class User extends DB{
         $query->execute(['user' => $user, 'pass' => $password]);
         return ($query);
     }    
-
-    function verificarNroCliente($nroCliente){
-        $query = $this->connect()->prepare('call webapi.beltran_usuarios_verificacion_nro_cliente_procedimiento(:nroCliente, false)');
-        $query->execute(['nroCliente' => $nroCliente]);
-        return ($query);
-    }    
+    
 
     function obtenerIdPorUsuario($user, $password){
         $query = $this->connect()->prepare('SELECT webapi.beltran_usuarios_get_id(:user , :pass)');
@@ -38,7 +33,7 @@ class User extends DB{
 
 
     function perfil($id){
-        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, nro_cliente, documento, email from beltran.usuarios_vw where id_usuario = :id_session');
+        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, email from beltran.usuarios_vw where id_usuario = :id_session');
         $query->execute(['id_session' => $id]);
         return ($query);
     }    
@@ -51,7 +46,7 @@ class User extends DB{
     }    
 
     function listaCliente(){
-        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, nro_cliente, estado  from beltran.usuarios_vw where id_tipo_permiso = :id_permiso');
+        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, estado  from beltran.usuarios_vw where id_tipo_permiso = :id_permiso');
         $query->execute(['id_permiso' => 3]);
         return ($query);
     }    

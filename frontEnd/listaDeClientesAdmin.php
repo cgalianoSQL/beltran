@@ -68,7 +68,6 @@ $lista = $api->listaCliente();
                                                                 <th>Usuario</th>
                                                                 <th>Nombre y Apellido</th>
                                                                 <th>Documento</th>
-                                                                <th>Numero Cliente</th>
                                                                 <th>Estado</th>
                                                                 <th>Modificar Estado</th>
 															    </tr>

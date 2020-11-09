@@ -18,8 +18,6 @@
 			<br>
 			<img class="imgLogo" src="img\logo.png">
 			<form name="registro" action="php/api/sendEmail.php" method="POST">
-				<br> <label for="numCuenta"><h5>NÚMERO DE CUENTA</h5></label>
-				<br> <input type="text" name="numCuenta" required>
 				<br> <label for="email"><h5>CORREO ELECTRÓNICO</h5></label>
 				<br> <input type="email" name="email" required>
 				<br> <button type="submit" class="btn btn-success">REGISTRAR CUENTA</button>

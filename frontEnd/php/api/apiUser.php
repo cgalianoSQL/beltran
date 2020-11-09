@@ -95,7 +95,7 @@ class ApiUser{
 
 
 
-    function sendEmail($email, $nroCuenta){
+    function sendEmail($email){
         
         $mail = new PHPMailer();
         $mail -> isSMTP();
@@ -119,7 +119,7 @@ class ApiUser{
                         <h3>Le da la bienvenida</h3>
                         <img src="https://www.socialchef.es/wp-content/uploads/atencion_cliente_social-media.jpg" alt="Magic" width="300" height="190" style="display: block;" />
                         <p>Termine su registro usando el siguiente link.</p>
-                        <a href="http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta.'&email='.$email.'" style="background: white;  outline: none;
+                        <a href="http://localhost/beltran/frontEnd/registro2.php?email='.$email.'" style="background: white;  outline: none;
                         text-decoration: none;
                         display: inline-block;
                         text-align: center;
@@ -133,7 +133,7 @@ class ApiUser{
                         margin-top: 5px;
                         ">Terminar Registro</a>
                         <br><br>
-                        http://localhost/beltran/frontEnd/registro2.php?cliente='. $nroCuenta.'&email='.$email.'
+                        http://localhost/beltran/frontEnd/registro2.php?email='.$email.'
                         
                     </td>    
         
@@ -181,19 +181,6 @@ class ApiUser{
         $mail -> AddAddress($email); //A quien se enviara el mail
         $mail -> Send();
     }
-
-    
-    function validarCliente($nroCliente){
-        $user = new User();
-
-        $res = $user->verificarNroCliente($nroCliente);
-
-        $result = $res->fetch(PDO::FETCH_ASSOC);
-
-        return $result;
-    }
-
-
 
 
     function error($mensaje){

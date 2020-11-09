@@ -9,30 +9,11 @@
     $api = new ApiUser();
     $error = '';
 
-    if(isset($_POST['numCuenta']) && isset($_POST['email'])){
+    if(isset($_POST['email'])){
 
-        $result = $api->validarCliente($_POST['numCuenta']);
-
-        if(!$result){
-
-            ?>
-                <script>
-                    swal({
-                        title: "Numero de cliente no valido",
-                        text: "",
-                        icon: "error",
-                        button: "OK",
-                    }).then(function() {
-                        window.location = "../../registro.php";
-                        });
-                </script>
-            <?php   
-
-        } else 
-        {
 
             try {
-                    $api->sendEmail($_POST['email'], $_POST['numCuenta']);
+                    $api->sendEmail($_POST['email']);
                     ?>
 
                         <script>
@@ -62,7 +43,7 @@
                     </script>
                     <?php   
                 }
-            }
+            
 
     }else{
         ?>

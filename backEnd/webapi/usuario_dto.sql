@@ -10,7 +10,6 @@ BEGIN
         'password',
         'nombre',
         'apellido',
-        'nro_cliente',
         'nro_documento',
         'id_tipo_documento',
         'id_tipo_permiso'

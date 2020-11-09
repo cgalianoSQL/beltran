@@ -29,7 +29,6 @@ create or replace  VIEW beltran.usuarios_vw AS
 		u.id_usuario,
 		u.usuario,
 		u.nombre || ' ' || u.apellido AS nombre_completo,
-		u.nro_cliente,
 		t.tipo_documento || ' ' || u.nro_documento as documento,
 		u.id_tipo_permiso,
 		CASE WHEN u.estado THEN 'Habilitado'
@@ -58,14 +57,4 @@ create or replace  VIEW beltran.reclamos_movimientos_vw AS
 	ORDER BY 
 		r.creacion DESC;
 
-create or replace  VIEW beltran.mis_servicios_vw AS
-	select
-		s.id_servicio ,
-		s.nombre,
-		u.id_usuario 
-	FROM
-		beltran.servicios s
-		INNER JOIN beltran.servicios_nro_clientes sc ON sc.id_servicio = s.id_servicio 
-		INNER JOIN beltran.usuarios u ON u.nro_cliente = sc.nro_cliente
-	ORDER BY 
-		s.id_servicio DESC;
+

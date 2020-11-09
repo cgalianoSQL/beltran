@@ -14,7 +14,6 @@ CREATE OR REPLACE FUNCTION beltran.usuarios (
 	IN p_password                   text,
 	IN p_nombre                     text,
 	IN p_apellido                   text,
-    IN p_nro_cliente                text,
     IN p_nro_documento              text,
     IN p_id_tipo_documento          integer,
     IN p_id_tipo_permiso            integer
@@ -25,7 +24,6 @@ $$
         password, 
         nombre, 
         apellido, 
-        nro_cliente, 
         nro_documento, 
         id_tipo_documento, 
         id_tipo_permiso
@@ -35,7 +33,6 @@ $$
         p_password, 
         p_nombre, 
         p_apellido, 
-        p_nro_cliente, 
         p_nro_documento, 
         p_id_tipo_documento, 
         p_id_tipo_permiso
