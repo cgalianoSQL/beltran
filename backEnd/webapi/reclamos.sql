@@ -91,6 +91,7 @@ BEGIN
 
     v_movimiento := beltran.movimientos_reclamo (
         'Reclamo tomado por personal de soporte',
+		v_reclamo_jsonb ->> 'archivo',
         v_realizado
 	);
 

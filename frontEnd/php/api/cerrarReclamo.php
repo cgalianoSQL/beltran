@@ -30,6 +30,7 @@
         );
 
         $jsonParams = json_encode($Params);
+
         $result = $api->cerrar($jsonParams);
         if(!$result){
           switch($_SESSION['permiso']) {

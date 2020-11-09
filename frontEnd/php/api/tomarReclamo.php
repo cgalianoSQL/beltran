@@ -8,9 +8,14 @@
     $error = '';
     if(isset($_POST['id_reclamo']) && isset($_POST['id_asignado'])){
 
+      $imagenSubida = fopen("../../img/imagen.jpg", 'r');
+      $binariosImagen = fread($imagenSubida, 3000000);
+      $base64 = 'data:image/jpg;base64,' . base64_encode($binariosImagen);
+
        $Params = array(
             'id_reclamo'  => $_POST['id_reclamo'],
-            'id_asignado' => $_POST['id_asignado']
+            'id_asignado' => $_POST['id_asignado'],
+            'archivo' =>  $base64
         );
 
         $jsonParams = json_encode($Params);
