@@ -46,12 +46,12 @@
                  
             <script>     
             swal({
-                title: "EXITO!",
-                text: "Se creo el nuevo soporte",
+                title: "PERSONAL DE SOPORTE CREADO CON ÉXITO",
+                text: "Puede visualizar el mismo en la sección “Lista de personal de soporte”",
                 icon: "success",
                 confirmButtonText: 'OK',
             }).then(function() {
-                window.location = "../../listaPersonalSoporte.php";
+                window.location = "../../listaPersonalDeSoporteAdmin.php";
                 });
             </script>
         <?php         

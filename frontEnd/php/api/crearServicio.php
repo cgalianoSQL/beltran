@@ -23,8 +23,10 @@
 
                 <script>
                 swal({
-                    title: "ERROR CON QUERY",
-                    text: "Verifique capaz ya existe el servicio 'Lista De Servicios'",
+                    title: "ERROR!",
+                    text: "Es probable que el servicio haya sido creado anteriormente. Verifíquelo en la sección “Lista De Servicios”",
+                    
+
                     icon: "error",
                     button: "OK",
                   }).then(function() {

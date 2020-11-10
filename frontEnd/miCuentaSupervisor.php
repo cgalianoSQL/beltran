@@ -54,6 +54,7 @@ $perfil = $api->perfil($_SESSION['id']);
 							<h3>MIS DATOS</h3>
 								<h5>USUARIO: <?php ECHO $perfil['usuario']?></h5>
 								<h5>DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
+								<h5>EMAIL: <?php ECHO $perfil['email']?></h5>
 							</div>
 						</div>
 					

@@ -30,8 +30,6 @@
         );
 
         $jsonParams = json_encode($Params);
-        ECHO $jsonParams ;
-
         $result = $api->reabrir($jsonParams);
 
             if(!$result){
@@ -69,8 +67,8 @@
               ?>
               <script>
               swal({
-                title: "Reabierto",
-            text: "Estado Reabierto",
+                title: "REABIERTO",
+            text: "Se ha actualizado el estado del reclamo a “Reabierto”",
             icon: "success",
             button: "OK",
           }).then(function() {
@@ -83,8 +81,8 @@
               ?>
               <script>
               swal({
-                title: "ENVIADO",
-            text: "Ha enviado una respuesta corrrectamente",
+                title: "REABIERTO",
+            text: "Se ha actualizado el estado del reclamo a “Reabierto”",
             icon: "success",
             button: "OK",
           }).then(function() {

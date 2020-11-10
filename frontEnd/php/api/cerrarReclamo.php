@@ -67,8 +67,8 @@
             ?>
               <script>
                 swal({
-                  title: "Cerrado",
-                  text: "Se cerro la instancia corrrectamente",
+                  title: "CERRADO",
+                  text: "Se ha actualizado el estado del reclamo a “Cerrado”",
                   icon: "success",
                   button: "OK",
                 }).then(function() {
@@ -81,8 +81,8 @@
           ?>
             <script>
             swal({
-              title: "Cerrado",
-              text: "Se cerro la instancia corrrectamente",
+              title: "CERRADO",
+              text: "Se ha actualizado el estado del reclamo a “Cerrado”",
               icon: "success",
               button: "OK",
             }).then(function() {

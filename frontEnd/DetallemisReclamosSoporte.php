@@ -54,6 +54,7 @@ $perfil = $api->perfil($_SESSION['id']);
             <div class="row" >
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
+                                <br>
                                 <h3>DETALLE DE RECLAMOS</h3> 
 								<h5>Reclamo #: <?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?> </h5>          
 								<h5>Fecha: <?php ECHO json_decode(json_encode($reclamo['fecha'])); ?></h5>       

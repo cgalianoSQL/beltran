@@ -65,7 +65,7 @@ $perfil = $api->perfil($_SESSION['id']);
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
-									<button type="submit" class="btn btn-info">Reabrir</button>
+									<button type="submit" class="btn btn-info">REABRIR</button>
 							</form>
 							</center>
 						</div>
