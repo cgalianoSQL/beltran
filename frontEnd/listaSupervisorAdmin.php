@@ -9,7 +9,7 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'ADMINISTRADOR')
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
-$lista = $api->listaSoporte();
+$lista = $api->listaSupervisor();
 
 ?>
 

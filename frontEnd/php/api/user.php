@@ -38,10 +38,17 @@ class User extends DB{
         return ($query);
     }    
 
-
+    
     function listaSoporte(){
         $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, estado from beltran.usuarios_vw where id_tipo_permiso = :id_permiso');
         $query->execute(['id_permiso' => 2]);
+        return ($query);
+    }    
+
+
+    function listaSupervisor(){
+        $query = $this->connect()->prepare('select id_usuario , usuario, nombre_completo, documento, estado from beltran.usuarios_vw where id_tipo_permiso = :id_permiso');
+        $query->execute(['id_permiso' => 4]);
         return ($query);
     }    
 

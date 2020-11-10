@@ -70,6 +70,18 @@ class ApiUser{
         return $result;
     }
 
+    
+    function listaSupervisor(){
+        $user = new User();
+
+        $res = $user->listaSupervisor();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
 
     function listaCliente(){
         $user = new User();

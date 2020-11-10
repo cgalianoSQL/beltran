@@ -5,7 +5,7 @@ include_once 'database.php';
 class Servicio extends DB{
     
     function misServios($id){
-        $query = $this->connect()->prepare('select id_servicio, nombre from beltran.servicios');
+        $query = $this->connect()->prepare('select id_servicio, nombre from beltran.servicios where habilitado = true ');
         $query->execute();
         return ($query);
     }
