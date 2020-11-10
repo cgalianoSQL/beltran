@@ -30,7 +30,7 @@ if (isset($_SESSION['permiso']))
 	<title>LOGIN</title>
 </head>
 <body>
-
+	
 	<div class="modal">
 		
 		<form class="modal-content animate" id="formulario" action="php/api/login.php" method="POST">
