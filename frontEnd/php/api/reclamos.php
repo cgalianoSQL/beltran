@@ -45,6 +45,12 @@ class Reclamos extends DB{
         return ($query);
     }    
 
+    function reporte(){
+        $query = $this->connect()->prepare('select * from beltran.reclamos_reporte');
+        $query->execute();
+        return ($query);
+    }    
+
 
     function identify($id){
         $query = $this->connect()->prepare('SELECT id_reclamos, fecha, hora, servicio, pertenece, asignado,nombre_estado FROM beltran.reclamos_vw where id_reclamos = :id');

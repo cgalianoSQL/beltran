@@ -1,9 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SUPERVISOR')
+if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SUPERVISOR' && $_SESSION['permiso'] != 'ADMINISTRADOR' )
 {
   header("Location: login.php");
 }
+
+include_once 'php/api/apiReclamos.php';
+$api = new ApiReclamos();
+$reporte = $api->reporte();
 
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
@@ -16,7 +20,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>SUPERVISOR</title>
+	<title>ESTADISTICAS</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
@@ -45,31 +49,70 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 
 
-		<div id="colorcito1" class="container" >
-			<div class="row" >
-			
-				<div class="col col-lg-3" onclick="location.href='servicioreporte.php'" style="margin-top: 5%;margin-left: 20%;margin-bottom: 2%">
-					<div class="card" style="width: 18rem;">
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
-							
-							<div class="alert alert-secondary" role="alert">
-						  <h3>ESTADÍSTICAS DE SERVICIOS</h3>
-						</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col col-lg-3" onclick="location.href='estadisticasReclamo.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
-					<div class="card" style="width: 18rem;">
-						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
-							<div class="alert alert-info" role="alert">
-						  <h3>ESTADÍSTICAS DE RECLAMOS</h3>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<center>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<div class="chart-container" style="position: relative; height:40vh; width:80vw; margin-top:4%;">
+		<canvas id="myChart" style="background-color: white" ></canvas>
 		</div>
+
+
+		<script>
+		var servicios = new Array();
+		var valor = new Array();
+		var count = 0;
+		<?php
+			foreach($reporte as $item){
+		?>
+
+		servicios[count] = '<?php ECHO  json_decode(json_encode($item['nombre_estado'])); ?>';
+		valor[count] = <?php ECHO  json_decode(json_encode($item['count'])); ?>;
+		count = count + 1
+
+		<?php
+			}
+		?>
+		
+
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: servicios,
+				datasets: [{
+					label: 'Reclamos por Estado',
+					data: valor,
+					backgroundColor: [
+						'RGB(99, 255, 222)',
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 2
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+		</script>
+		<center>
+
 	</div>
 </div>
 

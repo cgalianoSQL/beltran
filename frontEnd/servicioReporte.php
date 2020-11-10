@@ -55,7 +55,6 @@ $perfil = $api->perfil($_SESSION['id']);
 		<canvas id="myChart" style="background-color: white" ></canvas>
 		</div>
 
-		<?php $pepe = 'no llego con el tiempo';?>
 
 		<script>
 		var servicios = new Array();
@@ -80,7 +79,7 @@ $perfil = $api->perfil($_SESSION['id']);
 			data: {
 				labels: servicios,
 				datasets: [{
-					label: 'Reclamos por servicio',
+					label: 'Cantidad de reclamos por Servicio',
 					data: valor,
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',

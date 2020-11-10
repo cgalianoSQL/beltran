@@ -113,6 +113,17 @@ class ApiReclamos{
     }
 
 
+    function reporte(){
+        $reclamos = new Reclamos();
+
+        $res = $reclamos->reporte();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+
     function mostrarMisReclamosSoporte($id){
         $reclamos = new Reclamos();
 

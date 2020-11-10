@@ -67,3 +67,12 @@ create or replace  VIEW beltran.servicios_reporte AS
 		beltran.servicios u
 		INNER JOIN beltran.reclamos t ON t.id_servicio = u.id_servicio
 	GROUP BY u.id_servicio;
+
+create or replace  VIEW beltran.reclamos_reporte AS
+	select
+		count(u.id_reclamos),
+		t.nombre_estado 
+	FROM
+		beltran.reclamos u
+		INNER JOIN beltran.estados t ON t.id_estados = u.id_estados
+	GROUP BY t.nombre_estado;
