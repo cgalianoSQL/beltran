@@ -45,8 +45,8 @@
         ?>
             <script>
                 swal({
-                    title: "Creacion exitosa",
-                    text: "",
+                    title: "SE HA REGISTRADO CON ÉXITO",
+                    text: "Ya puede comenzar a utilizar RR-ONLINE ",
                     icon: "success",
                     button: "OK",
                 }).then(function() {

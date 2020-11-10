@@ -18,8 +18,8 @@
 
                         <script>
                         swal({
-                            title: "Revise su Email",
-                            text: "",
+                            title: "Hemos enviado un correo a su casilla",
+                            text: "Si no encuentra el mismo por favor revise “Correo no deseado” o “Spam” ",
                             icon: "success",
                             button: "OK",
                         }).then(function() {
@@ -33,7 +33,7 @@
 
                         <script>
                         swal({
-                            title: "Error revise los datos",
+                            title: "Error revise los datos ingresados",
                             text: "",
                             icon: "error",
                             button: "OK",
@@ -50,7 +50,7 @@
 
             <script>
             swal({
-                title: "ERROR: Revise los datos enviados",
+                title: "Error revise los datos ingresados",
                 text: "",
                 icon: "success",
                 button: "error",

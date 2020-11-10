@@ -1,3 +1,6 @@
+<html>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</html>
 <?php
 
     include_once 'apiUser.php';
@@ -11,14 +14,78 @@
         $result = $api->cambiarPassword($_POST['password'], $_POST['id']);
 
         if(!$result){
-            echo '<script language="javascript">alert("Fallo de query");window.location.href="../../login.php"</script>';
-        } else {
-           
-            echo '<script language="javascript">alert("Contraseña cambiada con exito");window.location.href="../../login.php"</script>';         
+        ?>
+            <script>
+                swal({
+                    title: "Error de Query",
+                    text: "",
+                    icon: "error",
+                    button: "OK",
+                }).then(function() {
+                    window.location = "../../login.php";
+                    });
+            </script>
+        <?php  
+    } else {
+       
+    ?>
+        <script>
+            swal({
+                title: "SE HA REGISTRADO CON ÉXITO",
+                text: "Ya puede comenzar a utilizar RR-ONLINE ",
+                icon: "success",
+                button: "OK",
+            }).then(function() {
+                window.location = "../../login.php";
+                });
+        </script>
+    <?php          
+    }
+
+    if(!$result){
+        ?>
+            <script>
+                swal({
+                    title: "Error de Query",
+                    text: "",
+                    icon: "error",
+                    button: "OK",
+                }).then(function() {
+                    window.location = "../../login.php";
+                    });
+            </script>
+        <?php  
+    } else {
+       
+    ?>
+        <script>
+            swal({
+                title: "HA CAMBIADO SU CONTRASEÑA CON ÉXITO ",
+                text: "",
+                icon: "success",
+                button: "OK",
+            }).then(function() {
+                window.location = "../../login.php";
+                });
+        </script>
+    <?php          
         }
 
     }else{
-        echo '<script language="javascript">alert("Error contraseña no identicas");window.location.href="../../login.php"</script>';
-    }
+       
+        ?>
+            <script>
+                swal({
+                    title: "ERROR! LAS CONTRASEÑAS NO COINCIDEN",
+                    text: "",
+                    icon: "error",
+                    button: "OK",
+                }).then(function() {
+                    window.location = "../../login.php";
+                    });
+            </script>
+        <?php          
+        }
+
     
 ?>

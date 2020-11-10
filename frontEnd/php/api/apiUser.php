@@ -118,7 +118,7 @@ class ApiUser{
                         <h1>RR-ONLINE</h1>
                         <h3>Le da la bienvenida</h3>
                         <img src="https://www.socialchef.es/wp-content/uploads/atencion_cliente_social-media.jpg" alt="Magic" width="300" height="190" style="display: block;" />
-                        <p>Termine su registro usando el siguiente link.</p>
+                        <br>
                         <a href="http://localhost/beltran/frontEnd/registro2.php?email='.$email.'" style="background: white;  outline: none;
                         text-decoration: none;
                         display: inline-block;
@@ -131,8 +131,9 @@ class ApiUser{
                         font-size: 18px;
                         border-radius: 15px;
                         margin-top: 5px;
-                        ">Terminar Registro</a>
-                        <br><br>
+                        "> Terminar Registro </a>
+                        <br>
+                        <p>En caso de que el boton no funcione copie el siguiente link en su navegador:</p>
                         http://localhost/beltran/frontEnd/registro2.php?email='.$email.'
                         
                     </td>    
