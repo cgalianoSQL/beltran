@@ -9,6 +9,8 @@ $api = new ApiReclamos();
 $abierto = $api->misReclamosInfo(1, $_SESSION['id']);
 $cancelado = $api->misReclamosInfo(3, $_SESSION['id']);
 $curso = $api->misReclamosInfo(2, $_SESSION['id']);
+$reabierto = $api->misReclamosInfo(4, $_SESSION['id']);
+
 
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
@@ -68,6 +70,8 @@ $perfil = $api->perfil($_SESSION['id']);
 							 <h3>MIS<br>RECLAMOS</h3>
 							</div>
 							<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
+							<br>
+							<h5>Reabiertos: <?php ECHO $reabierto["count"]; ?></h5>
 							<br>
 							<h5>Cerrados: <?php ECHO $cancelado["count"]; ?></h5>
 							<br>

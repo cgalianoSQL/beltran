@@ -5,6 +5,10 @@ if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SUPERVISOR' && $_SE
   header("Location: login.php");
 }
 
+include_once 'php/api/apiServicio.php';
+$api = new ApiServicio();
+$reporte = $api->reporte();
+
 include_once 'php/api/apiUser.php';
 $api = new ApiUser();
 $perfil = $api->perfil($_SESSION['id']);
@@ -51,15 +55,33 @@ $perfil = $api->perfil($_SESSION['id']);
 		<canvas id="myChart" style="background-color: white" ></canvas>
 		</div>
 
+		<?php $pepe = 'no llego con el tiempo';?>
+
 		<script>
+		var servicios = new Array();
+		var valor = new Array();
+		var count = 0;
+		<?php
+			foreach($reporte as $item){
+		?>
+
+		servicios[count] = '<?php ECHO  json_decode(json_encode($item['nombre'])); ?>';
+		valor[count] = <?php ECHO  json_decode(json_encode($item['count'])); ?>;
+		count = count + 1
+
+		<?php
+			}
+		?>
+		
+
 		var ctx = document.getElementById('myChart').getContext('2d');
 		var myChart = new Chart(ctx, {
 			type: 'bar',
 			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				labels: servicios,
 				datasets: [{
-					label: '# of Votes',
-					data: [12, 19, 3, 5, 2, 3],
+					label: 'Reclamos por servicio',
+					data: valor,
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
 						'rgba(54, 162, 235, 0.2)',

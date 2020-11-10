@@ -15,6 +15,16 @@ class ApiServicio{
         return $result;
     }
 
+    function reporte(){
+        $servicio = new Servicio();
+
+        $res = $servicio->reporte();
+
+        $result = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
 
     function listaServios(){
         $servicio = new Servicio();

@@ -58,3 +58,12 @@ create or replace  VIEW beltran.reclamos_movimientos_vw AS
 		r.creacion DESC;
 
 
+create or replace  VIEW beltran.servicios_reporte AS
+	select
+		u.id_servicio,
+		count(t.id_servicio),
+		u.nombre 
+	FROM
+		beltran.servicios u
+		INNER JOIN beltran.reclamos t ON t.id_servicio = u.id_servicio
+	GROUP BY u.id_servicio;

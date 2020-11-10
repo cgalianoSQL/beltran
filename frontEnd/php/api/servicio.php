@@ -9,6 +9,12 @@ class Servicio extends DB{
         $query->execute();
         return ($query);
     }
+
+    function reporte(){
+        $query = $this->connect()->prepare('select * from beltran.servicios_reporte');
+        $query->execute();
+        return ($query);
+    }
     
     function lista(){
         $query = $this->connect()->prepare('select * from beltran.servicios');
