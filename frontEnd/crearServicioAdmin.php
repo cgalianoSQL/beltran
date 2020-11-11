@@ -58,7 +58,7 @@ $perfil = $api->perfil($_SESSION['id']);
 								<div class="form-group">
 								<label for="formGroupExampleInput" >DETALLE</label>
 								<br>
-								<textarea rows="3" cols="65" name="comentario"> </textarea>
+								<textarea rows="3" cols="60" name="comentario"> </textarea>
 								</div>
 								<br>
 								<button type="submit" class="btn btn-success">CREAR</button>

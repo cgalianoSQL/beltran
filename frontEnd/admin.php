@@ -73,7 +73,7 @@ $perfil = $api->perfil($_SESSION['id']);
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:310px;max-height: 330px;">
 							
-							<div class="alert alert-warning" role="alert">
+							<div class="alert alert-secondary" role="alert">
 						  <h3>PERSONAL DE SOPORTE</h3>
 						</div>
 						</div>
