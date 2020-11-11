@@ -163,7 +163,7 @@ END;$$
 
 
 CREATE OR REPLACE PROCEDURE webapi.beltran_usuarios_set_estado_procedimiento(
-	p_usuario                     integer,
+	p_usuario                     text,
 	inout p_estado                boolean
 )
 LANGUAGE plpgsql    

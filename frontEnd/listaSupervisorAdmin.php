@@ -86,12 +86,17 @@ $lista = $api->listaSupervisor();
                                                             ?>
 
                                                             <td>
-                                                                <form action="" method="POST">
-            
-                                                                    <input type="hidden" name="id_soporte" value="<?php ECHO  $_SESSION['id'];?>" >
-                                                                    <center>
-                                                               <button type="submit" class="btn btn-primary">Habilitar/Deshabilitar</button>                                                          
-                                                               </center> 
+                                                                <form action="php/api/setSupervisor.php" method="POST">
+
+                                                                    <input type="hidden" name="usuario" value="<?php ECHO json_decode(json_encode($r['usuario']));?>" >
+                                                                <center>
+                                                                    <?php if (json_decode(json_encode($r['estado'])) == "Habilitado") { ?>
+                                                                        <button type="submit" class="btn btn-danger">Deshabilitar</button>   
+                                                                    <?php } else { ?>
+                                                                        <button type="submit" class="btn btn-primary">Habilitar</button>   
+
+                                                                    <?php } ?>     
+                                                                </center> 
                                                             
                                                                 </form>
                                                             </td>

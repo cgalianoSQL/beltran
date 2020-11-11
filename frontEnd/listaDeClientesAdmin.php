@@ -84,10 +84,16 @@ $lista = $api->listaCliente();
                                                             ?>
 
                                                             <td>
-                                                                <form action="" method="POST">
-                                                                    <input type="hidden" name="id_soporte" value="<?php ECHO  $_SESSION['id'];?>" >
+                                                                <form action="php/api/setCliente.php" method="POST">
+                                                                    <input type="hidden" name="usuario" value="<?php ECHO  json_decode(json_encode($r['usuario']));?>" >
                                                                <center>
-                                                               <button type="submit" class="btn btn-primary">Habilitar/Deshabilitar</button>                                                          
+                                                                    <?php if (json_decode(json_encode($r['estado'])) == "Habilitado") { ?>
+                                                                        <button type="submit" class="btn btn-danger">Deshabilitar</button>   
+                                                                    <?php } else { ?>
+                                                                        <button type="submit" class="btn btn-primary">Habilitar</button>   
+
+                                                                    <?php } ?>
+                                                       
                                                                </center> 
                                                             
                                                                 </form>
