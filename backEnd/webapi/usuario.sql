@@ -160,3 +160,26 @@ BEGIN
     return;
 
 END;$$
+
+
+CREATE OR REPLACE PROCEDURE webapi.beltran_usuarios_set_estado_procedimiento(
+	p_usuario                     integer,
+	inout p_estado                boolean
+)
+LANGUAGE plpgsql    
+AS $$
+BEGIN
+    PERFORM beltran.usuarios_identify_by_usuario(p_usuario);
+
+	PERFORM beltran.usuarios_set_estado (
+        p_usuario
+	);
+
+    COMMIT;
+	   
+   	p_estado := true;
+   
+    return;
+
+END;$$
+

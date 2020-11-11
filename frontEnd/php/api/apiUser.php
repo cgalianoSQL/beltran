@@ -104,6 +104,16 @@ class ApiUser{
         return $result;
     }
 
+    function setEstado($usuario){
+        $user = new User();
+
+        $res = $user->setEstado($usuario);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
 
 
 

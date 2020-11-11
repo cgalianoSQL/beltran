@@ -64,6 +64,13 @@ class User extends DB{
         return ($query);
     }    
 
+    function setEstado($usuario){
+        $query = $this->connect()->prepare('call webapi.beltran_usuarios_set_estado_procedimiento(:usuario, false)');
+        $query->execute(['usuario' => $usuario]);
+        return ($query);
+    }    
+
+
 
 }
 

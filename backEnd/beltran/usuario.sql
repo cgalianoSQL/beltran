@@ -107,4 +107,12 @@ $$ LANGUAGE sql IMMUTABLE STRICT
 SET search_path FROM CURRENT;
 
 
+CREATE OR REPLACE FUNCTION beltran.usuarios_set_estado (
+	IN p_usuario              text
+) RETURNS void AS
+$$
+	UPDATE beltran.usuarios SET estado = NOT estado WHERE usuario = p_usuario;
+$$ LANGUAGE sql VOLATILE STRICT
+SET search_path FROM CURRENT;
+
 
