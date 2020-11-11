@@ -76,10 +76,15 @@ $perfil = $api->perfil($_SESSION['id']);
                                                         <?php 
                                                         foreach($result as $r){
                                                         echo'<tr>';
-                                                        foreach($r as $v){
-														echo'<td>'.$v.'</td>';
-														
-														}
+
+
+                                                        echo'<td>'. json_decode(json_encode($r['fecha'])) .'</td>';
+                                                        echo'<td>'. json_decode(json_encode($r['hora'])) .'</td>';
+														echo'<td>'. json_decode(json_encode($r['servicio'])) .'</td>';
+														echo'<td>'. json_decode(json_encode($r['pertenece'])) .'</td>';
+														echo'<td>'. json_decode(json_encode($r['asignado'])) .'</td>';
+														echo'<td>'. json_decode(json_encode($r['nombre_estado'])) .'</td>';
+
 														
                                                         ?>
                                                         <center>
