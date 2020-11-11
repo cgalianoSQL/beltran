@@ -103,9 +103,9 @@ $result = $api->listaServios();
                                                                 <input type="hidden" name="id" value="<?php ECHO  json_encode($r['id_servicio']); ?>" >
                                                                <center>
                                                                <?php if (json_decode(json_encode($r['habilitado'])) == 1) { ?>
-                                                                    <button type="submit" class="btn btn-primary">Habilitar</button>    
-                                                               <?php }else { ?>
                                                                     <button type="submit" class="btn btn-danger">Deshabilitar</button>    
+                                                               <?php }else { ?>
+                                                                    <button type="submit" class="btn btn-primary">Habilitar</button>    
                                                                <?php } ?>                                                      
                                                                </center> 
                                                         
