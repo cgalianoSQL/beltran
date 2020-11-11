@@ -48,7 +48,7 @@ $perfil = $api->perfil($_SESSION['id']);
 			<div class="row" >
 				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 4%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 730px;">
+						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 790px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO SUPERVISOR</h3>
 				<center>
