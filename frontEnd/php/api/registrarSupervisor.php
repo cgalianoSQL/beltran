@@ -48,7 +48,7 @@
             <script>     
             swal({
                 title: "SUPERVISOR CREADO CON ÉXITO",
-                text: "Puede visualizar el mismo en la sección “Lista de personal de soporte”",
+                text: "Puede visualizar el mismo en la sección “Lista de Supervisores",
                 icon: "success",
                 confirmButtonText: 'OK',
             }).then(function() {
