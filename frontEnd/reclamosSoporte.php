@@ -54,9 +54,7 @@ $perfil = $api->perfil($_SESSION['id']);
 							<div class="alert alert-primary" role="alert">
 						  <h3>LISTA<br> DE RECLAMOS</h3>
 						</div>
-						<center>
-						<h5>Total:</h5>
-						</center>
+					
 						</div>
 					</div>
 				</div>
@@ -67,9 +65,7 @@ $perfil = $api->perfil($_SESSION['id']);
 							<div class="alert alert-warning" role="alert">
 							  	<h3>MIS<br>RECLAMOS</h3>
 							</div>
-							<center>
-							<h5>Total:</h5>
-							</center>
+							
 						</div>
 					</div>
 				</div>
