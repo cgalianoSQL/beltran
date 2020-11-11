@@ -18,7 +18,7 @@
             'apellido' => $_POST['apellido'],
             'nro_documento' => $_POST['nro_documento'],
             'id_tipo_documento' => (int)$_POST['id_tipo_documento'],
-            'id_tipo_permiso' => 2,
+            'id_tipo_permiso' => 4,
             'email' => $_POST['email']
         );
 
@@ -37,7 +37,7 @@
                     icon: "error",
                     confirmButtonText: 'OK',
                 }).then(function() {
-                    window.location = "../../crearPersonalDeSoporteAdmin.php";
+                    window.location = "../../crearSupervisorAdmin.php";
                     });
                 </script>
             <?php
@@ -47,12 +47,12 @@
                  
             <script>     
             swal({
-                title: "PERSONAL DE SOPORTE CREADO CON ÉXITO",
+                title: "SUPERVISOR CREADO CON ÉXITO",
                 text: "Puede visualizar el mismo en la sección “Lista de personal de soporte”",
                 icon: "success",
                 confirmButtonText: 'OK',
             }).then(function() {
-                window.location = "../../listaPersonalDeSoporteAdmin.php";
+                window.location = "../../listaSupervisorAdmin.php";
                 });
             </script>
         <?php         
@@ -68,7 +68,7 @@
             icon: "error",
             confirmButtonText: 'OK',
         }).then(function() {
-            window.location = "../../crearPersonalDeSoporteAdmin.php";
+            window.location = "../../crearSupervisorAdmin.php";
             });
         </script>
     <?php

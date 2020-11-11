@@ -52,7 +52,7 @@ $perfil = $api->perfil($_SESSION['id']);
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO SUPERVISOR</h3>
 				<center>
-				<form name="registro" action="" method="POST">
+				<form name="registro" action="php/api/registrarSupervisor.php" method="POST">
 					<br> <label for="nombre"><h5>NOMBRE:</h5></label><br>
 					<input type="text" name="nombre" required>
 					<br> <label for="apellido"><h5>APELLIDO</h5></label><br>
