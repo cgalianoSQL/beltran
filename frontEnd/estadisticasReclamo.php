@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SUPERVISOR' && $_SESSION['permiso'] != 'ADMINISTRADOR' )
+if (!isset($_SESSION['permiso']) || $_SESSION['permiso'] != 'SUPERVISOR' && $_SESSION['permiso'] != 'ADMINISTRADOR' && $_SESSION['permiso'] != 'SOPORTE')
 {
   header("Location: login.php");
 }

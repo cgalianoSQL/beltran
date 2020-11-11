@@ -65,6 +65,8 @@ $perfil = $api->perfil($_SESSION['id']);
 					</select>
 					<br> <label for="numdoc"><h5>NUMERO DE DOCUMENTO</h5></label><br>
 					<input type="text" name="nro_documento" required>
+					<br> <label for="email"><h5>E-MAIL</h5></label><br>
+					<input type="email" name="email" required>  
 					<br> <label for="nombreuser"><h5>NOMBRE DE USUARIO</h5></label><br>
 					<input type="text" name="usuario" required>          
 					<br> <label for="password"><h5>CONTRASEÑA</h5></label><br>

@@ -57,22 +57,18 @@ $perfil = $api->perfil($_SESSION['id']);
 						</div>
 					</div>
 				</div>
-				<div  class="col col-lg-3" onclick="location.href='estadisticasDeReclamoSoporte.php'"style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div  class="col col-lg-3" onclick="location.href='servicioReporte.php'"style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div  class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 							<div class="alert alert-warning" role="alert">
 								<h3>ESTADÍSTICAS DE RECLAMOS</h3>
 							</div>
-							<h5>Total de reclamos <br> abiertos:</h5>
-							<br>
-							<h5>Total de reclamos solucionados:</h5>
-							<br>
-							<h5>Total de reclamos:</h5>
+						
 						</div>
 					</div>
 				</div>
 
-				<div class="col col-lg-3" onclick="location.href='estadisticasDeServicioSoporte.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
+				<div class="col col-lg-3" onclick="location.href='estadisticasReclamo.php'" style="margin-top: 5%;margin-left: 5%;margin-bottom: 2%">
 					<div class="card" style="width: 18rem;">
 						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
 						<div class="alert alert-success" role="alert">
