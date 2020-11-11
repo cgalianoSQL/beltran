@@ -30,7 +30,7 @@
         <script>
         swal({
             title: "ESTADO MODIFICADO",
-            text: "Ha modifico el estado del servicio con éxito",
+            text: "Ha modifico el estado con éxito",
             icon: "success",
             button: "OK",
           }).then(function() {
