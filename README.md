@@ -17,7 +17,6 @@ Gestion de reclamos
 
 ## La carpeta de git se tiene que poner en xampp/htdocs
 
-# ** No me acuerdo si instale php o con el xampp ya es suficiente. **
 
 ## http://localhost/beltran/frontEnd/main.php inicio de aplicacion 
 
