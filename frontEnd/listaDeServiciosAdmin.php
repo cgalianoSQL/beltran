@@ -68,10 +68,10 @@ $result = $api->listaServios();
                                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                                <th>ID #:</th>
-                                                                <th>Nombre:</th>
-                                                                <th>Descipcion:</th>
-                                                                <th>Estado:</th>
+                                                                <th>ID #</th>
+                                                                <th>Nombre</th>
+                                                                <th>Descipcion</th>
+                                                                <th>Estado</th>
                                                                 <th>Modificar Estado</th>
 															    </tr>
                                                         </thead>
