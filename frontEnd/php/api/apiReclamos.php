@@ -77,8 +77,7 @@ class ApiReclamos{
         $res = $reclamos->identify($id);
 
         $result = $res->fetch(PDO::FETCH_ASSOC);
-
-
+        
         return $result;
     }
 
