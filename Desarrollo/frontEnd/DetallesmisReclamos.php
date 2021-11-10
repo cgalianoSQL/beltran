@@ -112,10 +112,52 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
     <title>DETALLE MIS RECLAMOS</title>
    
   <body>
+
+  <?php if (is_null(json_decode(json_encode($reclamo['id_reclamos'])))) { ?>           
+    <script>    
+    function SwalOverlayColor(){
+      setTimeout(function(){
+        $(".swal-overlay").css({"background-color":"rgba(217, 217, 217)"});
+      },0.01);
+    }
+
+    SwalOverlayColor(); 
+    swal({
+        title: "No existe este reclamo!",
+        text: "",
+        icon: "error",
+        confirmButtonText: 'OK',
+      }).then(function() {
+        window.location = "/beltran/frontEnd/misReclamos.php";
+    });
+    </script>
+  <?php } elseif (json_decode(json_encode($reclamo['id_usuario_pertenece'])) != $_SESSION['id'])  { ?>
+    <script>     
+
+    function SwalOverlayColor(){
+      setTimeout(function(){
+        $(".swal-overlay").css({"background-color":"rgba(217, 217, 217)"});
+      },0.01);
+    }
+
+    SwalOverlayColor();
+    swal({
+        title: "Acceso al reclamo denegado!",
+        text: "",
+        icon: "error",
+        confirmButtonText: 'OK',
+      }).then(function() {
+        window.location = "/beltran/frontEnd/misReclamos.php";
+    });
+    </script>
+  <?php } ?>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
