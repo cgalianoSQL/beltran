@@ -74,7 +74,7 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>	
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Detalle su problema</label>
-										<textarea rows="3" cols="95" name="comentario"> </textarea>
+										<textarea rows="3" cols="80" name="comentario"> </textarea>
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
