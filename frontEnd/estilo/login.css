@@ -107,3 +107,16 @@ img.avatar
      display: block;
      float: absolute;
  }
+
+.content {
+	width:600px;
+	height:400px;
+	line-height:400px;
+	margin:0px auto;
+	text-align:center;
+	background-color:#CCCCCC;
+}
+ 
+.content img {
+	vertical-align:middle;
+}
