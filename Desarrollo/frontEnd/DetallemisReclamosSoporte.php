@@ -96,7 +96,7 @@ $perfil = $api->perfil($_SESSION['id']);
                                                           ?>
                                                         <center>
 													     <td>
-                                                         <form name="registro" action="/beltran/frontEnd/DetallesmisReclamos.php?id=<?php ECHO $_GET['id'] ?>&mostrar"  method="POST">
+                                                         <form name="registro" action="/beltran/Desarrollo/frontEnd/DetallesmisReclamos.php?id=<?php ECHO $_GET['id'] ?>&mostrar"  method="POST">
                                                             <input type="hidden" name="id_imagen" value="<?php ECHO  json_decode(json_encode($r['archivo']));?> ">
 
                                                            <button type="submit" ><img width="100" src="<?php ECHO json_decode(json_encode($r['archivo']))?> " alt="x" /></button>

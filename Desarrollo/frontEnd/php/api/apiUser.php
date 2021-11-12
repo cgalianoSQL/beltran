@@ -141,7 +141,7 @@ class ApiUser{
                         <h3>Le da la bienvenida</h3>
                         <img src="https://www.socialchef.es/wp-content/uploads/atencion_cliente_social-media.jpg" alt="Magic" width="300" height="190" style="display: block;" />
                         <br>
-                        <a href="http://localhost/beltran/frontEnd/registro2.php?email='.$email.'" style="background: white;  outline: none;
+                        <a href="http://localhost/beltran/Desarrollo/frontEnd/registro2.php?email='.$email.'" style="background: white;  outline: none;
                         text-decoration: none;
                         display: inline-block;
                         text-align: center;
@@ -156,7 +156,7 @@ class ApiUser{
                         "> Terminar Registro </a>
                         <br>
                         <p>En caso de que el boton no funcione copie el siguiente link en su navegador:</p>
-                        http://localhost/beltran/frontEnd/registro2.php?email='.$email.'
+                        http://localhost/beltran/Desarrollo/frontEnd/registro2.php?email='.$email.'
                         
                     </td>    
         

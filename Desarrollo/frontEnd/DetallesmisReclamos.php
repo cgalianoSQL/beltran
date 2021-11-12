@@ -134,7 +134,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         icon: "error",
         confirmButtonText: 'OK',
       }).then(function() {
-        window.location = "/beltran/frontEnd/misReclamos.php";
+        window.location = "/beltran/Desarrollo/frontEnd/misReclamos.php";
     });
     </script>
   <?php } elseif (json_decode(json_encode($reclamo['id_usuario_pertenece'])) != $_SESSION['id'])  { ?>
@@ -153,7 +153,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         icon: "error",
         confirmButtonText: 'OK',
       }).then(function() {
-        window.location = "/beltran/frontEnd/misReclamos.php";
+        window.location = "/beltran/Desarrollo/frontEnd/misReclamos.php";
     });
     </script>
   <?php } ?>
@@ -222,7 +222,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                                           ?>
                                                         <center>
 														<td>
-                                                        <form name="registro" action="/beltran/frontEnd/DetallesmisReclamos.php?id=<?php ECHO $_GET['id'] ?>&mostrar"  method="POST">
+                                                        <form name="registro" action="/beltran/Desarrollo/frontEnd/DetallesmisReclamos.php?id=<?php ECHO $_GET['id'] ?>&mostrar"  method="POST">
                                                             <input type="hidden" name="id_imagen" value="<?php ECHO  json_decode(json_encode($r['archivo']));?> ">
 
                                                            <button type="submit" ><img width="100" src="<?php ECHO json_decode(json_encode($r['archivo']))?> " alt="x" /></button>
