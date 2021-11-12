@@ -13,7 +13,7 @@
 
         $Params = array(
             'usuario'  => $_POST['usuario'],
-            'password' => $_POST['password'],
+            'password' => md5($_POST['password']),
             'nombre' => $_POST['nombre'],
             'apellido' => $_POST['apellido'],
             'nro_documento' => $_POST['nro_documento'],

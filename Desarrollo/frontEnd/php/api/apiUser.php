@@ -10,7 +10,7 @@ class ApiUser{
     function verificar($username, $password){
         $user = new User();
 
-        $res = $user->verificarUser($username, $password);
+        $res = $user->verificarUser($username, md5($password));
 
         $result = $res->fetch(PDO::FETCH_ASSOC);
 
@@ -21,7 +21,7 @@ class ApiUser{
     function obtenerId($username, $password){
         $user = new User();
 
-        $res = $user->obtenerIdPorUsuario($username, $password);
+        $res = $user->obtenerIdPorUsuario($username, md5($password));
 
         $result = $res->fetch(PDO::FETCH_ASSOC);
 
@@ -43,7 +43,7 @@ class ApiUser{
     function cambiarPassword($password, $id){
         $user = new User();
 
-        $res = $user->cambiarPassword($password, $id);
+        $res = $user->cambiarPassword(md5($password), $id);
 
         $result = $res->fetch(PDO::FETCH_ASSOC);
 
