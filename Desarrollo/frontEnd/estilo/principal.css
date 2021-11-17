@@ -4,21 +4,13 @@
 	margin: 0;
 }
 
-body {font-family: Arial, Helvetica, sans-serif; background-color:  #483D8B;
-}
-
-
-#colorcito1, #{ 
-	background-color:#F9F9F9;
-	margin-top: 2%;
-	height: auto;
-	width: auto;
-	text-align: center;
+body {font-family: Arial, Helvetica, sans-serif; background-color:  #251d53; 
 }
 
 
 h3{
-	font-family: 'Assistant', sans-serif;
+	font-family: 'Montagu Slab', serif;
+font-family: 'Yantramanav', sans-serif;
 	text-align: center;
 	text-shadow: 1px #2E1070;
 	color: #3C0DA8;
@@ -34,7 +26,7 @@ h4{
 }
 
 h5{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Montagu Slab', serif;
 	text-align: center;
 	}
 
@@ -60,3 +52,38 @@ h5{
 	border: 2px solid rgba(0, 0, 0, 0.596);
 	display: inline-block;
 }
+
+#content { 
+	overflow:auto; 
+	background:#251d53; 
+	height: 100%;
+  } 
+
+  
+  #left, #right { 
+	width: 47%; 
+	margin:20px; 
+	margin-top: 10%;
+	background: white; 
+	content: center;
+	text-align: center;
+  } 
+  
+  #left  { float:left;  }
+  #right { float:right; } 
+
+  
+  .card {
+	border: 20%;
+  }
+
+  #center { 
+	width: 90%; 
+	margin:5%; 
+	margin-top: 7%;
+	background: white; 
+	content: center;
+	text-align: center;
+	float: center;
+
+  } 

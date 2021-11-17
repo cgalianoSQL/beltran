@@ -27,16 +27,11 @@ $perfil = $api->perfil($_SESSION['id']);
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h3>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h3></a>	
+		<a class="navbar-brand" href="cliente.php"><h4>CLIENTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -57,32 +52,46 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 
-			<div id="content">
-				<div id="center">
-				<div id="object1" onclick="location.href='GenerarReclamo.php'" >
-									<div class="card">
-											<div class="alert alert-info" role="alert">
-											<h3>GENERAR<br>RECLAMO</h3>
-											</div>
-									</div>
-					</div>
-				<div id="object2" onclick="location.href='misReclamos.php'" >
-									<div class="card">
-											<div class="alert alert-info" role="alert">
-											<h3>MIS<br>RECLAMOS</h3>
-											</div>
-											<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
-											<br>
-											<h5>Reabiertos: <?php ECHO $reabierto["count"]; ?></h5>
-											<br>
-											<h5>Cerrados: <?php ECHO $cancelado["count"]; ?></h5>
-											<br>
-											<h5>En proceso de solución: <?php ECHO $curso["count"]; ?></h5>
-									</div>
+
+        <div>
+			Hola
+		</div>
+		<!-- <div id="colorcito1" class="container" >
+			<div class="row" >
+				<div class="col col-lg-3" onclick="location.href='GenerarReclamo.php'" style=" margin-top: 3%;margin-left: 21%;margin-bottom: 3%">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body" style="min-width:286px;max-width: 286px;min-height:330px;max-height: 330px;">
+							
+							<div class="alert alert-success" role="alert">
+						  <h3>GENERAR RECLAMO</h3>
+						</div>
+						</div>
 					</div>
 				</div>
+				<div class="col col-lg-3" onclick="location.href='misReclamos.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 3%">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body"  style="min-width:286px;max-width: 286px;min-height: 330px;max-height: 330px;">
+						
+							<div class="alert alert-info" role="alert">
+							 <h3>MIS<br>RECLAMOS</h3>
+							</div>
+							<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
+							<br>
+							<h5>Reabiertos: <?php ECHO $reabierto["count"]; ?></h5>
+							<br>
+							<h5>Cerrados: <?php ECHO $cancelado["count"]; ?></h5>
+							<br>
+							<h5>En proceso de solución: <?php ECHO $curso["count"]; ?></h5>
+						</div>
+					</div>
 				</div>
-</div>
+			</div>
+		</div> -->
+
+
+
+
+
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
