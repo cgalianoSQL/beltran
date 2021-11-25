@@ -62,17 +62,17 @@ $perfil = $api->perfil($_SESSION['id']);
 					<br>
 				<div id="object1" onclick="location.href='GenerarReclamo.php'" >
 									<div class="card">
-											<div class="alert alert-info" role="alert">
 											<h3>GENERAR<br>RECLAMO</h3>
-											</div>
 									</div>
 									<br>
 					</div>
 				<div id="object2" onclick="location.href='misReclamos.php'" >
 									<div class="card">
-										<div class="alert alert-info" role="alert">
 											<h3>MIS<br>RECLAMOS</h3>
 											</div>
+											<br>
+											<h3>Estados de mis tickets:</h3>
+											<br>
 											<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
 											<br>
 											<h5>Reabiertos: <?php ECHO $reabierto["count"]; ?></h5>

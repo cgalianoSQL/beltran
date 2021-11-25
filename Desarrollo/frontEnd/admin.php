@@ -55,53 +55,43 @@ $perfil = $api->perfil($_SESSION['id']);
 
 		<div id="content">
 				<div id="center">
-					<br>
+				<br>
 					<div id="object1" onclick="location.href='ServiciosAdmin.php'" >
 						<div class="card">
-							<div class="alert alert-primary" role="alert">
 						 		 <h3>SERVICIOS</h3>
-							</div>
 						</div>
 					</div>
-					
+					<br>
 					<div id="object1" onclick="location.href='SupervisorAdmin.php'" >
 						<div class="card">
-							<div class="alert alert-primary" role="alert">
 						 		 <h3>SUPERVISOR</h3>
-							</div>
 						</div>
 					</div>
+					<br>
 					<div id="object1" onclick="location.href='PersonalDeSoporteAdmin.php'" >
 						<div class="card">
-							<div class="alert alert-primary" role="alert">
-						 		 <h3>PERSONAL DE SOPORTE</h3>
-							</div>
+						 		 <h3>PERSONAL DE<br> SOPORTE</h3>
 						</div>
 					</div>
+					<br>
 					<div id="object1" onclick="location.href='listaDeClientesAdmin.php'" >
 						<div class="card">
-							<div class="alert alert-primary" role="alert">
-						 		 <h3>LISTA DE CLIENTES</h3>
-							</div>
+						 		 <h3>LISTA DE<br> CLIENTES</h3>
 						</div>
 					</div>
-
+					<br>
 					<div id="object1" onclick="location.href='servicioReporte.php'" >
 						<div class="card">
-							<div class="alert alert-primary" role="alert">
-						 		 <h3>STADÍSTICAS DE RECLAMOS</h3>
-							</div>
+						 		 <h3>ESTADÍSTICAS DE<br> SERVICIOS</h3>
 						</div>
 					</div>
-
+					<br>
 					<div id="object1" onclick="location.href='estadisticasReclamo.php'" >
 						<div class="card">
-							<div class="alert alert-primary" role="alert">
-						 		 <h3>ESTADÍSTICAS DE RECLAMOS</h3>
+						 		 <h3>ESTADÍSTICAS DE<br> RECLAMOS</h3>
 							</div>
-						</div>
 					</div>
-
+					<br>
 					</div>
 					</div>
 

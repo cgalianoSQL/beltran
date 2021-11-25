@@ -48,24 +48,26 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 		
-		<div id="content">
+        <div id="content">
 				<div id="center">
-			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%;margin-left:11% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 55rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:220px;max-height: 400px;">
-							<div class="alert alert-primary" role="alert">
-							
+            <div class="row" >
+
+                        <div class="card">
+							<br>
 							<h3>MIS DATOS</h3>
 								<h5>USUARIO: <?php ECHO $perfil['usuario']?></h5>
 								<h5>DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
 								<h5>EMAIL: <?php ECHO $perfil['email']?></h5>
+								<br>
 							</div>
 						</div>
 					
+<br>
 
-					<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 450px;">
-						<div class="alert alert-primary" role="alert">
+            <div class="row" >
+
+                        <div class="card">
+							<br>
 					  		<h3>CAMBIAR CONTRASEÑA</h3>
 							  <center>
 							  <form action="php/api/cambiarPassword.php" method="POST">
@@ -81,7 +83,7 @@ $perfil = $api->perfil($_SESSION['id']);
 							</form>							  
 							  </center>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>

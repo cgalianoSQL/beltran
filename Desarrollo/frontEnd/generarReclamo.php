@@ -53,19 +53,19 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 
 
+				
+
 
 				<div id="content">
 				<div id="center">
-				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
-					<div class="alert alert-primary" role="alert">
+						<div class="card">
+							<br>
 					  	<h3>NUEVO RECLAMO</h3>
 						  <form action="php/api/registrarReclamo.php" method="POST" enctype="multipart/form-data">
 								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 									<div class="form-group">
 										Servicio 
-										
+										<br>
 										<select class="custom-select" name="id_servicio" required>
 										<option value="">Seleccione un servicio</option>				
 										<?php 
@@ -81,11 +81,13 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>	
 									<div class="form-group">
 										<label for="formGroupExampleInput" >Detalle su problema</label>
-										<textarea rows="3" cols="84" name="comentario"> </textarea>
+										<br>
+										<textarea rows="3" cols="76" name="comentario"> </textarea>
 										<input type="file" name="archivo" accept="image/*,.pdf" />
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
+									<br>- 
 							</form>
 						</div>
 					</div>

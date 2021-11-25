@@ -78,12 +78,19 @@ h5{
   }
 
   #center { 
-	width: 85%; 
-	margin:10%; 
+	width: 90%; 
+	margin:5%; 
 	margin-top: 5%;
 	background: #251d53; 
 	content: center;
 	text-align: left;
 	float: center;
 
+  } 
+  .card { 
+	width: 80%;  
+	margin-left: 10%;
+	background-color: rgb(234, 241, 255);
+	border-color: black ;
+	
   } 

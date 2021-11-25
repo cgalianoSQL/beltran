@@ -78,12 +78,32 @@ h5{
   }
 
   #center { 
-	width: 80%; 
-	margin:9%; 
+	width: 70%; 
+	margin:15%; 
 	margin-top: 5%;
 	background: #251d53; 
 	content: center;
 	text-align: center;
 	float: center;
 
+  } 
+  .card { 
+	width: 80%;  
+	margin-left: 10%;
+	background-color: rgb(234, 241, 255);
+	border-color: black ;
+	
+  } 
+
+  .custom-select, .comentario{
+	  width: 80%;
+	  rows: 3;
+	  
+  }
+  .card2 { 
+	width: 80%;  
+	margin-left: 10%;
+	background-color: rgb(234, 241, 255);
+	border-color: black ;
+	
   } 

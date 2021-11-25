@@ -50,12 +50,10 @@ $perfil = $api->perfil($_SESSION['id']);
 		</nav>
 
         <div id="content">
-				<div id="center">
-            <div class="row" >
-                <div class="col col-lg-3" style="margin-top: 1%;margin-left:1% ;margin-bottom: 1%">
-                   <div id="tarjeta" class="card" style="width: 68rem;">
-                        <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
-                            <div class="alert alert-info" role="alert">
+			<div id="center">
+                <div class="row" >
+                     <div class="card">
+                            <br>
                                 <h3>MIS RECLAMOS</h3>
                                 <br>
                                     <div class="container">
@@ -65,7 +63,6 @@ $perfil = $api->perfil($_SESSION['id']);
                                                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
-                                                            
                                                                 <th>Fecha</th>
                                                                 <th>Hora</th>
                                                                 <th>Servicio</th>
@@ -117,9 +114,6 @@ $perfil = $api->perfil($_SESSION['id']);
                                 </div>
                             </div>
                     </div>  
-                </div> 
-            </div>  
-        </div>   
       
         <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="popper/popper.min.js"></script>

@@ -14,14 +14,17 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Generar reclamo</title>
+<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+	<title>ADM - Personal de Soporte</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/registroReclamo.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
 	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,30 +48,28 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
-		<div id="colorcito1" class="container" >
-			<div class="row" >
-				<div class="col col-lg-3" onclick="location.href='crearPersonalDeSoporteAdmin.php'" style=" margin-top: 3%;margin-left: 21%;margin-bottom: 3%">
-					<div class="card" style="width: 20rem;">
-						<div class="card-body" style="min-width:310px;max-width: 310px;min-height:330px;max-height: 330px;">
-							
-							<div class="alert alert-success" role="alert">
-						  <h3>CREAR CUENTA PERSONAL DE SOPORTE</h3>
-						</div>
-						</div>
-					</div>
-				</div>
-				<div class="col col-lg-3" onclick="location.href='listaPersonalDeSoporteAdmin.php'" style="margin-top: 3%;margin-left: 5%;margin-bottom: 3%">
-					<div class="card" style="width: 20rem;">
-						<div class="card-body"  style="min-width:310px;max-width: 310px;min-height: 330px;max-height: 330px;">
-						
-							<div class="alert alert-info" role="alert">
-							 <h3>LISTA DE <br>PERSONAL DE SOPORTE</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
+
+
+		<div id="content">
+				<div id="center">
+					<br>
+				<div id="object1" onclick="location.href='crearPersonalDeSoporteAdmin.php'" >
+									<div class="card">
+									<h3>CREAR CUENTA <br> PERSONAL DE SOPORTE</h3>
+											</div>
+									</div>
+									<br>
+					
+				<div id="object2" onclick="location.href='listaPersonalDeSoporteAdmin.php'" >
+									<div class="card">
+									<h3>LISTA <br>PERSONAL DE SOPORTE</h3>
+									</div>
+									<br>
+					</div>
+				</div>
+				</div>
+</div>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
