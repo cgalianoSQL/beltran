@@ -56,7 +56,7 @@ h5{
 #content { 
 	overflow:auto; 
 	background:#251d53; 
-	height: 80%;
+	height: 100%;
   } 
 
   
@@ -68,25 +68,22 @@ h5{
 	content: center;
 	text-align: center;
   } 
+  
+  #left  { float:left;  }
+  #right { float:right; } 
 
   
-   .card {
-	border: 30%;
+  .card {
+	border: 20%;
   }
 
   #center { 
-	width: 60%; 
-	margin:20%; 
-	margin-top: 4%;
-	background: white; 
+	width: 85%; 
+	margin:10%; 
+	margin-top: 5%;
+	background: #251d53; 
 	content: center;
-	text-align: center;
+	text-align: left;
 	float: center;
 
-  } 
-
-  .card { 
-	width: 50%;  
-	margin-left: 25%;
-	
   } 

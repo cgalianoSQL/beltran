@@ -22,7 +22,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="estilo/principal3.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
    
@@ -48,14 +48,16 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
-    <div style="height:50px"></div>
-        <div id="colorcito1" class="container" >
+
+        <div id="content">
+				<div id="center">
             <div class="row" >
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:1% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 68rem;">
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                             <div class="alert alert-info" role="alert">
                                 <h3>MIS RECLAMOS</h3>
+                                <br>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">

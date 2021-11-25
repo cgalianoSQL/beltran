@@ -21,7 +21,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
@@ -48,7 +48,8 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 		
-		<div id="colorcito1" class="container" >
+		<div id="content">
+				<div id="center">
 			<div class="row" >
 				<div class="col col-lg-3" style="margin-top: 1%;margin-left:11% ;margin-bottom: 3%">
 					<div id="tarjeta" class="card" style="width: 55rem;">

@@ -25,7 +25,7 @@ $perfil = $api->perfil($_SESSION['id']);
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
@@ -51,14 +51,16 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
-		<div id="colorcito1" class="container" >
-			<div class="row" >
+
+
+
+				<div id="content">
+				<div id="center">
 				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
 					<div id="tarjeta" class="card" style="width: 50rem;">
 						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
 					<div class="alert alert-primary" role="alert">
 					  	<h3>NUEVO RECLAMO</h3>
-						  <center>
 						  <form action="php/api/registrarReclamo.php" method="POST" enctype="multipart/form-data">
 								<input type="hidden" name="id_usuario_pertenece" value="<?php ECHO  $_SESSION['id'];?>" >
 									<div class="form-group">
@@ -85,7 +87,6 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
 							</form>
-							</center>
 						</div>
 					</div>
 				</div>

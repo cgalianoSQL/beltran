@@ -59,16 +59,18 @@ $perfil = $api->perfil($_SESSION['id']);
 
 			<div id="content">
 				<div id="center">
+					<br>
 				<div id="object1" onclick="location.href='GenerarReclamo.php'" >
 									<div class="card">
 											<div class="alert alert-info" role="alert">
 											<h3>GENERAR<br>RECLAMO</h3>
 											</div>
 									</div>
+									<br>
 					</div>
 				<div id="object2" onclick="location.href='misReclamos.php'" >
 									<div class="card">
-											<div class="alert alert-info" role="alert">
+										<div class="alert alert-info" role="alert">
 											<h3>MIS<br>RECLAMOS</h3>
 											</div>
 											<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
@@ -79,6 +81,7 @@ $perfil = $api->perfil($_SESSION['id']);
 											<br>
 											<h5>En proceso de solución: <?php ECHO $curso["count"]; ?></h5>
 									</div>
+									<br>
 					</div>
 				</div>
 				</div>
