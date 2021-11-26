@@ -13,17 +13,24 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>SUPERVISOR</title>
+	<title>Mi Cuenta</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="admin.php"><h4>SUPERVISOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="admin.php"><h3>SUPERVISOR - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -44,24 +51,28 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 		
-		<div id="colorcito1" class="container" >
-			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%;margin-left:11% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 55rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:220px;max-height: 400px;">
-							<div class="alert alert-primary" role="alert">
+		<div id="content">
+				<div id="center">
+            <div class="row" >
+
+                        <div class="card">
+							<br>
 							
 							<h3>MIS DATOS</h3>
 								<h5>USUARIO: <?php ECHO $perfil['usuario']?></h5>
 								<h5>DOCUMENTO: <?php ECHO $perfil['documento']?></h5>
 								<h5>EMAIL: <?php ECHO $perfil['email']?></h5>
+								<br>
 							</div>
 						</div>
 					
+						<br>
 
-					<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 450px;">
-						<div class="alert alert-primary" role="alert">
-					  		<h3>CAMBIAR CONTRASEÑA</h3>
+<div class="row" >
+
+			<div class="card">
+				<br>
+				  <h3>CAMBIAR CONTRASEÑA</h3>
 							  <center>
 							  <form action="php/api/cambiarPassword.php" method="POST">
 								<input type="hidden" name="id" value="<?php ECHO  $_SESSION['id'];?>" >
