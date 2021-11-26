@@ -16,7 +16,6 @@ $lista = $api->listaCliente();
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
 	<title>ADM - Lista de Clientes</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -25,13 +24,13 @@ $lista = $api->listaCliente();
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/principal3.css" rel="stylesheet" type="text/css">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="cliente.php"><h3>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">

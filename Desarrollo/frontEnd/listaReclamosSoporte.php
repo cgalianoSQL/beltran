@@ -12,21 +12,23 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css"> 
-    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
-    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+	<title>SOPOETE - Lista de Reclamos</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
-	<title>LISTA DE RECLAMOS</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal3.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="soporte.php"><h4>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="soporte.php"><h3>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -47,14 +49,11 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 
-
-		<div style="height:40px" ></div>
-        <div id="colorcito1" class="container" >
-			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 1%; margin-bottom: 1%; margin-right: 2%">
-					<div id="tarjeta" class="card" style="width: 72rem;">
-						<div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
-						<div class="alert alert-primary" role="alert">
+        <div id="content">
+			<div id="center">
+                <div class="row" >
+                     <div class="card">
+                            <br>
 							  	<h3>LISTA DE RECLAMOS</h3>
                                     <div class="container">
                                         <div class="row">

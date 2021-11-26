@@ -13,22 +13,23 @@ $perfil = $api->perfil($_SESSION['id']);
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">   
-    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
-    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
-    <title>Detalle Reclamo</title>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+	<title>Detalle mis reclamos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
    
   <body> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="soporte.php"><h4>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="soporte.php"><h3>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -55,23 +56,22 @@ $perfil = $api->perfil($_SESSION['id']);
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
                                 <br>
-                                <h3>DETALLE DE RECLAMOS</h3> 
-								<h5>Reclamo #: <?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?> </h5>          
+                                <h3>DETALLE RECLAMO #<?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?> </h3>          
 								<h5>Fecha: <?php ECHO json_decode(json_encode($reclamo['fecha'])); ?></h5>       
 								<h5>Hora: <?php ECHO json_decode(json_encode($reclamo['hora'])); ?> </h5> 
 								<h5>Servicio: <?php ECHO json_decode(json_encode($reclamo['servicio'])); ?> </h5>      
 								<h5>Pertenece: <?php ECHO json_decode(json_encode($reclamo['pertenece'])); ?> </h5>       
 								<h5>Asignado: <?php ECHO json_decode(json_encode($reclamo['asignado'])); ?></h5> 
 								<h5>Estado: <?php ECHO json_decode(json_encode($reclamo['nombre_estado'])); ?></h5> 
-                        <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
-                            <div class="alert alert-info" role="alert">
-                            <h3>MOVIMIENTOS DE RECLAMOS</h3>
+                                <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
+                        <div class="card2">
+                                <h3> MOVIMIENTOS RECLAMO #<?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?></h3>
+                                <br>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                              <br>
                                                 <div class="table-responsive">        
-                                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>Fecha</th>

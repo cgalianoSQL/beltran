@@ -22,13 +22,13 @@ $perfil = $api->perfil($_SESSION['id']);
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="estilo/principal4.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="cliente.php"><h3>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">

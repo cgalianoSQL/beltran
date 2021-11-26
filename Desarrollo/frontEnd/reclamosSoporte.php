@@ -15,16 +15,20 @@ $perfil = $api->perfil($_SESSION['id']);
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>PERSONAL DE SOPORTE</title>
+	<title>SOPORTE - Reclamos</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal4.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="soporte.php"><h4>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="soporte.php"><h3>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h3></a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -44,6 +48,25 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
+
+		<div id="content">
+				<div id="center">
+					<br>
+				<div id="object1" onclick="location.href='listaReclamosSoporte.php'" >
+									<div class="card">
+									<h3>LISTA<br> DE RECLAMOS</h3>
+									</div>
+									<br>
+					</div>
+				<div id="object2" onclick="location.href='misReclamosSoporte.php'" >
+									<div class="card">
+									<h3>MIS<br>RECLAMOS</h3>
+									</div>
+									<br>
+					</div>
+
+				</div>
+				</div>
 
 		<div id="colorcito1" class="container" >
 			<div class="row" >

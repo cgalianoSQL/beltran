@@ -14,17 +14,23 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>Generar reclamo</title>
+	<title>Administrador</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
-	<link href="estilo/secundario.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="cliente.php"><h4>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="admin.php"><h3>ADMINISTRADOR - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -44,29 +50,33 @@ $perfil = $api->perfil($_SESSION['id']);
 				</li>
 			</ul>
 		</nav>
-		<div id="colorcito1" class="container" >
-			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 280px;min-height:280px;max-height: 395px;">
-					<div class="alert alert-primary" role="alert">
+        <div id="content">
+				<div id="center">
+            <div class="row" >
+
+                        <div class="card">
+							<br>
 					  	<h3>NUEVO SERVICIO</h3>
 						  <center>
 						 	<form name="registro" action="php/api/crearServicio.php" method="POST">
-								<br> <label for="nomServ"><h5>NOMBRE DE SERVICIO</h5></label>
+								<br> <label for="nomServ">NOMBRE DE SERVICIO</label>
 								<br> <input type="text" name="nomServ" required>
 								<div class="form-group">
 								<label for="formGroupExampleInput" >DETALLE</label>
 								<br>
-								<textarea rows="3" cols="60" name="comentario"> </textarea>
+								<textarea rows="3" cols="88"name="comentario"> </textarea>
 								</div>
-								<br>
 								<button type="submit" class="btn btn-success">CREAR</button>
+								<br>
+								-
 							</form>						  
 						  </center>
 					</div>
+					<br>
 				</div>
+				<br>
 			</div>
+			<br>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

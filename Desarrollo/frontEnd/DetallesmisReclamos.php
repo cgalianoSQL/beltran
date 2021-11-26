@@ -186,8 +186,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <div class="col col-lg-3" style="margin-top: 1%;margin-left:5% ;margin-bottom: 1%">
                    <div id="tarjeta" class="card" style="width: 60rem;">
                    <br>
-                             <h3>DETALLE DE RECLAMOS</h3> 
-								<h5>Reclamo #: <?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?> </h5>          
+                <h3>DETALLE RECLAMO #<?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?> </h3>        
 								<h5>Fecha: <?php ECHO json_decode(json_encode($reclamo['fecha'])); ?></h5>       
 								<h5>Hora: <?php ECHO json_decode(json_encode($reclamo['hora'])); ?> </h5> 
 								<h5>Servicio: <?php ECHO json_decode(json_encode($reclamo['servicio'])); ?> </h5>      
@@ -196,7 +195,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 								<h5>Estado: <?php ECHO json_decode(json_encode($reclamo['nombre_estado'])); ?></h5> 
                         <div class="card-body" style="min-width:100%;max-width: 100%;min-height: 100%;max-height: 100%;">
                         <div class="card2">
-                                <h3> MOVIMIENTOS DE RECLAMOS</h3>
+                                <h3> MOVIMIENTOS RECLAMO #<?php ECHO json_decode(json_encode($reclamo['id_reclamos'])); ?></h3>
                                 <br>
                                     <div class="container">
                                         <div class="row">

@@ -12,19 +12,22 @@ $perfil = $api->perfil($_SESSION['id']);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
-	<title>PERSONAL DE SOPORTE</title>
+	<title>Agregar respuesta</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-	<link href="estilo/principal.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&display=swap" rel="stylesheet">
+	<link href="estilo/principal2.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Yantramanav:wght@900&display=swap" rel="stylesheet">
 </head>
 <body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="soporte.php"><h4>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h4></a>	
+		<a class="navbar-brand" href="soporte.php"><h3>PERSONAL DE SOPORTE - <?php ECHO $perfil['nombre_completo']?></h3></a>	
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
@@ -45,12 +48,12 @@ $perfil = $api->perfil($_SESSION['id']);
 			</ul>
 		</nav>
 
-		<div id="colorcito1" class="container" >
-			<div class="row" >
-				<div class="col col-lg-3" style="margin-top: 3%;margin-left:15% ;margin-bottom: 3%">
-					<div id="tarjeta" class="card" style="width: 50rem;">
-						<div class="card-body" style="min-width:100%;max-width: 286px;min-height:330px;max-height: 400px;">
-					<div class="alert alert-warning" role="alert">
+        <div id="content">
+				<div id="center">
+            <div class="row" >
+
+                        <div class="card">
+							<br>
 						  <h3>RESPUESTA</h3>
 						  <CENTER>
 							<form action="php/api/actualizarReclamo.php" method="POST" enctype="multipart/form-data">
@@ -65,6 +68,8 @@ $perfil = $api->perfil($_SESSION['id']);
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
+									<br>
+									-
 							</form>
 						</CENTER>
 						</div>
