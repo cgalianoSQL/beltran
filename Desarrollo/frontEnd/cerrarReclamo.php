@@ -73,7 +73,7 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>
 									<button type="submit" class="btn btn-danger">CERRAR</button>
 									<br>
-									-
+									<br>
 							</form>
 							</center>
 						</div>

@@ -59,16 +59,17 @@ $perfil = $api->perfil($_SESSION['id']);
 					  	<h3>NUEVO SERVICIO</h3>
 						  <center>
 						 	<form name="registro" action="php/api/crearServicio.php" method="POST">
-								<br> <label for="nomServ">NOMBRE DE SERVICIO</label>
-								<br> <input type="text" name="nomServ" required>
-								<div class="form-group">
-								<label for="formGroupExampleInput" >DETALLE</label>
+								<br> <label for="nomServ"><h5>NOMBRE DE SERVICIO</h5></label>
 								<br>
-								<textarea rows="3" cols="88"name="comentario"> </textarea>
+								<input type="text" name="nomServ" required>
+								<div class="form-group">
+								<br>
+								<label for="formGroupExampleInput" ><h5>DETALLE</h5></label>
+								<textarea rows="3" cols="70"name="comentario"> </textarea>
 								</div>
 								<button type="submit" class="btn btn-success">CREAR</button>
 								<br>
-								-
+								<br>
 							</form>						  
 						  </center>
 					</div>

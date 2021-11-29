@@ -73,13 +73,13 @@ $perfil = $api->perfil($_SESSION['id']);
 											<br>
 											<h3>Estados de mis tickets:</h3>
 											<br>
-											<h5>Abiertos: <?php ECHO $abierto["count"]; ?></h5>
+											<h4>Abiertos: <?php ECHO $abierto["count"]; ?></h4>
 											<br>
-											<h5>Reabiertos: <?php ECHO $reabierto["count"]; ?></h5>
+											<h4>Reabiertos: <?php ECHO $reabierto["count"]; ?></h4>
 											<br>
-											<h5>Cerrados: <?php ECHO $cancelado["count"]; ?></h5>
+											<h4>Cerrados: <?php ECHO $cancelado["count"]; ?></h4>
 											<br>
-											<h5>En proceso de solución: <?php ECHO $curso["count"]; ?></h5>
+											<h4>En proceso de solución: <?php ECHO $curso["count"]; ?></h4>
 									</div>
 									<br>
 					</div>

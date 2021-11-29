@@ -80,7 +80,7 @@ $perfil = $api->perfil($_SESSION['id']);
 					<br>
 					<br><button type="submit" class="btn btn-success">CREAR CUENTA</button>
 					<br>
-					-
+					<br>
 				</form>						
 				</center>
 				

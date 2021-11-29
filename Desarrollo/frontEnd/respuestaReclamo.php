@@ -73,7 +73,7 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
 									<br>
-									-
+									<br>
 							</form>
 							</center>
 						</div>

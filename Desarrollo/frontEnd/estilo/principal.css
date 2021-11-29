@@ -7,10 +7,17 @@
 body {font-family: Arial, Helvetica, sans-serif; background-color:  #251d53; 
 }
 
+h1{
+	font-family: 'Montagu Slab', serif;
+	font-family: 'Yantramanav', sans-serif;
+	text-align: center;
+	text-shadow: 20% #000000;
+	color: #edeaf3;
 
+}
 h3{
 	font-family: 'Montagu Slab', serif;
-font-family: 'Yantramanav', sans-serif;
+	font-family: 'Yantramanav', sans-serif;
 	text-align: center;
 	text-shadow: 1px #2E1070;
 	color: #3C0DA8;
@@ -18,19 +25,21 @@ font-family: 'Yantramanav', sans-serif;
 }
 
 h4{
-	font-family: 'Assistant', sans-serif;
-	text-align: center;
-	text-shadow: 1px #2E1070;
-	color: #3C0DA8;
+	font-family: 'Montagu Slab', serif;
+	font-family: 'Yantramanav', sans-serif;
 
 }
 
 h5{
 	font-family: 'Montagu Slab', serif;
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 25px;
 	text-align: center;
+	margin: 5px;
+	color: #edeaf3;
 	}
 
-	input[type=hidden], input[type=password], input[type=submit]
+	input[type=hidden], input[type=password], input[type=submit], input[type=text], input[type=email]
     {
         width: 45%;
         padding: 5px 5px;
@@ -38,9 +47,11 @@ h5{
 		display: inline-block;
         
 	}
+
 	label{
-		padding: 1px 1px;;
-		margin: 1px;
+        width: 45%;
+        padding: 5px 5px;
+        margin: 2px 0;
 		display: inline-block;
 		
 	}
@@ -82,3 +93,5 @@ h5{
 	border-color: black ;
 	
   } 
+
+ 
