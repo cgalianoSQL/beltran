@@ -87,7 +87,8 @@ $perfil = $api->perfil($_SESSION['id']);
 										<!--<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Agregue un detalle de su problema" name="comentario" required>-->
 									</div>
 									<button type="submit" class="btn btn-success">ENVIAR</button>
-									<br>- 
+									<br>
+									<br> 
 							</form>
 						</div>
 					</div>

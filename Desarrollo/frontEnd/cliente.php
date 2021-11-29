@@ -66,13 +66,15 @@ $perfil = $api->perfil($_SESSION['id']);
 									</div>
 									<br>
 					</div>
-				<div id="object2" onclick="location.href='misReclamos.php'" >
+				<div id="object2" onclick="location.href='misReclamos.php'" > 
 									<div class="card">
 											<h3>MIS<br>RECLAMOS</h3>
 											</div>
-											<br>
-											<h3>Estados de mis tickets:</h3>
-											<br>
+									</div>
+				<br>
+				<div id="object3" > 
+					
+					<h3>Estados de mis reclamos:</h3>
 											<h4>Abiertos: <?php ECHO $abierto["count"]; ?></h4>
 											<br>
 											<h4>Reabiertos: <?php ECHO $reabierto["count"]; ?></h4>
@@ -80,12 +82,12 @@ $perfil = $api->perfil($_SESSION['id']);
 											<h4>Cerrados: <?php ECHO $cancelado["count"]; ?></h4>
 											<br>
 											<h4>En proceso de solución: <?php ECHO $curso["count"]; ?></h4>
-									</div>
 									<br>
+				</div>
+
 					</div>
 				</div>
-				</div>
-</div>
+
 
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

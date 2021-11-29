@@ -58,35 +58,35 @@ $perfil = $api->perfil($_SESSION['id']);
 				<br>
 					<div id="object1" onclick="location.href='ServiciosAdmin.php'" >
 						<div class="card">
-						 		 <h3>ADMINISTAR <BR> SERVICIOS</h3>
+								  <h3>ADMINISTRAR<br> SERVICIOS</h3>
 						</div>
 					</div>
 					<br>
-					<div id="object1" onclick="location.href='SupervisorAdmin.php'" >
+					<div id="object2" onclick="location.href='SupervisorAdmin.php'" >
 						<div class="card">
-						 		 <h3>ADMINISTAR <BR>SUPERVISOR</h3>
+						 		 <h3>ADMINISTRAR <BR> SUPERVISOR</h3>
 						</div>
 					</div>
 					<br>
-					<div id="object1" onclick="location.href='PersonalDeSoporteAdmin.php'" >
+					<div id="object3" onclick="location.href='PersonalDeSoporteAdmin.php'" >
 						<div class="card">
 						 		 <h3>PERSONAL DE<br> SOPORTE</h3>
 						</div>
 					</div>
 					<br>
-					<div id="object1" onclick="location.href='listaDeClientesAdmin.php'" >
+					<div id="object4" onclick="location.href='listaDeClientesAdmin.php'" >
 						<div class="card">
 						 		 <h3>LISTA DE<br> CLIENTES</h3>
 						</div>
 					</div>
 					<br>
-					<div id="object1" onclick="location.href='servicioReporte.php'" >
+					<div id="object5" onclick="location.href='servicioReporte.php'" >
 						<div class="card">
 						 		 <h3>ESTADÍSTICAS DE<br> SERVICIOS</h3>
 						</div>
 					</div>
 					<br>
-					<div id="object1" onclick="location.href='estadisticasReclamo.php'" >
+					<div id="object6" onclick="location.href='estadisticasReclamo.php'" >
 						<div class="card">
 						 		 <h3>ESTADÍSTICAS DE<br> RECLAMOS</h3>
 							</div>

@@ -30,10 +30,14 @@ label{
     margin: 1px;
 }
 
-button:hover
+.modal-content
 {
-    opacity: 0.8;
-}
+    background-color: #ffffffee;
+    position: center;
+    display: center;
+    align-items: center;
+    border: 2px solid ;
+    }
 
 .imgcontainer
 {
@@ -49,15 +53,6 @@ img.avatar
     width: 35%;
     border-radius: 40%;
 }
-
-.modal-content
-{
-    background-color: #ffffffee;
-    position: center;
-    display: absolute;
-    align-items: center;
-    border: 2px solid ;s
-    }
 
 
 .animate
@@ -85,4 +80,4 @@ img.avatar
      display: block;
      float: absolute;
  }
- 
+}
