@@ -116,3 +116,13 @@ $$ LANGUAGE sql VOLATILE STRICT
 SET search_path FROM CURRENT;
 
 
+CREATE OR REPLACE FUNCTION beltran.usuarios_set_recuperacion_password (
+	IN p_usuario              text,
+	IN p_password             text
+) RETURNS void AS
+$$
+	UPDATE beltran.usuarios SET password = p_password WHERE usuario = p_usuario;
+$$ LANGUAGE sql VOLATILE STRICT
+SET search_path FROM CURRENT;
+
+
