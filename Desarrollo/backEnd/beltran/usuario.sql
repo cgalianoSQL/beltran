@@ -98,6 +98,14 @@ $$ LANGUAGE sql IMMUTABLE STRICT
 SET search_path FROM CURRENT;
 
 
+CREATE OR REPLACE FUNCTION beltran.usuarios_get_name_by_email (
+	IN p_email                    text
+) RETURNS text AS
+$$
+	select u.nombre from beltran.usuarios_contactos as uc inner join beltran.usuarios as u ON u.id_usuario  = uc.id_usuario and uc.descripcion = p_email;
+$$ LANGUAGE sql IMMUTABLE STRICT
+SET search_path FROM CURRENT;
+
 CREATE OR REPLACE FUNCTION beltran.tipos_permisos_get_nombre_tipo (
 	IN p_id                       integer
 ) RETURNS text AS

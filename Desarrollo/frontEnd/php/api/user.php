@@ -64,6 +64,12 @@ class User extends DB{
         return ($query);
     }    
 
+    function recuperarUsuario($email){
+        $query = $this->connect()->prepare('SELECT webapi.beltran_usuarios_recuperar_usuario(:email);');
+        $query->execute(['email' => $email]);
+        return ($query);
+    }    
+
     function setEstado($usuario){
         $query = $this->connect()->prepare('call webapi.beltran_usuarios_set_estado_procedimiento(:usuario, false)');
         $query->execute(['usuario' => $usuario]);

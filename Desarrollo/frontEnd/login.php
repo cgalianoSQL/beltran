@@ -49,6 +49,7 @@ if (isset($_SESSION['permiso']))
 					</label>
 					<label>
 						<span class="psw">OLVIDE <a href="recuperar.php"> MI CONTRASEÑA <br></a></span>
+						<span class="psw">OLVIDE <a href="recuperarUsuario.php"> MI USUARIO <br></a></span>
 					</label>
 					<br>
 					<button type="button" class="btn btn-primary" onclick="location.href='registro.php'">REGISTRARSE</button>

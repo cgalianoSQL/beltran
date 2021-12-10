@@ -104,6 +104,17 @@ class ApiUser{
         return $result;
     }
 
+
+    function recuperarUsuario($email){
+        $user = new User();
+
+        $res = $user->recuperarUsuario($email);
+
+        $result = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     function setEstado($usuario){
         $user = new User();
 
@@ -466,7 +477,7 @@ class ApiUser{
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                             <tr>
                                 <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 40px 30px; color: #666666; font-family: "Lato", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                    <p style="margin: 0;">Recuperacion de contraseña</p>
+                                    <p style="margin: 0;">Recuperacion de username</p>
                                 </td>
                             </tr>
                             <tr>
@@ -476,8 +487,8 @@ class ApiUser{
                                             <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                                 <table border="0" cellspacing="0" cellpadding="0">
                                                     <tr>
-                                                        <td align="center" style="border-radius: 3px;" bgcolor="#251d53"><a target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #251d53; display: inline-block;"><p>Su contraseña es : '.$password.' </p>
-                        <p>Se recomienda cambiarla. </p></a></td>
+                                                        <td align="center" style="border-radius: 3px;" bgcolor="#251d53"><a target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #251d53; display: inline-block;"><p>Su usuario es : '.$password.' </p>
+                        </a></td>
                                                     </tr>
                                                 </table>
                                             </td>

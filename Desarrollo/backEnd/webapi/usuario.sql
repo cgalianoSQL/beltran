@@ -112,6 +112,28 @@ $$ LANGUAGE plpgsql VOLATILE STRICT
 SET search_path FROM CURRENT
 SECURITY DEFINER;
 
+
+CREATE OR REPLACE FUNCTION webapi.beltran_usuarios_recuperar_usuario (
+	IN p_email                    text
+) RETURNS text AS $$
+DECLARE
+	v_usuario_jsonb               jsonb;
+	v_usuario	                  beltran.usuarios;
+	v_new_password                text;
+
+BEGIN
+	IF not exists (select * from beltran.usuarios_vw where email = p_email )
+	THEN
+	    RAISE EXCEPTION 'webapi.beltran_usuarios_recuperar_usuario EXCEPTION: parameter is not a valid params';
+	END IF;
+	
+    RETURN beltran.usuarios_get_name_by_email(p_email);
+END;
+$$ LANGUAGE plpgsql VOLATILE STRICT
+SET search_path FROM CURRENT
+SECURITY DEFINER;
+
+
 create or replace function random_string(length integer
 ) returns text as $$ 
 declare 
