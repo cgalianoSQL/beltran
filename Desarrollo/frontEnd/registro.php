@@ -29,7 +29,7 @@
 				<input type="email" name="email" required>
 				<br>
 				<br>
-				<button type="submit" class="btn btn-success">REGISTRAR CUENTA</button>
+				<button type="submit" class="btn btn-success">CONTINUAR REGISTRO</button>
 				<br>
 				<br>
 				<button type="button" class="btn btn-primary" onclick="location.href='login.php'"> INGRESAR CON UNA CUENTA EXISTENTE</button>
