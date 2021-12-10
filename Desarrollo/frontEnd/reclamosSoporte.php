@@ -53,13 +53,13 @@ $perfil = $api->perfil($_SESSION['id']);
 				<div id="center">
 					<br>
 				<div id="object1" onclick="location.href='listaReclamosSoporte.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 									<h3>LISTA<br> DE RECLAMOS</h3>
 									</div>
 									<br>
 					</div>
 				<div id="object2" onclick="location.href='misReclamosSoporte.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 									<h3>MIS<br>RECLAMOS</h3>
 									</div>
 									<br>

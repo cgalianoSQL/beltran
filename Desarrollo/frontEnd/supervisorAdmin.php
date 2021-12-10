@@ -59,14 +59,14 @@ $perfil = $api->perfil($_SESSION['id']);
 				<div id="center">
 					<br>
 				<div id="object1" onclick="location.href='crearSupervisorAdmin.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 											<h3>CREAR<br>SUPERVISOR</h3>
 											</div>
 									</div>
 									<br>
 					
 				<div id="object2" onclick="location.href='listaSupervisorAdmin.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 											<h3>LISTA DE <br>SUPERVISORES</h3>
 									</div>
 									<br>

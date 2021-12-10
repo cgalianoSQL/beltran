@@ -55,20 +55,20 @@ $perfil = $api->perfil($_SESSION['id']);
 				<div id="center">
 					<br>
 				<div id="object1" onclick="location.href='reclamosSoporte.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 											<h3>VER <bR> RECLAMOS</h3>
 									</div>
 									<br>
 					</div>
 				<div id="object2" onclick="location.href='estadisticasReclamo.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 											<h3>ESTADÍSTICAS DE <br> RECLAMOS</h3>
 									</div>
 									<br>
 					</div>
 
 					<div id="object3" onclick="location.href='servicioReporte.php'" >
-									<div class="card">
+									<div id="hover" class="card">
 											<h3>ESTADÍSTICAS DE <br>SERVICIOS</h3>
 									</div>
 									<br>
